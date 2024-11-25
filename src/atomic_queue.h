@@ -22,6 +22,8 @@ namespace mmcso
             return nullptr;
         }
 
+        void release_command(OffloadCommand *oc) { delete oc; }
+
     private:
         atomic_queue::AtomicQueue<Element, QueueSize> q_;
     };

@@ -14,7 +14,7 @@ namespace mmcso
     struct OffloadCommand {
         using MPICommand = std::function<int(MPI_Request *)>;
         explicit OffloadCommand(MPICommand &&func, MPI_Request *request, bool null_request = false)
-            : func_{func}, request_{request}, null_request_{null_request}
+            : func_{std::move(func)}, request_{request}, null_request_{null_request}
         {
         }
 
@@ -50,7 +50,7 @@ namespace mmcso
                         *request = MPI_REQUEST_NULL;
                     }
 
-                    delete command;
+                    q_.release_command(command);
 
                     rm_.test_request(request);
 
@@ -87,6 +87,7 @@ namespace mmcso
         }
 
         void enqueue(OffloadCommand *command) { q_.enqueue(command); }
+        void enqueue(OffloadCommand &&command) { q_.enqueue(std::move(command)); }
 
     private:
         std::thread      thread_;
@@ -115,6 +116,13 @@ namespace mmcso
             // the offloading thread dequeues the command and provides a valid request
             rm_.invalidate_request(command->request_);
             ot_.enqueue(command);
+        }
+
+        // TODO: use forwarding reference instead of duplicated code
+        void post(OffloadCommand &&command)
+        {
+            rm_.invalidate_request(command.request_);
+            ot_.enqueue(std::move(command));
         }
 
         void wait(MPI_Request *request, MPI_Status *status) { rm_.wait(request, status); }

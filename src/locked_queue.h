@@ -21,13 +21,13 @@ namespace mmcso
         std::mutex          mtx_;
     };
 
-    void LockedQueue::enqueue(Element elem)
+    inline void LockedQueue::enqueue(Element elem)
     {
         std::lock_guard<std::mutex> lock{mtx_};
         q_.push(elem);
     }
 
-    Element LockedQueue::dequeue()
+    inline Element LockedQueue::dequeue()
     {
         Element value;
 
