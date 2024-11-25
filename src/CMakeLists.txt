@@ -20,10 +20,10 @@ set(
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
-add_library(mmcso SHARED ${SRC})
+add_library(mmc SHARED ${SRC})
 
-target_include_directories(mmcso PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-target_include_directories(mmcso PRIVATE ${PROJECT_SOURCE_DIR}/external/atomic_queue/include)
-target_include_directories(mmcso PRIVATE ${PROJECT_SOURCE_DIR}/external/)
+target_include_directories(mmc PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(mmc PRIVATE ${PROJECT_SOURCE_DIR}/external/atomic_queue/include)
+target_include_directories(mmc PRIVATE ${PROJECT_SOURCE_DIR}/external/)
 
-target_link_libraries(mmcso PRIVATE MPI::MPI_CXX)
+target_link_libraries(mmc PRIVATE MPI::MPI_CXX)

@@ -1,3 +1,4 @@
+#pragma once
 
 #include "array_request_manager.h"
 // #include "hash_request_manager.h"
