@@ -3,6 +3,7 @@
 #include <cassert>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <ctime>
 
 #include <mpi.h>
@@ -25,7 +26,6 @@ struct alignas(CLSIZE) measurement {
 thread_local char *a{nullptr};
 thread_local char *b{nullptr};
 
-#define USE_MEMORY_INTENSIVE_WORK 0
 #if USE_MEMORY_INTENSIVE_WORK
 static void do_work(int work)
 {
@@ -214,16 +214,16 @@ int main(int argc, char *argv[])
         comm_time += m[i].comm_time;
     }
 
-    printf("[rank %d] post time (avg. per thread and iter): %lfus\n", rank, 1.0e6 * post_time / nthreads / rep);
-    printf("[rank %d] wait time (avg. per thread and iter): %lfus\n", rank, 1.0e6 * wait_time / nthreads / rep);
-    printf("[rank %d] comp time (avg. per thread and iter): %lfus\n", rank, 1.0e6 * comp_time / nthreads / rep);
-    printf("[rank %d] comm time (avg. per thread and iter): %lfus\n", rank, 1.0e6 * comm_time / nthreads / rep);
+    printf("[rank %d] post time (avg. per thread and iter): %fus\n", rank, 1.0e6 * post_time / nthreads / rep);
+    printf("[rank %d] wait time (avg. per thread and iter): %fus\n", rank, 1.0e6 * wait_time / nthreads / rep);
+    printf("[rank %d] comp time (avg. per thread and iter): %fus\n", rank, 1.0e6 * comp_time / nthreads / rep);
+    printf("[rank %d] comm time (avg. per thread and iter): %fus\n", rank, 1.0e6 * comm_time / nthreads / rep);
     printf("[rank %d] overlap: %.2lf%%\n", rank, 100. * comp_time / comm_time);
     fflush(stdout);
 
     for (int i = 0; i < nthreads; ++i) {
         fprintf(csv_out,
-                "%d,%d,%d,%d,%zu,%lf,%lf,%lf,%lf\n",
+                "%d,%d,%d,%d,%zu,%f,%f,%f,%f\n",
                 nthreads,
                 i,
                 rep,
