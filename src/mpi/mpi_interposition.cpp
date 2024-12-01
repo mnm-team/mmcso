@@ -100,6 +100,26 @@ int MPI_Test(MPI_Request *request, int *flag, MPI_Status *status)
     return MPI_SUCCESS;
 }
 
+int MPI_Probe(int source, int tag, MPI_Comm comm, MPI_Status *status)
+{
+    int flag;
+    do {
+        MPI_Iprobe(source, tag, comm, &flag, status);
+        /* TODO: backoff?? */
+    } while (!flag);
+    return MPI_SUCCESS;
+}
+
+int MPI_Mprobe(int source, int tag, MPI_Comm comm, MPI_Message *message, MPI_Status *status)
+{
+    int flag;
+    do {
+        MPI_Improbe(source, tag, comm, &flag, message, status);
+        /* TODO: backoff?? */
+    } while (!flag);
+    return MPI_SUCCESS;
+}
+
 #if MMCSO_OFFLOAD_NOT_IMPLEMENTED_YET
 int MPI_Testall(int count, MPI_Request array_of_requests[], int *flag, MPI_Status array_of_statuses[]);
 int MPI_Testany(int count, MPI_Request array_of_requests[], int *index, int *flag, MPI_Status *status);
@@ -112,6 +132,7 @@ int MPI_Testsome(int         incount,
 #endif /* MMCSO_OFFLOAD_NOT_IMPLEMENTED_YET */
 
 #if MMCSO_OFFLOAD_NOT_IMPLEMENTED_YET
+
 
 int MPI_Abort(MPI_Comm comm, int errorcode);
 
@@ -151,7 +172,6 @@ int MPI_Intercomm_merge(MPI_Comm intercomm, int high, MPI_Comm *newintercomm);
 
 int         MPI_Is_thread_main(int *flag);
 int         MPI_Lookup_name(const char *service_name, MPI_Info info, char *port_name);
-int         MPI_Mprobe(int source, int tag, MPI_Comm comm, MPI_Message *message, MPI_Status *status);
 
 int         MPI_Op_commutative(MPI_Op op, int *commute);
 int         MPI_Op_create(MPI_User_function *function, int commute, MPI_Op *op);
@@ -170,7 +190,6 @@ int         MPI_Pack(
             const void *inbuf, int incount, MPI_Datatype datatype, void *outbuf, int outsize, int *position, MPI_Comm comm);
 int MPI_Pack_size(int incount, MPI_Datatype datatype, MPI_Comm comm, int *size);
 int MPI_Pcontrol(const int level, ...);
-int MPI_Probe(int source, int tag, MPI_Comm comm, MPI_Status *status);
 int MPI_Publish_name(const char *service_name, MPI_Info info, const char *port_name);
 
 int MPI_Reduce_local(const void *inbuf, void *inoutbuf, int count, MPI_Datatype datatype, MPI_Op op);
@@ -200,41 +219,3 @@ double   MPI_Wtime(void);
 } /* extern "C" */
 
 #include "mpi_fortran_wrappers.h"
-
-#if 0
-
-// MPI_Win_flush_all
-int MPI_Blocking_call_wo_nonblocking_counterpart_and_wo_status(void *buf)
-{
-    MPI_Request request;
-    oe.post(new mmcso::OffloadCommand{std::function{[=](MPI_Request *request_) {
-                                          return MPI_Blocking_call_wo_nonblocking_counterpart_and_wo_status(buf);
-                                      }},
-                                      request});
-    MPI_Wait(&request, MPI_STATUS_IGNORE); // NOLINT: suppress warning 'no matching nonblocking call'
-    return MPI_SUCCESS;
-}
-
-
-// MPI_Iprobe
-int MPI_Nonblocking_wo_request_and_w_status(void *buf, MPI_Status *status)
-{
-    MPI_Request request;
-    oe.post(new mmcso::OffloadCommand{std::function{[=](MPI_Request *request_) {
-                                          return MPI_Nonblocking_wo_request_and_w_status(buf, status);
-                                      }},
-                                      request});
-    MPI_Wait(&request, status);
-    return MPI_SUCCESS;
-}
-
-// MPI_File_read_all, MPI_Recv, blocking call has status instead of request
-int MPI_File_read_all(void *buf, MPI_Status *status)
-{
-    MPI_Request request;
-    MPI_File_iread_all(..., &request);
-    MPI_Wait(&request, status);
-    return MPI_SUCCESS;
-}
-
-#endif
