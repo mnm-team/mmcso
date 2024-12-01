@@ -17,7 +17,8 @@ if(RUN_CLANG_TIDY)
         set(CMAKE_CXX_CLANG_TIDY
         clang-tidy;
         --use-color;
-        -extra-arg=-std=c++17;
+	#        -extra-arg=-std=c++17; #TODO: adopt this from global setting
+        -extra-arg=-std=c++20;
         -format-style='file';
         -header-filter=${CMAKE_CURRENT_SOURCE_DIR};
         )
