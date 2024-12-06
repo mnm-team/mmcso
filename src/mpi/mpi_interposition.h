@@ -16,7 +16,7 @@
 #if USE_MPSCQUEUE
 #    include "queue/mpsc_queue.h"
 #    define NEW_OR_FWD
-using OE = mmcso::OffloadEngine<mmcso::MPSCQueue<QUEUE_SIZE>, mmcso::ArrayRequestManager<REQUEST_POOL_SIZE>>;
+using OE = mmcso::OffloadEngine<mmcso::MPSCQueue<mmcso::OffloadCommand, QUEUE_SIZE>, mmcso::ArrayRequestManager<REQUEST_POOL_SIZE>>;
 #else
 #    include "queue/atomic_queue.h"
 #    define NEW_OR_FWD new

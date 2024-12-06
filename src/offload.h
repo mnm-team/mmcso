@@ -24,9 +24,9 @@ namespace mmcso
             /* empty ctor */
         }
 
-        OffloadCommand()                       = default;
+        OffloadCommand()                       = default; // required for std::array
         OffloadCommand(const OffloadCommand &) = delete;
-        OffloadCommand(OffloadCommand &&)      = delete;
+        OffloadCommand(OffloadCommand &&)      = default; // required for aligned wrapper
 
         OffloadCommand &operator=(const OffloadCommand &) = delete;
         OffloadCommand &operator=(OffloadCommand &&other) = default;
