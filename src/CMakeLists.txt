@@ -1,19 +1,20 @@
 set(
     SRC
-    mpi/mpi_c2f2c.cpp
-    mpi/mpi_collective.cpp
-    mpi/mpi_comm.cpp
-    mpi/mpi_file.cpp
-    mpi/mpi_group.cpp
-    mpi/mpi_info.cpp
+    # mpi/mpi_c2f2c.cpp
+    # mpi/mpi_collective.cpp
+    # mpi/mpi_comm.cpp
+    # mpi/mpi_file.cpp
+    # mpi/mpi_group.cpp
+    # mpi/mpi_info.cpp
     mpi/mpi_interposition.cpp
-    mpi/mpi_one_sided.cpp
-    mpi/mpi_p2p.cpp
-    mpi/mpi_partitioned.cpp
-    mpi/mpi_request_status.cpp
-    mpi/mpi_topo.cpp
-    mpi/mpi_type.cpp
-    mpi/mpi_win.cpp
+    # mpi/mpi_one_sided.cpp
+    # mpi/mpi_p2p.cpp
+    # mpi/mpi_partitioned.cpp
+    # mpi/mpi_request_status.cpp
+    # mpi/mpi_topo.cpp
+    # mpi/mpi_type.cpp
+    # mpi/mpi_win.cpp
+    mpi_impl.cpp
     # mpix_partitioned_collective.cpp
     util.cpp
 )
@@ -21,6 +22,8 @@ set(
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 add_library(mmc SHARED ${SRC})
+
+# target_compile_features(mmc PUBLIC cxx_std_20)
 
 target_include_directories(mmc PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(mmc PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/queue)

@@ -105,7 +105,7 @@ int MPI_Probe(int source, int tag, MPI_Comm comm, MPI_Status *status)
     int flag;
     do {
         MPI_Iprobe(source, tag, comm, &flag, status);
-        /* TODO: backoff?? */
+        /* TODO: exponential backoff?? */
     } while (!flag);
     return MPI_SUCCESS;
 }
@@ -115,7 +115,7 @@ int MPI_Mprobe(int source, int tag, MPI_Comm comm, MPI_Message *message, MPI_Sta
     int flag;
     do {
         MPI_Improbe(source, tag, comm, &flag, message, status);
-        /* TODO: backoff?? */
+        /* TODO: exponential backoff?? */
     } while (!flag);
     return MPI_SUCCESS;
 }
@@ -131,8 +131,13 @@ int MPI_Testsome(int         incount,
                  MPI_Status  array_of_statuses[]);
 #endif /* MMCSO_OFFLOAD_NOT_IMPLEMENTED_YET */
 
-#if MMCSO_OFFLOAD_NOT_IMPLEMENTED_YET
 
+
+
+
+
+
+#if MMCSO_OFFLOAD_NOT_IMPLEMENTED_YET
 
 int MPI_Abort(MPI_Comm comm, int errorcode);
 

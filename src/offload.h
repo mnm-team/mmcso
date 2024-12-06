@@ -4,21 +4,48 @@
 #include <functional>
 #include <future>
 #include <thread>
+#include <type_traits>
+#include <variant>
 
 #include <mpi.h>
 
+#include "mpi_command.h"
 #include "util.h"
 
 namespace mmcso
 {
     struct OffloadCommand {
-        using MPICommand = std::function<int(MPI_Request *)>;
-        explicit OffloadCommand(MPICommand &&func, MPI_Request *request, bool null_request = false)
+
+        using MPICommand = variant_type;
+
+        OffloadCommand(MPICommand &&func, MPI_Request *request, bool null_request = false) noexcept
             : func_{std::move(func)}, request_{request}, null_request_{null_request}
         {
+            /* empty ctor */
         }
 
-        int operator()(MPI_Request *request) const { return func_(request); }
+        OffloadCommand()                       = default;
+        OffloadCommand(const OffloadCommand &) = delete;
+        OffloadCommand(OffloadCommand &&)      = delete;
+
+        OffloadCommand &operator=(const OffloadCommand &) = delete;
+        OffloadCommand &operator=(OffloadCommand &&other) = default;
+
+        struct Visitor {
+            Visitor(MPI_Request *request) : request_{request} {}
+
+            int operator()(auto &&f) const noexcept { return std::move(f)(request_); }
+            // int operator()(auto &&f) const noexcept { return std::move(f.lambda_)(request_); }            
+            // int operator()(const auto &&f) const noexcept { return f.lambda_(request_); }
+
+            int operator()(std::monostate) const noexcept { return -1; }
+
+            MPI_Request *request_;
+        };
+
+        int operator()(MPI_Request *request) const noexcept { return std::visit(Visitor{request}, std::move(func_)); }
+        // int operator()(MPI_Request *request) { return std::visit(Visitor{request}, func_); } // problem code
+        // int operator()(MPI_Request *request) const noexcept { return 1; }
 
         MPICommand   func_;
         MPI_Request *request_;
@@ -44,8 +71,10 @@ namespace mmcso
 
                     if (command->null_request_) {
                         // set request to MPI_REQUEST_NULL
+                        //
                         // this will set the flag to true after the
                         // request was tested
+                        //
                         // required for (blocking) MPI calls w/o request
                         *request = MPI_REQUEST_NULL;
                     }
@@ -66,6 +95,8 @@ namespace mmcso
                 int provided;
                 PMPI_Init_thread(argc, argv, MPI_THREAD_FUNNELED, &provided);
                 provided_promise.set_value(provided);
+            } else {
+                /* TODO */
             }
             int rank;
             PMPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -96,7 +127,7 @@ namespace mmcso
         std::atomic_bool running_{false};
     };
 
-    template <class CommandQueue, class RequestManager, size_t NumThreads = 1>
+    template <class CommandQueue, class RequestManager, size_t NumThreads = 1u>
     class OffloadEngine
     {
         static_assert(NumThreads > 0);
