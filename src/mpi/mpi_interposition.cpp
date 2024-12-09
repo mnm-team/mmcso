@@ -167,8 +167,6 @@ int MPI_Get_library_version(char *version, int *resultlen);
 int MPI_Get_processor_name(char *name, int *resultlen);
 int MPI_Get_version(int *version, int *subversion);
 
-int      MPI_Improbe(int source, int tag, MPI_Comm comm, int *flag, MPI_Message *message, MPI_Status *status);
-
 int      MPI_Initialized(int *flag);
 
 int      MPI_Intercomm_create(
@@ -223,4 +221,4 @@ double   MPI_Wtime(void);
 
 } /* extern "C" */
 
-#include "mpi_fortran_wrappers.h"
+// #include "mpi_fortran_wrappers.h"
