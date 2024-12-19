@@ -41,7 +41,7 @@ namespace mmcso
     template <class T, index_t Capacity>
     class MPSCQueue
     {
-        static constexpr size_t CLSIZE = std::hardware_destructive_interference_size;
+        // static constexpr size_t CLSIZE = std::hardware_destructive_interference_size;
 
     public:
         // Enqueue an item using inplace construction. Blocks if queue is full.
