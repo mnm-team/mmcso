@@ -196,6 +196,9 @@ int main(int argc, char *argv[])
                 recvbuf[i] = -1;
             }
 #endif
+
+#pragma omp barrier
+
         }
         free(sendbuf);
         free(recvbuf);
