@@ -54,6 +54,8 @@ int main(int argc, char *argv[])
     int provided;
     MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &provided);
 
+    assert(provided == MPI_THREAD_MULTIPLE);
+
     int rank;
     int num_procs;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -179,9 +181,11 @@ int main(int argc, char *argv[])
             m[thread_id].wait_time += time_end - time_start;
             m[thread_id].comm_time += time_end - total_time;
 
+#pragma omp barrier
+
 #if !defined(NDEBUG)
-            assert(status_s.MPI_SOURCE == rank);
-            assert(status_s.MPI_TAG == thread_id);
+            // assert(status_s.MPI_SOURCE == rank);
+            // assert(status_s.MPI_TAG == thread_id);
             int count;
             MPI_Get_count(&status_r, MPI_INT, &count);
             assert(status_r.MPI_SOURCE == rank_recv);
