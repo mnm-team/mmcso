@@ -23,7 +23,7 @@ namespace mmcso
     class ArrayRequestManager
     {
         using index_t = uint32_t;
-        // static_assert(std::atomic<bool>::is_always_lock_free);
+        static_assert(std::atomic<bool>::is_always_lock_free);
 
         // required for using the MPI_Request as index:
         static_assert(sizeof(MPI_Request) >= sizeof(index_t));
@@ -35,6 +35,14 @@ namespace mmcso
 
         void test_requests() { rc_.test_requests(); }
 
+        /**
+         * @brief Posts a new MPI request to the request manager.
+         * Sets the application thread MPI request value to the index of a free request slot.
+         * (called by offload thread)
+         *
+         * @param request
+         * @return MPI_Request*
+         */
         MPI_Request *post(MPI_Request *request)
         {
             // if(!request) {
@@ -43,11 +51,13 @@ namespace mmcso
             // }
             index_t idx = rc_.acquire();
 
-            rc_.flags_[idx].done_ = false; // TODO: think about required memory ordering
+            // TODO: is this store even required?
+            // rc_.flags_[idx].done_.store(false, std::memory_order_relaxed);
 
             // return slot index in old request
             std::atomic<index_t> *idx_ptr = reinterpret_cast<std::atomic<index_t> *>(request);
-            *idx_ptr                      = idx; // TODO: think about required memory ordering
+
+            idx_ptr->store(idx, std::memory_order_relaxed);
 
             // new MPI_Request pointer
             return &rc_.requests_[idx];
@@ -62,7 +72,7 @@ namespace mmcso
         void invalidate_request(MPI_Request *request)
         {
             std::atomic<index_t> *idx_ptr = reinterpret_cast<std::atomic<index_t> *>(request);
-            *idx_ptr                      = INVALID_INDEX; // TODO: think about required memory ordering
+            idx_ptr->store(INVALID_INDEX, std::memory_order_relaxed);
         }
 
         /**
@@ -74,12 +84,13 @@ namespace mmcso
         void wait(MPI_Request *request, MPI_Status *status)
         {
             index_t idx;
-            // need to wait until offloading thread has set the index
+            // need to wait until offloading thread has set the index (provides request slot)
             do {
-                idx = *(reinterpret_cast<std::atomic<index_t> *>(request));
+                idx = (reinterpret_cast<std::atomic<index_t> *>(request))->load(std::memory_order_relaxed);
             } while (idx == INVALID_INDEX);
 
-            while (!rc_.flags_[idx].done_) {
+            // wait until request done flag is set by offloading thread
+            while (!rc_.flags_[idx].done_.load(std::memory_order_acquire)) {
                 /* spin */
             }
 
@@ -87,7 +98,7 @@ namespace mmcso
                 *status = rc_.statuses_[idx];
             }
 
-            rc_.flags_[idx].done_ = false;
+            rc_.flags_[idx].done_.store(false, std::memory_order_relaxed);
             rc_.release(idx);
         }
 
@@ -101,13 +112,13 @@ namespace mmcso
          */
         bool test(MPI_Request *request, MPI_Status *status)
         {
-            index_t idx = *(reinterpret_cast<std::atomic<index_t> *>(request));
+            index_t idx = (reinterpret_cast<std::atomic<index_t> *>(request))->load(std::memory_order_relaxed);
 
             if (idx == INVALID_INDEX) {
                 return false;
             }
 
-            if (!rc_.flags_[idx].done_) {
+            if (!rc_.flags_[idx].done_.load(std::memory_order_acquire)) {
                 return false;
             }
 
@@ -125,7 +136,6 @@ namespace mmcso
         // to use less memory and further improve performance
         struct alignas(CLSIZE) RequestFlags {
             std::atomic_bool done_{false};
-            // char padding__[CLSIZE - sizeof(std::atomic_bool)];
         };
 
         template <size_t Size>
@@ -184,7 +194,7 @@ namespace mmcso
                 PMPI_Test(request, &flag, &statuses_[idx]);
                 if (flag) {
                     used_.remove(idx);
-                    flags_[idx].done_ = true;
+                    flags_[idx].done_.store(true, std::memory_order_release);
                 }
             }
 
@@ -199,8 +209,8 @@ namespace mmcso
                     int flag;
                     PMPI_Test(&requests_[idx], &flag, &statuses_[idx]);
                     if (flag) {
-                        flags_[idx].done_ = true;
-                        it                = used_.erase(it);
+                        flags_[idx].done_.store(true, std::memory_order_release);
+                        it = used_.erase(it);
                     }
                 }
             }
