@@ -6,6 +6,7 @@
 
 #include "array_request_manager.h"
 #include "offload.h"
+#include "wait_strategy.h"
 
 #define QUEUE_SIZE        256
 #define REQUEST_POOL_SIZE 1024

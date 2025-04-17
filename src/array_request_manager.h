@@ -1,6 +1,8 @@
 #ifndef MMCSO_ARRAY_REQUEST_MANAGER_H_INCLUDED
 #define MMCSO_ARRAY_REQUEST_MANAGER_H_INCLUDED
 
+#include "wait_strategy.h"
+
 #include <algorithm>
 #include <array>
 #include <atomic>
@@ -19,7 +21,7 @@
 
 namespace mmcso
 {
-    template <size_t PoolSize>
+    template <size_t PoolSize, class WaitStrategy=SpinWait>
     class ArrayRequestManager
     {
         using index_t = uint32_t;
@@ -90,9 +92,7 @@ namespace mmcso
             } while (idx == INVALID_INDEX);
 
             // wait until request done flag is set by offloading thread
-            while (!rc_.flags_[idx].done_.load(std::memory_order_acquire)) {
-                /* spin */
-            }
+            rc_.flags_[idx].wait(); // wait strategy
 
             if (status != MPI_STATUS_IGNORE) {
                 *status = rc_.statuses_[idx];
@@ -114,6 +114,7 @@ namespace mmcso
         {
             index_t idx = (reinterpret_cast<std::atomic<index_t> *>(request))->load(std::memory_order_relaxed);
 
+            // offloading thread has not set the index (provided request slot) yet
             if (idx == INVALID_INDEX) {
                 return false;
             }
@@ -136,6 +137,9 @@ namespace mmcso
         // to use less memory and further improve performance
         struct alignas(CLSIZE) RequestFlags {
             std::atomic_bool done_{false};
+
+            void wait() { WaitStrategy::wait(done_); }
+            void notify() { WaitStrategy::notify(done_); }
         };
 
         template <size_t Size>
@@ -174,6 +178,7 @@ namespace mmcso
                     // TODO:
                     // this means that all request slots are in use
                     // this situation can lead to a deadlock situation
+                    //
                     // solution can be to increase the number of available
                     // slots dynamically here
                     DEBUG("[pid=%d] no more available slots!\n", (int)getpid());
@@ -194,7 +199,7 @@ namespace mmcso
                 PMPI_Test(request, &flag, &statuses_[idx]);
                 if (flag) {
                     used_.remove(idx);
-                    flags_[idx].done_.store(true, std::memory_order_release);
+                    flags_[idx].notify();
                 }
             }
 
@@ -209,13 +214,13 @@ namespace mmcso
                     int flag;
                     PMPI_Test(&requests_[idx], &flag, &statuses_[idx]);
                     if (flag) {
-                        flags_[idx].done_.store(true, std::memory_order_release);
+                        flags_[idx].notify();
                         it = used_.erase(it);
                     }
                 }
             }
 
-            void reset(index_t idx) { flags_[idx].done_.store(false); }
+            // void reset(index_t idx) { flags_[idx].done_.store(false); } // not required anymore?!
 
             std::array<MPI_Request, Size>  requests_{};
             std::array<MPI_Status, Size>   statuses_{}; // holds MPI_Statuses of requests
