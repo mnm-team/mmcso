@@ -19,6 +19,79 @@ from clang.cindex import Index, CursorKind
 
 clang.cindex.Config.set_library_file(os.path.join(clang_py_module, 'clang/native/libclang.so'))
 
+
+# Thread-safe functions (see MPI 4.1, Section 11.6 and Table 11.1)
+#
+# Quote:
+# "Regardless of whether or not the MPI implementation is thread compliant, a subset of MPI
+#  functions must always be thread safe. A complete list of such MPI functions is given in
+#  Table 11.1."
+#
+# Table 11.1:
+# ---------------------------------
+# MPI_INITIALIZED
+# MPI_FINALIZED
+# MPI_GET_VERSION
+# MPI_GET_LIBRARY_VERSION
+# MPI_INFO_CREATE
+# MPI_INFO_CREATE_ENV
+# MPI_INFO_SET
+# MPI_INFO_DELETE
+# MPI_INFO_GET_STRING
+# MPI_INFO_GET_NKEYS
+# MPI_INFO_GET_NTHKEY
+# MPI_INFO_DUP
+# MPI_INFO_FREE
+# MPI_INFO_F2C
+# MPI_INFO_C2F
+# MPI_SESSION_CREATE_ERRHANDLER
+# MPI_SESSION_CALL_ERRHANDLER
+# MPI_ERRHANDLER_FREE
+# MPI_ERRHANDLER_F2C
+# MPI_ERRHANDLER_C2F
+# MPI_ERROR_STRING
+# MPI_ERROR_CLASS
+# MPI_ADD_ERROR_CLASS
+# MPI_REMOVE_ERROR_CLASS
+# MPI_ADD_ERROR_CODE
+# MPI_REMOVE_ERROR_CODE
+# MPI_ADD_ERROR_STRING
+# MPI_REMOVE_ERROR_STRING
+# ---------------------------------
+
+mpi_thread_safe_function_names= [
+    "MPI_Initialized",
+    "MPI_Finalized",
+    "MPI_Get_version",
+    "MPI_Get_library_version",
+    "MPI_Add_error_class",
+    "MPI_Add_error_code",
+    "MPI_Add_error_string",
+    "MPI_Remove_error_class",
+    "MPI_Remove_error_code",
+    "MPI_Remove_error_string",
+    "MPI_Errhandler_free",
+    "MPI_Errhandler_f2c",
+    "MPI_Errhandler_c2f",
+    "MPI_Error_string",
+    "MPI_Error_class",
+    "MPI_Session_create_errhandler",
+    "MPI_Session_call_errhandler",
+    "MPI_Info_create",
+    "MPI_Info_create_env",
+    "MPI_Info_set",
+    "MPI_Info_delete",
+    # "MPI_Info_get",
+    "MPI_Info_get_string",
+    # "MPI_Info_get_valuelen",
+    "MPI_Info_get_nkeys",
+    "MPI_Info_get_nthkey",
+    "MPI_Info_dup",
+    "MPI_Info_free",
+    "MPI_Info_f2c",
+    "MPI_Info_c2f"
+]
+
 mpi_collective_function_names = [
     'MPI_Allgather',
     'MPI_Iallgather',
@@ -192,6 +265,13 @@ def find_mpi_header_path():
 def filter_non_mpi_functions(functions):
     return [func for func in functions if func.name.startswith('MPI_')]
     
+def filter_thread_safe_functions(functions):
+    return [func for func in functions if not func.name in mpi_thread_safe_function_names]
+    
+def filter_assumed_thread_safe_functions(functions):
+    # TODO !
+    return functions
+    
 def filter_non_fortran_functions(functions):
     return [func for func in functions if not func.name.endswith('_f2c') and not func.name.endswith('_c2f')]
 
@@ -207,13 +287,14 @@ def filter_non_assumed_unsafe_functions(functions):
 
 # Header
 impl_file_header = f'''\
-#include <mpi.h>
+#include <utility> // std::move
 
 #include "mpi_interposition.h"
 #include "mpi_command.h"
 
+#include <mpi.h>
+
 using mmcso::OffloadCommand;
-//using mmcso::variant_type;
 using mmcso::make_mpi_callable;
 
 extern "C" {{
@@ -515,6 +596,8 @@ if __name__ == '__main__':
     functions = extract_functions_with_libclang(os.path.join(mpi_path, 'mpi.h'))
 
     functions = filter_non_mpi_functions(functions)
+    functions = filter_thread_safe_functions(functions)
+    functions = filter_assumed_thread_safe_functions(functions)
     functions = filter_non_fortran_functions(functions)
     functions = filter_non_tool_functions(functions)
 
@@ -570,9 +653,6 @@ Without request:
 
 MPI_Abort
 MPI_Accumulate
-MPI_Add_error_class
-MPI_Add_error_code
-MPI_Add_error_string
 MPI_Alloc_mem
 MPI_Buffer_attach
 MPI_Buffer_detach
@@ -624,9 +704,8 @@ MPI_Comm_split_type
 MPI_Comm_test_inter
 MPI_Compare_and_swap
 MPI_Dims_create
-MPI_Errhandler_free
-MPI_Error_class
-MPI_Error_string
+
+
 MPI_Fetch_and_op
 MPI_File_call_errhandler
 MPI_File_create_errhandler
@@ -674,9 +753,8 @@ MPI_Get_elements*
 MPI_Get_elements_x*
 MPI_Get
 MPI_Get_accumulate
-MPI_Get_library_version*
+
 MPI_Get_processor_name*
-MPI_Get_version*
 MPI_Graph_create
 MPI_Graph_get
 MPI_Graph_map

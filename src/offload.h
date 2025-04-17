@@ -5,7 +5,6 @@
 #include <future>
 #include <thread>
 #include <type_traits>
-#include <variant>
 
 #include <mpi.h>
 
@@ -15,8 +14,6 @@
 namespace mmcso
 {
     struct OffloadCommand {
-
-        using MPICommand = variant_type;
 
         OffloadCommand(MPICommand &&func, MPI_Request *request, bool null_request = false) noexcept
             : func_{std::move(func)}, request_{request}, null_request_{null_request}
@@ -31,21 +28,7 @@ namespace mmcso
         OffloadCommand &operator=(const OffloadCommand &) = delete;
         OffloadCommand &operator=(OffloadCommand &&other) = default;
 
-        struct Visitor {
-            Visitor(MPI_Request *request) : request_{request} {}
-
-            int operator()(auto &&f) const noexcept { return std::move(f)(request_); }
-            // int operator()(auto &&f) const noexcept { return std::move(f.lambda_)(request_); }            
-            // int operator()(const auto &&f) const noexcept { return f.lambda_(request_); }
-
-            int operator()(std::monostate) const noexcept { return -1; }
-
-            MPI_Request *request_;
-        };
-
-        int operator()(MPI_Request *request) const noexcept { return std::visit(Visitor{request}, std::move(func_)); }
-        // int operator()(MPI_Request *request) { return std::visit(Visitor{request}, func_); } // problem code
-        // int operator()(MPI_Request *request) const noexcept { return 1; }
+        int operator()(MPI_Request *request) const noexcept { return invoke(func_, request); }
 
         MPICommand   func_;
         MPI_Request *request_;
@@ -117,7 +100,6 @@ namespace mmcso
             thread_.join();
         }
 
-        void enqueue(OffloadCommand *command) { q_.enqueue(command); }
         void enqueue(OffloadCommand &&command) { q_.enqueue(std::move(command)); }
 
     private:
@@ -131,7 +113,7 @@ namespace mmcso
     class OffloadEngine
     {
         static_assert(NumThreads > 0);
-
+        
         // for now, we support only one offloading thread per MPI process
         static_assert(NumThreads == 1);
 
@@ -141,17 +123,10 @@ namespace mmcso
          *
          * @param command
          */
-        void post(OffloadCommand *command)
+        void post(OffloadCommand &&command)
         {
             // the application thread must eventually invalidate its request because it has to wait until
             // the offloading thread dequeues the command and provides a valid request
-            rm_.invalidate_request(command->request_);
-            ot_.enqueue(command);
-        }
-
-        // TODO: use forwarding reference instead of duplicated code
-        void post(OffloadCommand &&command)
-        {
             rm_.invalidate_request(command.request_);
             ot_.enqueue(std::move(command));
         }

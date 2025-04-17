@@ -1,10 +1,11 @@
-#include <mpi.h>
+#include <utility> // std::move
 
 #include "mpi_interposition.h"
 #include "mpi_command.h"
 
+#include <mpi.h>
+
 using mmcso::OffloadCommand;
-//using mmcso::variant_type;
 using mmcso::make_mpi_callable;
 
 extern "C" {
