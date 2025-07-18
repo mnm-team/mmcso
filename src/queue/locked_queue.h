@@ -8,38 +8,35 @@
 
 namespace mmcso
 {
-    using Element = OffloadCommand *;
-
     class LockedQueue
     {
     public:
-        void    enqueue(Element);
-        Element dequeue();
+        void enqueue(OffloadCommand &&elem)
+        {
+            std::lock_guard<std::mutex> lock{mtx_};
+            q_.push(new OffloadCommand(std::move(elem)));
+        }
+
+        OffloadCommand *dequeue()
+        {
+            OffloadCommand *value;
+
+            std::lock_guard<std::mutex> lock{mtx_};
+            if (q_.empty()) {
+                return nullptr;
+            }
+            value = q_.front();
+            q_.pop();
+
+            return value;
+        }
+
+        void release_command(OffloadCommand *oc) { delete oc; }
 
     private:
-        std::queue<Element> q_;
-        std::mutex          mtx_;
+        std::queue<OffloadCommand *> q_;
+        std::mutex                   mtx_;
     };
-
-    inline void LockedQueue::enqueue(Element elem)
-    {
-        std::lock_guard<std::mutex> lock{mtx_};
-        q_.push(elem);
-    }
-
-    inline Element LockedQueue::dequeue()
-    {
-        Element value;
-
-        std::lock_guard<std::mutex> lock{mtx_};
-        if (q_.empty()) {
-            return nullptr;
-        }
-        value = q_.front();
-        q_.pop();
-
-        return value;
-    }
 } // namespace mmcso
 
 #endif /* MMCSO_LOCKED_QUEUE_H_INCLUDED */

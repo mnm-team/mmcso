@@ -112,10 +112,8 @@ namespace mmcso
     template <class CommandQueue, class RequestManager, size_t NumThreads = 1u>
     class OffloadEngine
     {
-        static_assert(NumThreads > 0);
-        
         // for now, we support only one offloading thread per MPI process
-        static_assert(NumThreads == 1);
+        static_assert(NumThreads == 1u);
 
     public:
         /**

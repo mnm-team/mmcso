@@ -3,7 +3,7 @@
 
 #include <mpi.h>
 
-#include "mpi_interposition.h"
+#include "config.h"
 
 /* static */ OE &oe = OE::instance();
 

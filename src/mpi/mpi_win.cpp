@@ -1,7 +1,7 @@
 
 #include <mpi.h>
 
-#include "mpi_interposition.h"
+#include "config.h"
 
 extern "C" {
 

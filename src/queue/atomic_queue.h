@@ -6,16 +6,14 @@
 
 namespace mmcso
 {
-    using Element = OffloadCommand *;
-
     template <size_t QueueSize>
     class AtomicQueue
     {
     public:
-        void    enqueue(Element elem) { q_.push(elem); }
-        Element dequeue()
+        void            enqueue(OffloadCommand &&elem) { q_.push(new OffloadCommand{std::move(elem)}); }
+        OffloadCommand *dequeue()
         {
-            Element value;
+            OffloadCommand *value;
             if (q_.try_pop(value)) {
                 return value;
             }
@@ -25,7 +23,7 @@ namespace mmcso
         void release_command(OffloadCommand *oc) { delete oc; }
 
     private:
-        atomic_queue::AtomicQueue<Element, QueueSize> q_;
+        atomic_queue::AtomicQueue<OffloadCommand *, QueueSize> q_;
     };
 } // namespace mmcso
 

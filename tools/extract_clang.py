@@ -289,7 +289,7 @@ def filter_non_assumed_unsafe_functions(functions):
 impl_file_header = f'''\
 #include <utility> // std::move
 
-#include "mpi_interposition.h"
+#include "config.h"
 #include "mpi_command.h"
 
 #include <mpi.h>

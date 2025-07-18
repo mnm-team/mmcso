@@ -1,6 +1,6 @@
 #include <utility> // std::move
 
-#include "mpi_interposition.h"
+#include "config.h"
 #include "mpi_command.h"
 
 #include <mpi.h>

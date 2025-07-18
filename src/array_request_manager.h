@@ -220,8 +220,6 @@ namespace mmcso
                 }
             }
 
-            // void reset(index_t idx) { flags_[idx].done_.store(false); } // not required anymore?!
-
             std::array<MPI_Request, Size>  requests_{};
             std::array<MPI_Status, Size>   statuses_{}; // holds MPI_Statuses of requests
             std::array<RequestFlags, Size> flags_{};
