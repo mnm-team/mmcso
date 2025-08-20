@@ -3,7 +3,7 @@
 #include "type_erasure.h"
 
 // 120 bytes storage for argument values of MPI function
-using MPICommand = MpiCommand<120ul>;
+using MPICommand = MpiCommand<112ul>;
 
 #include <functional>
 #include <utility>
