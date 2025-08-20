@@ -110,3 +110,23 @@ MMCSO_THREAD_AFFINITY=0:23,1:47
 [rank 1] comp time (avg. per thread and iter): 66.276581us
 [rank 1] comm time (avg. per thread and iter): 46230.500555us
 [rank 1] overlap: 0.14%
+[rank 0] post time (avg. per thread and iter): 2.671094us
+[rank 0] wait time (avg. per thread and iter): 717193.755255us
+[rank 0] comp time (avg. per thread and iter): 67.072695us
+[rank 0] comm time (avg. per thread and iter): 717263.499044us
+[rank 0] overlap: 0.01%
+[rank 1] post time (avg. per thread and iter): 2.536481us
+[rank 1] wait time (avg. per thread and iter): 670009.452043us
+[rank 1] comp time (avg. per thread and iter): 68.070151us
+[rank 1] comm time (avg. per thread and iter): 670080.058675us
+[rank 1] overlap: 0.01%
+[rank 0] post time (avg. per thread and iter): 2.574630us
+[rank 0] wait time (avg. per thread and iter): 7.868239us
+[rank 0] comp time (avg. per thread and iter): 1113.697501us
+[rank 0] comm time (avg. per thread and iter): 1124.140370us
+[rank 0] overlap: 99.07%
+[rank 1] post time (avg. per thread and iter): 2.501069us
+[rank 1] wait time (avg. per thread and iter): 6.971866us
+[rank 1] comp time (avg. per thread and iter): 1113.617096us
+[rank 1] comm time (avg. per thread and iter): 1123.090031us
+[rank 1] overlap: 99.16%
