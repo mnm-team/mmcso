@@ -100,7 +100,7 @@ namespace mmcso
             thread_.join();
         }
 
-        void enqueue(OffloadCommand &&command) { q_.enqueue(std::move(command)); }
+        // void enqueue(OffloadCommand &&command) { q_.enqueue(std::move(command)); }
 
     private:
         std::thread      thread_;
@@ -126,7 +126,8 @@ namespace mmcso
             // the application thread must eventually invalidate its request because it has to wait until
             // the offloading thread dequeues the command and provides a valid request
             rm_.invalidate_request(command.request_);
-            ot_.enqueue(std::move(command));
+            // ot_.enqueue(std::move(command));
+            q_.enqueue(std::move(command));
         }
 
         void wait(MPI_Request *request, MPI_Status *status) { rm_.wait(request, status); }
