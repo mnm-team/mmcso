@@ -6,11 +6,11 @@
         + Dual-socket (NUMA), 24 cores per socket, 48 cores in total
         + Interconnect: Intel Omni-Path
     + HAWK in Stuttgart
-        + AMD EPYC 7742 
+        + AMD EPYC 7742 (https://en.wikichip.org/wiki/amd/epyc/7742)
           + 64-Core Processor, 2 Sockets, 128 Cores total
-          + 8 NUMA domains (chiplet design, 16 Cores per Chiplet, 4 Sub-NUMA domains per Socket)
+          + 8 NUMA domains configured (NPS4 mode) (chiplet design, 16 Cores per Chiplet, 4 Sub-NUMA domains per Socket (CCD))
           + Private L1D and L2 caches
-          + Shared L3 cache per 4 Cores
+          + Shared L3 cache per 4 Cores (CCX), 2x CCX forms one CCD
         + Interconnect: Dual Rail InfiniBand HDR200
         + MPI: HPE MPT 2.30
         + Compiler: GCC 12.3.0
