@@ -1,4 +1,0 @@
-CC=$(which mpicc)
-CXX=$(which mpicxx)
-#LDFLAGS+=-L$HOME/mmcso/build/lib
-#LIBS+=-lmmc
