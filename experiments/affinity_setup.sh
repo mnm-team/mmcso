@@ -9,4 +9,3 @@ set_mmcso_thread_affinity()
 
 set_mmcso_thread_affinity $1 $2 $3
 env | grep MMCSO
-

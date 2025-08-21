@@ -155,6 +155,11 @@ namespace mmcso
                 }
             }
 
+            /**
+             * @brief Releases request (gives back to request pool) in index idx (called by application thread)
+             * 
+             * @param idx 
+             */
             void release(index_t idx)
             {
                 nexts_[idx] = head_;
@@ -164,6 +169,11 @@ namespace mmcso
                 }
             }
 
+            /**
+             * @brief Acquires request (reserves from request pool) in index idx (called by offload thread)
+             * 
+             * @return index_t 
+             */
             index_t acquire()
             {
                 index_t old_head = head_;
@@ -182,6 +192,8 @@ namespace mmcso
                     // solution can be to increase the number of available
                     // slots dynamically here
                     DEBUG("[pid=%d] no more available slots!\n", (int)getpid());
+
+                    // or try test for completion of requests and hope for the best
                     // test_requests();
                     // acquire();
                 }
