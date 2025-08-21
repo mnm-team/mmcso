@@ -1,0 +1,235 @@
+# Number of Sender threads: 104 
+# Number of Receiver threads: 104
+
+# OSU MPI Multi-threaded Latency Test v7.5
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+1                     918.38
+2                     964.25
+4                     955.97
+8                     914.92
+16                    923.06
+32                    918.74
+64                    533.75
+128                   978.99
+256                   212.77
+512                   957.33
+1024                  979.51
+2048                  945.27
+4096                  209.99
+8192                  251.88
+16384                 576.73
+32768                 792.46
+65536                1722.04
+131072               2079.26
+262144               2489.04
+524288               2685.50
+1048576              4604.07
+2097152              9388.11
+4194304             16456.41

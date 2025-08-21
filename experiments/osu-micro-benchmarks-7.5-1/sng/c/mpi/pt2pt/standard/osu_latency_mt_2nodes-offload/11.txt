@@ -1,0 +1,49 @@
+# Number of Sender threads: 11 
+# Number of Receiver threads: 11
+
+# OSU MPI Multi-threaded Latency Test v7.5
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+1                       8.44
+2                       8.46
+4                       8.47
+8                       8.49
+16                      9.14
+32                      9.15
+64                      9.18
+128                     9.72
+256                     9.87
+512                    10.85
+1024                   10.94
+2048                   11.72
+4096                   13.01
+8192                   15.58
+16384                  20.82
+32768                  65.84
+65536                  24.49
+131072                 36.30
+262144                 69.50
+524288                137.20
+1048576               279.85
+2097152               560.51
+4194304              1084.09

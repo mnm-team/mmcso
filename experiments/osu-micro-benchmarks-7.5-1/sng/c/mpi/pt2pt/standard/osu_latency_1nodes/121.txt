@@ -1,0 +1,31 @@
+MPT DSM information
+wrank	grank	lrank	pinning	 node name   	cpuid
+    0	    0	    0	yes	 r5c2t5n3    	    0
+    1	    1	    1	yes	 r5c2t5n3    	  121
+
+# OSU MPI Latency Test v7.5
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+1                       0.64
+2                       0.64
+4                       0.64
+8                       0.64
+16                      0.64
+32                      0.64
+64                      0.81
+128                     0.87
+256                     0.88
+512                     1.01
+1024                    1.31
+2048                    0.95
+4096                    0.97
+8192                    1.02
+16384                   1.23
+32768                   1.57
+65536                   2.19
+131072                  3.67
+262144                  7.15
+524288                 15.85
+1048576                27.09
+2097152                52.26
+4194304               102.28
