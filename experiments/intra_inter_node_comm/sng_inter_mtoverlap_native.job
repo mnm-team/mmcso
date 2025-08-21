@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J intra_node_mtoverlap
+#SBATCH -J inter_node_native_mtoverlap
 #SBATCH -o ./output/%x.%j.out 
 #SBATCH -e ./output/%x.%j.err 
 #SBATCH -D ./
@@ -8,7 +8,7 @@
 #SBATCH --get-user-env
 #SBATCH --account=pn76bu
 #SBATCH --partition=micro
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=2
 
 module load slurm_setup
@@ -17,21 +17,20 @@ module load cmake
 
 export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
 #export COMMOFF_THREAD_CPU_ID=0:23,1:23,2:47,3:47
-export OMP_DISPLAY_AFFINITY=true
 export OMP_NUM_THREADS=23
 export PREFIX=/dss/dsshome1/0C/di35hef/mmcso/build_impi/lib
 
-CSV_OFFLOAD=./result/offload_intra_node.csv
+CSV_NATIVE=./result/native_inter_node.csv
 CSV_HEADER=nthreads,thread,rep,work,msg_size,post_time,wait_time,comp_time,comm_time
-echo ${CSV_HEADER} > ${CSV_OFFLOAD}
+echo ${CSV_HEADER} > ${CSV_NATIVE}
 
-bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 2 24 48
+bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 4 24 48
 
-BENCH="mpiexec -n 2 -rr --bind-to core /dss/dsshome1/0C/di35hef/mmcso/build_impi/bench/mt_overlap"
+BENCH="mpiexec -n 4 -rr --bind-to core /dss/dsshome1/0C/di35hef/mmcso/build_impi/bench/mt_overlap"
 
 for work in 100 10000 1000000; do
 	for msg in 100 1000 10000 100000 1000000 10000000; do  
-		LD_PRELOAD=${PREFIX}/libmmc.so ${BENCH} -m ${msg} -w ${work} -f ${CSV_OFFLOAD} -r 1000
+		${BENCH} -m ${msg} -w ${work} -f ${CSV_NATIVE} -r 1000
 	done
 done
 

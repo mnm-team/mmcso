@@ -3,11 +3,11 @@
 #SBATCH -o ./output/%x.%j.out 
 #SBATCH -e ./output/%x.%j.err 
 #SBATCH -D ./
-#SBATCH --time=00:30:00
+#SBATCH --time=04:30:00
 #SBATCH --no-requeue
 #SBATCH --get-user-env
 #SBATCH --account=pn76bu
-#SBATCH --partition=test
+#SBATCH --partition=micro
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 
