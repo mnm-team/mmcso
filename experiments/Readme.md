@@ -25,7 +25,7 @@
     + Synthetic microbenchmarks for intra/inter communiation, and adjustable workloads
     + Realistic application: Cardiac Electrophysiology Simulation
 
-### 2. Intra- and Inter-Node Communication Performance
+### 1. Intra- and Inter-Node Communication Performance
 - Intra-Communication: NUMA 0 <-> NUMA 1 (same node)
 - Inter-Communication: UMA 0 (node A) <-> NUMA 0 (node B), and NUMA 1 (node A) <-> NUMA 1 (node B)
 - Goal: Assess baseline communication performance and how libmmc.so handles thread-aware traffic across NUMA and node boundaries.
@@ -37,22 +37,13 @@
     + Highlight how libmmc.so affects contention on intra-node communication
     + How offloading performs across networked nodes under NUMA isolation
 
-### 3. Strong and Weak Scaling Across Nodes
-- Strong and Weak Scaling Across Nodes: increase the number of processes
-- Goal: Show that libmmc.so maintains scalability as we increase the number of processes across nodes (use max. threads as well as max. cores).
-- Weak Scaling:
-    + Increase total workload proportionally with compute resources
-- Strong Scaling:
-    Fixed total workload; increase the number of MPI processes
-- Evaluation results on SNG and HAWK
+### 2. OSU Latency (MT) v7.5
+- Standart benchmark for (multithreaded) latency
+- Hawk: 1-2 nodes, compare offload vs. default
 
-### 4. SpecHPC 2021 HPGMG-FV benchmark
+### 3. Strong and Weak Scaling: SpecHPC 2021 HPGMG-FV benchmark
 - Goal: Demonstrate end-to-end benefits in realistic workloads using MPI_THREAD_MULTIPLE vs. MPI_THREAD_FUNNELED
 - Problem sizes: tiny, small, medium, large
 - Compare MPI_THREAD_FUNNELED vs. MPI_THREAD_MULTIPLE + offload vs. default
 - Nodes on Hawk: 1-128, 4-512, 4-512, 128-512
 - Configurations on Hawk: 1 MPI proc per socket (conf1), 2 MPI proc per socket (conf2), 4 MPI proc per socket (== 1 MPI proc per sub-NUMA domain) (conf3)
-
-### 4. OSU Latency (MT) v7.5
-- Standart benchmark for (multithreaded) latency
-- Hawk: 1-2 nodes, compare offload vs. default
