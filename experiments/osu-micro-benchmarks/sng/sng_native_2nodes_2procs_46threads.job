@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH -J native_2nodes_osu_latency
+#SBATCH -o ./output/%x.%j.out 
+#SBATCH -e ./output/%x.%j.err 
+#SBATCH -D ./
+#SBATCH --time=04:30:00
+#SBATCH --no-requeue
+#SBATCH --get-user-env
+#SBATCH --account=pn76bu
+#SBATCH --partition=micro
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+
+module load slurm_setup
+module load gcc
+module load cmake
+
+export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
+#export COMMOFF_THREAD_CPU_ID=0:23,1:23,2:47,3:47
+#export OMP_NUM_THREADS=23
+export OMP_DISPLAY_AFFINITY=true
+export PREFIX=/dss/dsshome1/0C/di35hef/mmcso/build_impi/lib
+
+bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 4 24 48
+
+BENCH="mpiexec -ppn 1 -n 2 -rr --bind-to core /dss/dsshome1/0C/di35hef/mmcso/experiments/osu-micro-benchmarks/osu-micro-benchmarks-7.5.1/c/mpi/pt2pt/standard/osu_latency_mt"
+
+# create the result directory if it does not exist
+RESULT_DIR=./results/native_2nodes_osu_latency_mt
+mkdir -p ${RESULT_DIR}
+
+for i in $(seq 46); do
+	${BENCH} -t $i:$i > ${RESULT_DIR}/$i.txt
+done
+
