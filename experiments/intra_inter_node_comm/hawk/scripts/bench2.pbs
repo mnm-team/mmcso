@@ -1,0 +1,55 @@
+#!/bin/bash
+#PBS -N mt-bench 
+##PBS -l select=2:node_type=rome:mpiprocs=128
+##PBS -l select=2:node_type=rome:ncpus=128:mpiprocs=8
+#PBS -l select=2:node_type=rome:ncpus=128
+#PBS -l walltime=02:00:00
+
+# Change to the direcotry that the job was submitted from
+cd $PBS_O_WORKDIR
+
+export MMCSO_DISPLAY_AFFINITY=TRUE
+# export OMP_DISPLAY_AFFINITY=TRUE
+
+set_mmcso_thread_affinity()
+{
+        echo Placing MMCSO Threads in $1 MPI processes on each $2th Core of each Node with total $3 Cores
+        a=$(for i in $(seq 0 $(($1 - 1))); do echo $i:$(( ((($i+1)*$2) - 1) % $3 )); done)
+        export MMCSO_THREAD_AFFINITY=$(echo $a | sed -e 's/\s\+/,/g')
+}
+
+MMCSO_DIR=/zhome/academic/HLRS/xmu/xmubreit/mmcso/
+MMCSO_LIB=$MMCSO_DIR/build/lib/libmmc.so
+
+export LD_LIBRARY_PATH=$MMCSO_DIR/build/lib:$LD_LIBRARY_PATH
+
+BENCH1="${MMCSO_DIR}/build/bench/./mt_overlap"
+BENCH2="${MMCSO_DIR}/build/bench/./mt_overlap_offloading"
+BENCH3="${MMCSO_DIR}/build/bench/./mt_overlap_mem"
+BENCH4="${MMCSO_DIR}/build/bench/./mt_overlap_mem_offloading"
+
+# mt_overlap_mem  mt_overlap_mem_offloading
+REP=1000
+
+set_mmcso_thread_affinity 8 32 128
+MPIEXEC="mpiexec_mpt -ppn 4 -np 8 omplace -nt 31 -c 0-30,32-62,64-94,96-126"
+CSV=mt-2-8
+
+#set_mmcso_thread_affinity 16 16 128
+#MPIEXEC="mpiexec_mpt -ppn 8 -np 16 omplace -nt 15 -c 0-14,16-30,32-46,48-62,64-78,80-94,96-110,112-12"
+#CSV=mt-2-16
+
+#echo "nthreads,tid,rep,work,msg_size,tpost,twait,tcomp,tcomm" > $CSV-default.csv
+#echo "nthreads,tid,rep,work,msg_size,tpost,twait,tcomp,tcomm" > $CSV-offload.csv
+#echo "nthreads,tid,rep,work,msg_size,tpost,twait,tcomp,tcomm" > $CSV-mem-default.csv
+#echo "nthreads,tid,rep,work,msg_size,tpost,twait,tcomp,tcomm" > $CSV-mem-offload.csv
+
+for work in 100 500 1000 5000 10000 50000 100000 500000; do
+	for msg in 1 10 100 1000 10000 100000; do
+		$MPIEXEC $BENCH1 -w $work -m $msg -r $REP -f $CSV-default.csv
+		$MPIEXEC $BENCH2 -w $work -m $msg -r $REP -f $CSV-offload.csv
+		$MPIEXEC $BENCH3 -w $work -m $msg -r $REP -f $CSV-mem-default.csv
+		$MPIEXEC $BENCH4 -w $work -m $msg -r $REP -f $CSV-mem-offload.csv
+	done
+done
+
