@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH -J inter_native_compute_mtovlap
+#SBATCH -o ./output/%x.%j.out 
+#SBATCH -e ./output/%x.%j.err 
+#SBATCH -D ./
+#SBATCH --time=04:30:00
+#SBATCH --no-requeue
+#SBATCH --get-user-env
+#SBATCH --account=pn76bu
+#SBATCH --partition=micro
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=2
+
+module load slurm_setup
+module load gcc
+module load cmake
+
+export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
+#export COMMOFF_THREAD_CPU_ID=0:23,1:23,2:47,3:47
+export OMP_DISPLAY_AFFINITY=true
+export OMP_NUM_THREADS=23
+export PREFIX=/dss/dsshome1/0C/di35hef/mmcso/build_impi/lib
+
+CSV_NATIVE=./result/inter_native_compute_2nodes_4procs.csv
+CSV_HEADER=rank,nthreads,thread,rep,work,msg_size,post_time,wait_time,comp_time,comm_time
+echo ${CSV_HEADER} > ${CSV_NATIVE}
+
+bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 4 24 48
+
+BENCH="mpiexec -n 4 -rr --bind-to core /dss/dsshome1/0C/di35hef/mmcso/build_impi/bench/mt_overlap"
+
+for work in 100 1000 10000 100000; do
+	for msg in 1 100 1000 10000 100000 1000000 10000000 100000000; do  
+		${BENCH} -m ${msg} -w ${work} -f ${CSV_NATIVE} -r 1000
+	done
+done
+
