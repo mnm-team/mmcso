@@ -230,7 +230,8 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < nthreads; ++i) {
         fprintf(csv_out,
-                "%d,%d,%d,%d,%zu,%f,%f,%f,%f\n",
+                "%d,%d,%d,%d,%d,%zu,%f,%f,%f,%f\n",
+                rank,
                 nthreads,
                 i,
                 rep,
