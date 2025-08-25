@@ -1,0 +1,6 @@
+Verification: PASSED
+             FOM:          0.000000000
+       Init time:          0.656290479
+       Core time:         68.271879151
+      Resid time:          0.227923843
+      Total time:         69.156093473
