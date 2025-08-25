@@ -101,8 +101,9 @@ def plot(axs, df, is_mem):
     conf1 = ('2-4', '1 MPI proc per Socket, 63 threads per MPI proc')
     conf2 = ('2-8', '2 MPI proc per Socket, 31 threads per MPI proc')
     conf3 = ('2-16', '1 MPI proc per NUMA domain, 15 threads per MPI proc')
+    conf4 = ('2-4', '1 MPI proc per Socket, 23 threads per MPI proc')
     
-    configs = [conf1]
+    configs = [conf4]
     
     ymax = 3.5
     # ymax = 17.5
@@ -127,7 +128,7 @@ def plot(axs, df, is_mem):
 if __name__ == '__main__':
 
     # fig, axs = plt.subplots(2, 1, figsize=(16, 9), sharex=True, sharey=True)
-    fig, axs = plt.subplots(2, 1, figsize=(8, 9), sharex=True, sharey=True)
+    fig, axs = plt.subplots(1, 2, figsize=(16, 5), sharex=True, sharey=True)
 
     # csv_files = [f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')]
     csv_files_compute = ['./result/inter_native_compute_2nodes_4procs.csv', 
@@ -140,7 +141,7 @@ if __name__ == '__main__':
     plot(axs[0], df_compute, False)
     plot(axs[1], df_mem, True)
     
-    fig.suptitle(f'SNG: Intel Xeon(R) Gold 6148 48 Cores (2 Nodes)')
+    fig.suptitle(f'SNG: Intel Xeon(R) Gold 6148 48 Cores \n(2 Nodes, 1 MPI proc per Socket, 23 threads per MPI proc)')
     
     plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=0.5)
     plt.subplots_adjust(top=0.90)
