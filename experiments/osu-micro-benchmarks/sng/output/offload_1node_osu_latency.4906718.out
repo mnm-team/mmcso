@@ -1,0 +1,2 @@
+Placing MMCSO Threads in 2 MPI processes on each 24th Core of each Node with total 48 Cores
+MMCSO_THREAD_AFFINITY=0:23,1:47
