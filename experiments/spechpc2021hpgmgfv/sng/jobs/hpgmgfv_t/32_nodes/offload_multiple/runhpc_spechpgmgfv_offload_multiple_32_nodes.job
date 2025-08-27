@@ -7,7 +7,7 @@
 #SBATCH --no-requeue
 #SBATCH --get-user-env
 #SBATCH --account=pn76bu
-#SBATCH --partition=test
+#SBATCH --partition=general
 #SBATCH --nodes=32
 
 # load spec env
