@@ -1,0 +1,6 @@
+[libmmcso] : offloading thread affinity on [host i01r01c01s01, rank 1] : cpu=47
+[libmmcso] : offloading thread affinity on [host i01r01c01s01, rank 0] : cpu=23
+[libmmcso] : offloading thread affinity on [host i01r01c01s02, rank [libmmcso] : offloading thread affinity on [host i01r01c01s02, rank 2] : cpu=233] : cpu=47
+
+[libmmcso] : offloading thread affinity on [host i01r01c01s01, rank 1] : cpu=47
+[libmmcso] : offloading thread affinity on [host i01r01c01s01, rank 0] : cpu=23

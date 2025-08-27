@@ -1,0 +1,85 @@
+#!/bin/bash
+#SBATCH -J native_multi_1_8_nodes
+#SBATCH -o ./%x.%j.out
+#SBATCH -e ./%x.%j.err
+#SBATCH -D ./
+#SBATCH --time=00:30:00
+#SBATCH --no-requeue
+#SBATCH --get-user-env
+#SBATCH --account=pn76bu
+#SBATCH --partition=test
+#SBATCH --nodes=8
+
+# load spec env
+#source /dss/dsshome1/0C/di35hef/mmcso/experiments/spechpc2021hpgmgfv/hpc2021-1.1.8/shrc
+
+# specify base dirs
+MMCSO_DIR=/dss/dsshome1/0C/di35hef/mmcso/build_impi/lib
+MMCSO_LIB=$MMCSO_DIR/libmmc.so
+BASEDIR="/dss/dsshome1/0C/di35hef/mmcso/experiments/spechpc2021hpgmgfv/hpc2021-1.1.8/benchspec/HPC"
+
+# export mmcso lib to LD env
+export LD_LIBRARY_PATH=$MMCSO_DIR/build/lib/:$LD_LIBRARY_PATH
+
+export MMCSO_DISPLAY_AFFINITY=TRUE
+
+set_mmcso_thread_affinity()
+{
+    # echo Placing MMCSO Threads in $1 MPI processes on each $2th Core 
+    # of each Node with $3 Cores per Node 2>&1
+    a=$(for i in $(seq 0 $(($1 - 1))); do echo $i:$(( ((($i+1)*$2) - 1) % $3 )); done)
+    export MMCSO_THREAD_AFFINITY=$(echo $a | sed -e 's/\s\+/,/g')
+    echo $MMCSO_THREAD_AFFINITY
+}
+
+# input: number of nodes, config, offloading
+set_config()
+{
+    case $2 in
+        1)
+            NPROCS=$(($1 * 2))
+            if [[ $3 == "1" ]]; then
+                set_mmcso_thread_affinity $(($1 * 2)) 24 48
+		export OMP_NUM_THREADS=23
+		export LD_PRELOAD=$MMCSO_LIB
+                MPIEXEC="mpiexec -ppn 2 -np $NPROCS "
+            else
+		export OMP_NUM_THREADS=24
+                MPIEXEC="mpiexec -ppn 2 -np $NPROCS "
+            fi
+            ;;
+
+        *)
+            echo -n "Unknown or unsupported config!"
+            ;;
+    esac
+
+}
+
+# for testing the execution of the benchmark
+BENCH="534.hpgmgfv_t"
+NNODES="1 2 4 8"
+VARIANT="native"
+c=1
+
+ARGS=$(cat $BASEDIR/$BENCH/multiple.args.txt | xargs)
+EXE="$BASEDIR/$BENCH/exe/hpgmgfv_base.sng-multiple_omp"
+
+for n in $NNODES; do
+	set_config $n $c 0
+
+	echo "------------------------------------------------"
+	echo "Check BASEDIR: $BASEDIR"
+	echo "Check BENCH: $BENCH"
+	echo "Check MPIEXEC: $MPIEXEC"
+	echo "Check EXE: $EXE"
+	echo "Check ARGS: $ARGS"
+	echo "------------------------------------------------"
+	echo "Run $BENCH $VARIANT on $n nodes - SNG"
+	echo "------------------------------------------------"
+	
+	$MPIEXEC ${EXE} ${ARGS}
+	
+	mv spectimes.txt spectimes-$VARIANT-hpgmgfv_t-$n-nodes-conf-$c.txt
+done
+
