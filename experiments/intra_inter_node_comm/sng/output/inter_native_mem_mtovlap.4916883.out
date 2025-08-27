@@ -1,0 +1,1898 @@
+Placing MMCSO Threads in 4 MPI processes on each 24th Core of each Node with total 48 Cores
+MMCSO_THREAD_AFFINITY=0:23,1:47,2:23,3:47
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1563239  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1563240  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1259579  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1259580  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 67.968259us
+[rank 0] wait time (avg. per thread and iter): 148.672363us
+[rank 0] comp time (avg. per thread and iter): 5.295783us
+[rank 0] comm time (avg. per thread and iter): 221.936404us
+[rank 0] overlap: 2.39%
+[rank 1] post time (avg. per thread and iter): 73.770791us
+[rank 1] wait time (avg. per thread and iter): 142.220065us
+[rank 1] comp time (avg. per thread and iter): 5.300156us
+[rank 1] comm time (avg. per thread and iter): 221.291012us
+[rank 1] overlap: 2.40%
+[rank 2] post time (avg. per thread and iter): 67.303590us
+[rank 2] wait time (avg. per thread and iter): 133.316848us
+[rank 2] comp time (avg. per thread and iter): 5.167839us
+[rank 2] comm time (avg. per thread and iter): 205.788277us
+[rank 2] overlap: 2.51%
+[rank 3] post time (avg. per thread and iter): 72.112493us
+[rank 3] wait time (avg. per thread and iter): 139.641751us
+[rank 3] comp time (avg. per thread and iter): 5.223037us
+[rank 3] comm time (avg. per thread and iter): 216.977280us
+[rank 3] overlap: 2.41%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1563336  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1563337  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1259655  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1259656  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 86.249154us
+[rank 0] wait time (avg. per thread and iter): 134.648628us
+[rank 0] comp time (avg. per thread and iter): 5.509423us
+[rank 0] comm time (avg. per thread and iter): 226.407205us
+[rank 0] overlap: 2.43%
+[rank 2] post time (avg. per thread and iter): 89.139118us
+[rank 2] wait time (avg. per thread and iter): 130.437954us
+[rank 2] comp time (avg. per thread and iter): 5.590038us
+[rank 2] comm time (avg. per thread and iter): 225.167110us
+[rank 2] overlap: 2.48%
+[rank 3] post time (avg. per thread and iter): 82.729797us
+[rank 3] wait time (avg. per thread and iter): 150.477864us
+[rank 3] comp time (avg. per thread and iter): 5.460160us
+[rank 3] comm time (avg. per thread and iter): 238.667821us
+[rank 3] overlap: 2.29%
+[rank 1] post time (avg. per thread and iter): 81.240605us
+[rank 1] wait time (avg. per thread and iter): 141.411860us
+[rank 1] comp time (avg. per thread and iter): 5.431008us
+[rank 1] comm time (avg. per thread and iter): 228.083473us
+[rank 1] overlap: 2.38%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1563433  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1563434  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1259730  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1259731  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 130.616178us
+[rank 0] wait time (avg. per thread and iter): 150.615974us
+[rank 0] comp time (avg. per thread and iter): 5.815172us
+[rank 0] comm time (avg. per thread and iter): 287.047324us
+[rank 0] overlap: 2.03%
+[rank 1] post time (avg. per thread and iter): 109.902977us
+[rank 1] wait time (avg. per thread and iter): 184.425239us
+[rank 1] comp time (avg. per thread and iter): 5.684975us
+[rank 1] comm time (avg. per thread and iter): 300.013191us
+[rank 1] overlap: 1.89%
+[rank 3] post time (avg. per thread and iter): 109.886510us
+[rank 3] wait time (avg. per thread and iter): 186.860136us
+[rank 3] comp time (avg. per thread and iter): 5.773794us
+[rank 3] comm time (avg. per thread and iter): 302.520440us
+[rank 3] overlap: 1.91%
+[rank 2] post time (avg. per thread and iter): 131.318375us
+[rank 2] wait time (avg. per thread and iter): 163.080674us
+[rank 2] comp time (avg. per thread and iter): 5.814238us
+[rank 2] comm time (avg. per thread and iter): 300.213286us
+[rank 2] overlap: 1.94%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1563532  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1563533  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1259803  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1259804  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 451.207514us
+[rank 2] wait time (avg. per thread and iter): 335.971113us
+[rank 2] comp time (avg. per thread and iter): 6.213599us
+[rank 2] comm time (avg. per thread and iter): 793.392226us
+[rank 2] overlap: 0.78%
+[rank 0] post time (avg. per thread and iter): 471.620960us
+[rank 0] wait time (avg. per thread and iter): 304.349121us
+[rank 0] comp time (avg. per thread and iter): 6.197151us
+[rank 0] comm time (avg. per thread and iter): 782.167232us
+[rank 0] overlap: 0.79%
+[rank 3] post time (avg. per thread and iter): 419.313194us
+[rank 3] wait time (avg. per thread and iter): 426.461646us
+[rank 3] comp time (avg. per thread and iter): 6.095410us
+[rank 3] comm time (avg. per thread and iter): 851.870249us
+[rank 3] overlap: 0.72%
+[rank 1] post time (avg. per thread and iter): 407.270663us
+[rank 1] wait time (avg. per thread and iter): 433.044242us
+[rank 1] comp time (avg. per thread and iter): 6.136098us
+[rank 1] comm time (avg. per thread and iter): 846.451003us
+[rank 1] overlap: 0.72%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1563630  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1563631  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1259877  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1259878  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 167.892145us
+[rank 2] wait time (avg. per thread and iter): 4648.741481us
+[rank 2] comp time (avg. per thread and iter): 4.634000us
+[rank 2] comm time (avg. per thread and iter): 4821.267625us
+[rank 2] overlap: 0.10%
+[rank 3] post time (avg. per thread and iter): 2144.680610us
+[rank 3] wait time (avg. per thread and iter): 1353.857576us
+[rank 3] comp time (avg. per thread and iter): 4.821560us
+[rank 3] comm time (avg. per thread and iter): 3503.359746us
+[rank 3] overlap: 0.14%
+[rank 0] post time (avg. per thread and iter): 2023.327085us
+[rank 0] wait time (avg. per thread and iter): 1815.785915us
+[rank 0] comp time (avg. per thread and iter): 5.313703us
+[rank 0] comm time (avg. per thread and iter): 3844.426702us
+[rank 0] overlap: 0.14%
+[rank 1] post time (avg. per thread and iter): 970.271706us
+[rank 1] wait time (avg. per thread and iter): 1943.360942us
+[rank 1] comp time (avg. per thread and iter): 4.879563us
+[rank 1] comm time (avg. per thread and iter): 2918.512211us
+[rank 1] overlap: 0.17%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1563726  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1563727  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1259950  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1259951  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 10164.394824us
+[rank 2] wait time (avg. per thread and iter): 17222.416400us
+[rank 2] comp time (avg. per thread and iter): 4.998410us
+[rank 2] comm time (avg. per thread and iter): 27391.809634us
+[rank 2] overlap: 0.02%
+[rank 0] post time (avg. per thread and iter): 8448.799679us
+[rank 0] wait time (avg. per thread and iter): 19296.595830us
+[rank 0] comp time (avg. per thread and iter): 4.916800us
+[rank 0] comm time (avg. per thread and iter): 27750.312309us
+[rank 0] overlap: 0.02%
+[rank 1] post time (avg. per thread and iter): 9389.712377us
+[rank 1] wait time (avg. per thread and iter): 16926.313125us
+[rank 1] comp time (avg. per thread and iter): 4.785510us
+[rank 1] comm time (avg. per thread and iter): 26320.811012us
+[rank 1] overlap: 0.02%
+[rank 3] post time (avg. per thread and iter): 8443.160140us
+[rank 3] wait time (avg. per thread and iter): 17248.692318us
+[rank 3] comp time (avg. per thread and iter): 4.762893us
+[rank 3] comm time (avg. per thread and iter): 25696.615351us
+[rank 3] overlap: 0.02%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1564040  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1564041  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1260258  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1260259  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 653.734844us
+[rank 1] wait time (avg. per thread and iter): 452905.741171us
+[rank 1] comp time (avg. per thread and iter): 4.599388us
+[rank 1] comm time (avg. per thread and iter): 453564.075402us
+[rank 1] overlap: 0.00%
+[rank 2] post time (avg. per thread and iter): 1450.671431us
+[rank 2] wait time (avg. per thread and iter): 292910.712063us
+[rank 2] comp time (avg. per thread and iter): 4.862616us
+[rank 2] comm time (avg. per thread and iter): 294366.246110us
+[rank 2] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 250.022395us
+[rank 0] wait time (avg. per thread and iter): 369609.018293us
+[rank 0] comp time (avg. per thread and iter): 4.357321us
+[rank 0] comm time (avg. per thread and iter): 369863.398009us
+[rank 0] overlap: 0.00%
+[rank 3] post time (avg. per thread and iter): 332135.063853us
+[rank 3] wait time (avg. per thread and iter): 76160.035169us
+[rank 3] comp time (avg. per thread and iter): 5.049082us
+[rank 3] comm time (avg. per thread and iter): 408300.148104us
+[rank 3] overlap: 0.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1565918  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1565919  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1262093  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1262094  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 1356.812663us
+[rank 1] wait time (avg. per thread and iter): 4417232.218504us
+[rank 1] comp time (avg. per thread and iter): 4.627050us
+[rank 1] comm time (avg. per thread and iter): 4418593.658217us
+[rank 1] overlap: 0.00%
+[rank 2] post time (avg. per thread and iter): 2035.811748us
+[rank 2] wait time (avg. per thread and iter): 2855484.247204us
+[rank 2] comp time (avg. per thread and iter): 5.041588us
+[rank 2] comm time (avg. per thread and iter): 2857525.100540us
+[rank 2] overlap: 0.00%
+[rank 3] post time (avg. per thread and iter): 3235677.533785us
+[rank 3] wait time (avg. per thread and iter): 690490.445949us
+[rank 3] comp time (avg. per thread and iter): 5.145340us
+[rank 3] comm time (avg. per thread and iter): 3926173.125075us
+[rank 3] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 353.119542us
+[rank 0] wait time (avg. per thread and iter): 3546520.534896us
+[rank 0] comp time (avg. per thread and iter): 4.404919us
+[rank 0] comm time (avg. per thread and iter): 3546878.059357us
+[rank 0] overlap: 0.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1583468  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1583469  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1280515  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1280516  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 69.696422us
+[rank 2] wait time (avg. per thread and iter): 186.207828us
+[rank 2] comp time (avg. per thread and iter): 20.898979us
+[rank 2] comm time (avg. per thread and iter): 276.803229us
+[rank 2] overlap: 7.55%
+[rank 0] post time (avg. per thread and iter): 69.481136us
+[rank 0] wait time (avg. per thread and iter): 178.435386us
+[rank 0] comp time (avg. per thread and iter): 21.127081us
+[rank 0] comm time (avg. per thread and iter): 269.043604us
+[rank 0] overlap: 7.85%
+[rank 1] post time (avg. per thread and iter): 75.443199us
+[rank 1] wait time (avg. per thread and iter): 146.363414us
+[rank 1] comp time (avg. per thread and iter): 20.482885us
+[rank 1] comm time (avg. per thread and iter): 242.289498us
+[rank 1] overlap: 8.45%
+[rank 3] post time (avg. per thread and iter): 72.802957us
+[rank 3] wait time (avg. per thread and iter): 200.505657us
+[rank 3] comp time (avg. per thread and iter): 20.385389us
+[rank 3] comm time (avg. per thread and iter): 293.694003us
+[rank 3] overlap: 6.94%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1583566  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1583567  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1280615  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1280616  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 82.786197us
+[rank 3] wait time (avg. per thread and iter): 198.870654us
+[rank 3] comp time (avg. per thread and iter): 21.312352us
+[rank 3] comm time (avg. per thread and iter): 302.969203us
+[rank 3] overlap: 7.03%
+[rank 2] post time (avg. per thread and iter): 89.597444us
+[rank 2] wait time (avg. per thread and iter): 167.613758us
+[rank 2] comp time (avg. per thread and iter): 21.804012us
+[rank 2] comm time (avg. per thread and iter): 279.015214us
+[rank 2] overlap: 7.81%
+[rank 0] post time (avg. per thread and iter): 87.268900us
+[rank 0] wait time (avg. per thread and iter): 204.612580us
+[rank 0] comp time (avg. per thread and iter): 21.987798us
+[rank 0] comm time (avg. per thread and iter): 313.869279us
+[rank 0] overlap: 7.01%
+[rank 1] post time (avg. per thread and iter): 84.076807us
+[rank 1] wait time (avg. per thread and iter): 210.042252us
+[rank 1] comp time (avg. per thread and iter): 21.449167us
+[rank 1] comm time (avg. per thread and iter): 315.568225us
+[rank 1] overlap: 6.80%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1583663  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1583664  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1280690  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1280691  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 109.488913us
+[rank 1] wait time (avg. per thread and iter): 245.830337us
+[rank 1] comp time (avg. per thread and iter): 23.386599us
+[rank 1] comm time (avg. per thread and iter): 378.705849us
+[rank 1] overlap: 6.18%
+[rank 2] post time (avg. per thread and iter): 135.651594us
+[rank 2] wait time (avg. per thread and iter): 167.232677us
+[rank 2] comp time (avg. per thread and iter): 23.292177us
+[rank 2] comm time (avg. per thread and iter): 326.176448us
+[rank 2] overlap: 7.14%
+[rank 0] post time (avg. per thread and iter): 132.047308us
+[rank 0] wait time (avg. per thread and iter): 201.318581us
+[rank 0] comp time (avg. per thread and iter): 24.380814us
+[rank 0] comm time (avg. per thread and iter): 357.746703us
+[rank 0] overlap: 6.82%
+[rank 3] post time (avg. per thread and iter): 102.418161us
+[rank 3] wait time (avg. per thread and iter): 273.342296us
+[rank 3] comp time (avg. per thread and iter): 23.033159us
+[rank 3] comm time (avg. per thread and iter): 398.793617us
+[rank 3] overlap: 5.78%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1583758  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1583759  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1280763  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1280764  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 401.853942us
+[rank 2] wait time (avg. per thread and iter): 467.853209us
+[rank 2] comp time (avg. per thread and iter): 24.553522us
+[rank 2] comm time (avg. per thread and iter): 894.260673us
+[rank 2] overlap: 2.75%
+[rank 1] post time (avg. per thread and iter): 408.424694us
+[rank 1] wait time (avg. per thread and iter): 493.250835us
+[rank 1] comp time (avg. per thread and iter): 25.362191us
+[rank 1] comm time (avg. per thread and iter): 927.037721us
+[rank 1] overlap: 2.74%
+[rank 3] post time (avg. per thread and iter): 417.620675us
+[rank 3] wait time (avg. per thread and iter): 483.531758us
+[rank 3] comp time (avg. per thread and iter): 25.125830us
+[rank 0] post time (avg. per thread and iter): 427.721718us
+[rank 0] wait time (avg. per thread and iter): 426.500384us
+[rank 0] comp time (avg. per thread and iter): 25.056567us
+[rank 3] comm time (avg. per thread and iter): 926.278263us
+[rank 3] overlap: 2.71%
+[rank 0] comm time (avg. per thread and iter): 879.278669us
+[rank 0] overlap: 2.85%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1583855  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1583856  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1280837  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1280838  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 134.987107us
+[rank 2] wait time (avg. per thread and iter): 3267.113339us
+[rank 2] comp time (avg. per thread and iter): 15.167068us
+[rank 2] comm time (avg. per thread and iter): 3417.267514us
+[rank 2] overlap: 0.44%
+[rank 1] post time (avg. per thread and iter): 510.488829us
+[rank 1] wait time (avg. per thread and iter): 2635.574083us
+[rank 1] comp time (avg. per thread and iter): 18.941417us
+[rank 1] comm time (avg. per thread and iter): 3165.004329us
+[rank 1] overlap: 0.60%
+[rank 0] post time (avg. per thread and iter): 1342.161923us
+[rank 0] wait time (avg. per thread and iter): 1548.777608us
+[rank 0] comp time (avg. per thread and iter): 21.308100us
+[rank 0] comm time (avg. per thread and iter): 2912.247630us
+[rank 0] overlap: 0.73%
+[rank 3] post time (avg. per thread and iter): 2470.923232us
+[rank 3] wait time (avg. per thread and iter): 854.802719us
+[rank 3] comp time (avg. per thread and iter): 20.001016us
+[rank 3] comm time (avg. per thread and iter): 3345.726967us
+[rank 3] overlap: 0.60%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1583950  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1583951  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1280912  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1280913  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 4361.485496us
+[rank 2] wait time (avg. per thread and iter): 24638.349225us
+[rank 2] comp time (avg. per thread and iter): 18.215935us
+[rank 2] comm time (avg. per thread and iter): 29018.050655us
+[rank 2] overlap: 0.06%
+[rank 1] post time (avg. per thread and iter): 6323.199781us
+[rank 1] wait time (avg. per thread and iter): 18246.834331us
+[rank 1] comp time (avg. per thread and iter): 19.713726us
+[rank 1] comm time (avg. per thread and iter): 24589.747838us
+[rank 1] overlap: 0.08%
+[rank 0] post time (avg. per thread and iter): 13174.411070us
+[rank 0] wait time (avg. per thread and iter): 14839.438358us
+[rank 0] comp time (avg. per thread and iter): 22.416472us
+[rank 0] comm time (avg. per thread and iter): 28036.265901us
+[rank 0] overlap: 0.08%
+[rank 3] post time (avg. per thread and iter): 12487.580936us
+[rank 3] wait time (avg. per thread and iter): 15572.583840us
+[rank 3] comp time (avg. per thread and iter): 20.609269us
+[rank 3] comm time (avg. per thread and iter): 28080.774045us
+[rank 3] overlap: 0.07%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1584073  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1584074  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1281046  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1281047  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 374.568925us
+[rank 3] wait time (avg. per thread and iter): 449295.913592us
+[rank 3] comp time (avg. per thread and iter): 17.676069us
+[rank 3] comm time (avg. per thread and iter): 449688.158585us
+[rank 3] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 979.661098us
+[rank 0] wait time (avg. per thread and iter): 293664.475136us
+[rank 0] comp time (avg. per thread and iter): 19.413042us
+[rank 0] comm time (avg. per thread and iter): 294663.549276us
+[rank 0] overlap: 0.01%
+[rank 2] post time (avg. per thread and iter): 253.108325us
+[rank 2] wait time (avg. per thread and iter): 366858.819943us
+[rank 2] comp time (avg. per thread and iter): 15.692971us
+[rank 2] comm time (avg. per thread and iter): 367127.621239us
+[rank 2] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 328054.060088us
+[rank 1] wait time (avg. per thread and iter): 77848.737893us
+[rank 1] comp time (avg. per thread and iter): 22.341452us
+[rank 1] comm time (avg. per thread and iter): 405925.139434us
+[rank 1] overlap: 0.01%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1586046  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1586047  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1283330  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1283331  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 6238.895856us
+[rank 3] wait time (avg. per thread and iter): 4396378.810624us
+[rank 3] comp time (avg. per thread and iter): 17.803542us
+[rank 3] comm time (avg. per thread and iter): 4402635.510021us
+[rank 3] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 1620.211679us
+[rank 0] wait time (avg. per thread and iter): 2835469.872372us
+[rank 0] comp time (avg. per thread and iter): 20.134084us
+[rank 0] comm time (avg. per thread and iter): 2837110.218135us
+[rank 0] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 3216301.496024us
+[rank 1] wait time (avg. per thread and iter): 651090.498099us
+[rank 1] comp time (avg. per thread and iter): 22.547542us
+[rank 1] comm time (avg. per thread and iter): 3867414.541664us
+[rank 1] overlap: 0.00%
+[rank 2] post time (avg. per thread and iter): 309.077347us
+[rank 2] wait time (avg. per thread and iter): 3515368.313199us
+[rank 2] comp time (avg. per thread and iter): 15.674826us
+[rank 2] comm time (avg. per thread and iter): 3515693.065372us
+[rank 2] overlap: 0.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603201  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603202  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1303768  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1303769  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 69.253991us
+[rank 2] wait time (avg. per thread and iter): 202.899029us
+[rank 2] comp time (avg. per thread and iter): 35.600280us
+[rank 2] comm time (avg. per thread and iter): 307.753301us
+[rank 2] overlap: 11.57%
+[rank 3] post time (avg. per thread and iter): 74.293501us
+[rank 3] wait time (avg. per thread and iter): 215.625643us
+[rank 3] comp time (avg. per thread and iter): 35.605217us
+[rank 3] comm time (avg. per thread and iter): 325.524362us
+[rank 3] overlap: 10.94%
+[rank 0] post time (avg. per thread and iter): 69.904435us
+[rank 0] wait time (avg. per thread and iter): 163.830192us
+[rank 0] comp time (avg. per thread and iter): 35.499401us
+[rank 0] comm time (avg. per thread and iter): 269.234028us
+[rank 0] overlap: 13.19%
+[rank 1] post time (avg. per thread and iter): 72.793048us
+[rank 1] wait time (avg. per thread and iter): 268.499255us
+[rank 1] comp time (avg. per thread and iter): 36.004845us
+[rank 1] comm time (avg. per thread and iter): 377.297148us
+[rank 1] overlap: 9.54%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603296  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603297  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1303843  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1303844  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 86.437043us
+[rank 2] wait time (avg. per thread and iter): 200.751181us
+[rank 2] comp time (avg. per thread and iter): 38.963750us
+[rank 2] comm time (avg. per thread and iter): 326.151974us
+[rank 2] overlap: 11.95%
+[rank 0] post time (avg. per thread and iter): 88.841587us
+[rank 0] wait time (avg. per thread and iter): 199.798810us
+[rank 0] comp time (avg. per thread and iter): 37.832025us
+[rank 0] comm time (avg. per thread and iter): 326.472422us
+[rank 0] overlap: 11.59%
+[rank 1] post time (avg. per thread and iter): 83.108993us
+[rank 1] wait time (avg. per thread and iter): 245.145598us
+[rank 1] comp time (avg. per thread and iter): 38.413964us
+[rank 1] comm time (avg. per thread and iter): 366.668555us
+[rank 1] overlap: 10.48%
+[rank 3] post time (avg. per thread and iter): 80.534273us
+[rank 3] wait time (avg. per thread and iter): 241.531138us
+[rank 3] comp time (avg. per thread and iter): 38.246147us
+[rank 3] comm time (avg. per thread and iter): 360.311558us
+[rank 3] overlap: 10.61%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603391  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603392  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1303918  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1303919  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 99.551124us
+[rank 1] wait time (avg. per thread and iter): 356.613192us
+[rank 1] comp time (avg. per thread and iter): 41.247062us
+[rank 1] comm time (avg. per thread and iter): 497.411378us
+[rank 1] overlap: 8.29%
+[rank 3] post time (avg. per thread and iter): 96.356098us
+[rank 3] wait time (avg. per thread and iter): 378.205902us
+[rank 3] comp time (avg. per thread and iter): 40.211067us
+[rank 3] comm time (avg. per thread and iter): 514.773067us
+[rank 3] overlap: 7.81%
+[rank 0] post time (avg. per thread and iter): 122.540721us
+[rank 0] wait time (avg. per thread and iter): 243.293626us
+[rank 0] comp time (avg. per thread and iter): 44.085294us
+[rank 0] comm time (avg. per thread and iter): 409.919642us
+[rank 0] overlap: 10.75%
+[rank 2] post time (avg. per thread and iter): 130.227526us
+[rank 2] wait time (avg. per thread and iter): 173.755205us
+[rank 2] comp time (avg. per thread and iter): 43.280720us
+[rank 2] comm time (avg. per thread and iter): 347.263452us
+[rank 2] overlap: 12.46%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603486  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603487  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1303993  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1303994  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 350.953993us
+[rank 0] wait time (avg. per thread and iter): 610.960410us
+[rank 0] comp time (avg. per thread and iter): 43.453469us
+[rank 0] comm time (avg. per thread and iter): 1005.367872us
+[rank 0] overlap: 4.32%
+[rank 2] post time (avg. per thread and iter): 352.276976us
+[rank 2] wait time (avg. per thread and iter): 614.098874us
+[rank 2] comp time (avg. per thread and iter): 42.191173us
+[rank 2] comm time (avg. per thread and iter): 1008.567023us
+[rank 2] overlap: 4.18%
+[rank 1] post time (avg. per thread and iter): 413.232078us
+[rank 1] wait time (avg. per thread and iter): 483.268432us
+[rank 1] comp time (avg. per thread and iter): 46.872309us
+[rank 1] comm time (avg. per thread and iter): 943.372819us
+[rank 1] overlap: 4.97%
+[rank 3] post time (avg. per thread and iter): 422.248519us
+[rank 3] wait time (avg. per thread and iter): 463.505731us
+[rank 3] comp time (avg. per thread and iter): 46.507984us
+[rank 3] comm time (avg. per thread and iter): 932.262235us
+[rank 3] overlap: 4.99%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603583  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603584  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1304070  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1304071  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 660.334068us
+[rank 0] wait time (avg. per thread and iter): 2495.188303us
+[rank 0] comp time (avg. per thread and iter): 31.233249us
+[rank 0] comm time (avg. per thread and iter): 3186.755620us
+[rank 0] overlap: 0.98%
+[rank 1] post time (avg. per thread and iter): 1552.905457us
+[rank 1] wait time (avg. per thread and iter): 1664.912235us
+[rank 1] comp time (avg. per thread and iter): 34.452594us
+[rank 1] comm time (avg. per thread and iter): 3252.270285us
+[rank 1] overlap: 1.06%
+[rank 3] post time (avg. per thread and iter): 1342.938222us
+[rank 3] wait time (avg. per thread and iter): 1830.992460us
+[rank 3] comp time (avg. per thread and iter): 33.975808us
+[rank 3] comm time (avg. per thread and iter): 3207.906489us
+[rank 3] overlap: 1.06%
+[rank 2] post time (avg. per thread and iter): 810.885955us
+[rank 2] wait time (avg. per thread and iter): 2308.137607us
+[rank 2] comp time (avg. per thread and iter): 33.061081us
+[rank 2] comm time (avg. per thread and iter): 3152.084643us
+[rank 2] overlap: 1.05%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603785  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603786  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1304253  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1304254  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 5844.518729us
+[rank 0] wait time (avg. per thread and iter): 21968.510476us
+[rank 0] comp time (avg. per thread and iter): 34.845378us
+[rank 0] comm time (avg. per thread and iter): 27847.874583us
+[rank 0] overlap: 0.13%
+[rank 1] post time (avg. per thread and iter): 10885.849559us
+[rank 1] wait time (avg. per thread and iter): 16261.655584us
+[rank 1] comp time (avg. per thread and iter): 37.655579us
+[rank 1] comm time (avg. per thread and iter): 27185.160723us
+[rank 1] overlap: 0.14%
+[rank 3] post time (avg. per thread and iter): 6848.425227us
+[rank 3] wait time (avg. per thread and iter): 18025.939909us
+[rank 3] comp time (avg. per thread and iter): 36.364868us
+[rank 3] comm time (avg. per thread and iter): 24910.730004us
+[rank 3] overlap: 0.15%
+[rank 2] post time (avg. per thread and iter): 11337.302078us
+[rank 2] wait time (avg. per thread and iter): 16028.218733us
+[rank 2] comp time (avg. per thread and iter): 42.191583us
+[rank 2] comm time (avg. per thread and iter): 27407.712393us
+[rank 2] overlap: 0.15%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1603994  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1603995  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1304466  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1304467  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 784.330116us
+[rank 1] wait time (avg. per thread and iter): 431684.859985us
+[rank 1] comp time (avg. per thread and iter): 33.368334us
+[rank 1] comm time (avg. per thread and iter): 432502.558436us
+[rank 1] overlap: 0.01%
+[rank 2] post time (avg. per thread and iter): 1224.220219us
+[rank 2] wait time (avg. per thread and iter): 281072.573765us
+[rank 2] comp time (avg. per thread and iter): 34.757571us
+[rank 2] comm time (avg. per thread and iter): 282331.551555us
+[rank 2] overlap: 0.01%
+[rank 0] post time (avg. per thread and iter): 268.814963us
+[rank 0] wait time (avg. per thread and iter): 351705.553987us
+[rank 0] comp time (avg. per thread and iter): 26.586808us
+[rank 0] comm time (avg. per thread and iter): 352000.955759us
+[rank 0] overlap: 0.01%
+[rank 3] post time (avg. per thread and iter): 292342.040176us
+[rank 3] wait time (avg. per thread and iter): 100419.497899us
+[rank 3] comp time (avg. per thread and iter): 42.499795us
+[rank 3] comm time (avg. per thread and iter): 392804.037871us
+[rank 3] overlap: 0.01%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1605761  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1605762  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1306532  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1306533  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 11853.880938us
+[rank 1] wait time (avg. per thread and iter): 4174980.948811us
+[rank 1] comp time (avg. per thread and iter): 34.075935us
+[rank 1] comm time (avg. per thread and iter): 4186868.905684us
+[rank 1] overlap: 0.00%
+[rank 2] post time (avg. per thread and iter): 1981.619026us
+[rank 2] wait time (avg. per thread and iter): 2722746.235264us
+[rank 2] comp time (avg. per thread and iter): 38.061192us
+[rank 2] comm time (avg. per thread and iter): 2724765.915482us
+[rank 2] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 448.575552us
+[rank 0] wait time (avg. per thread and iter): 3357361.575553us
+[rank 0] comp time (avg. per thread and iter): 27.367320us
+[rank 0] comm time (avg. per thread and iter): 3357837.518425us
+[rank 0] overlap: 0.00%
+[rank 3] post time (avg. per thread and iter): 2839990.282165us
+[rank 3] wait time (avg. per thread and iter): 940503.204958us
+[rank 3] comp time (avg. per thread and iter): 43.224427us
+[rank 3] comm time (avg. per thread and iter): 3780536.711550us
+[rank 3] overlap: 0.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622164  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622165  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326072  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326073  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 51.364771us
+[rank 2] wait time (avg. per thread and iter): 88.788689us
+[rank 2] comp time (avg. per thread and iter): 76.038854us
+[rank 2] comm time (avg. per thread and iter): 216.192315us
+[rank 2] overlap: 35.17%
+[rank 3] post time (avg. per thread and iter): 52.642005us
+[rank 3] wait time (avg. per thread and iter): 231.122460us
+[rank 3] comp time (avg. per thread and iter): 75.408935us
+[rank 3] comm time (avg. per thread and iter): 359.173400us
+[rank 3] overlap: 21.00%
+[rank 0] post time (avg. per thread and iter): 51.656971us
+[rank 0] wait time (avg. per thread and iter): 165.989674us
+[rank 0] comp time (avg. per thread and iter): 74.834750us
+[rank 0] comm time (avg. per thread and iter): 292.481396us
+[rank 0] overlap: 25.59%
+[rank 1] post time (avg. per thread and iter): 49.373900us
+[rank 1] wait time (avg. per thread and iter): 317.467348us
+[rank 1] comp time (avg. per thread and iter): 72.504403us
+[rank 1] comm time (avg. per thread and iter): 439.345650us
+[rank 1] overlap: 16.50%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622261  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622262  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326149  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326150  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 53.504990us
+[rank 1] wait time (avg. per thread and iter): 328.905143us
+[rank 1] comp time (avg. per thread and iter): 75.810461us
+[rank 1] comm time (avg. per thread and iter): 458.220594us
+[rank 1] overlap: 16.54%
+[rank 0] post time (avg. per thread and iter): 57.637096us
+[rank 0] wait time (avg. per thread and iter): 300.913932us
+[rank 0] comp time (avg. per thread and iter): 81.559185us
+[rank 0] comm time (avg. per thread and iter): 440.110213us
+[rank 0] overlap: 18.53%
+[rank 3] post time (avg. per thread and iter): 56.098582us
+[rank 3] wait time (avg. per thread and iter): 307.377945us
+[rank 3] comp time (avg. per thread and iter): 79.438853us
+[rank 3] comm time (avg. per thread and iter): 442.915381us
+[rank 3] overlap: 17.94%
+[rank 2] post time (avg. per thread and iter): 68.321654us
+[rank 2] wait time (avg. per thread and iter): 30.194471us
+[rank 2] comp time (avg. per thread and iter): 88.522043us
+[rank 2] comm time (avg. per thread and iter): 187.038168us
+[rank 2] overlap: 47.33%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622356  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622357  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326224  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326225  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 63.588993us
+[rank 3] wait time (avg. per thread and iter): 354.612692us
+[rank 3] comp time (avg. per thread and iter): 88.469314us
+[rank 3] comm time (avg. per thread and iter): 506.670998us
+[rank 3] overlap: 17.46%
+[rank 1] post time (avg. per thread and iter): 65.878625us
+[rank 1] wait time (avg. per thread and iter): 334.666593us
+[rank 1] comp time (avg. per thread and iter): 90.411848us
+[rank 1] comm time (avg. per thread and iter): 490.957065us
+[rank 1] overlap: 18.42%
+[rank 2] post time (avg. per thread and iter): 74.672174us
+[rank 2] wait time (avg. per thread and iter): 339.375487us
+[rank 2] comp time (avg. per thread and iter): 96.877802us
+[rank 2] comm time (avg. per thread and iter): 510.925464us
+[rank 2] overlap: 18.96%
+[rank 0] post time (avg. per thread and iter): 101.913893us
+[rank 0] wait time (avg. per thread and iter): 40.250766us
+[rank 0] comp time (avg. per thread and iter): 104.539909us
+[rank 0] comm time (avg. per thread and iter): 246.704568us
+[rank 0] overlap: 42.37%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622453  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622454  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326298  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326299  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 229.884130us
+[rank 0] wait time (avg. per thread and iter): 453.571119us
+[rank 0] comp time (avg. per thread and iter): 98.498814us
+[rank 0] comm time (avg. per thread and iter): 781.954062us
+[rank 0] overlap: 12.60%
+[rank 2] post time (avg. per thread and iter): 227.058872us
+[rank 2] wait time (avg. per thread and iter): 452.009415us
+[rank 2] comp time (avg. per thread and iter): 98.673142us
+[rank 2] comm time (avg. per thread and iter): 777.741428us
+[rank 2] overlap: 12.69%
+[rank 3] post time (avg. per thread and iter): 259.480262us
+[rank 3] wait time (avg. per thread and iter): 345.753601us
+[rank 3] comp time (avg. per thread and iter): 116.003999us
+[rank 3] comm time (avg. per thread and iter): 721.237862us
+[rank 3] overlap: 16.08%
+[rank 1] post time (avg. per thread and iter): 243.349538us
+[rank 1] wait time (avg. per thread and iter): 385.658809us
+[rank 1] comp time (avg. per thread and iter): 119.549422us
+[rank 1] comm time (avg. per thread and iter): 748.557768us
+[rank 1] overlap: 15.97%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622550  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622551  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326375  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326376  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 463.681836us
+[rank 0] wait time (avg. per thread and iter): 2889.537865us
+[rank 0] comp time (avg. per thread and iter): 99.020996us
+[rank 0] comm time (avg. per thread and iter): 3452.240696us
+[rank 0] overlap: 2.87%
+[rank 3] post time (avg. per thread and iter): 857.669060us
+[rank 3] wait time (avg. per thread and iter): 2631.450780us
+[rank 3] comp time (avg. per thread and iter): 100.263976us
+[rank 3] comm time (avg. per thread and iter): 3589.383816us
+[rank 3] overlap: 2.79%
+[rank 2] post time (avg. per thread and iter): 887.497598us
+[rank 2] wait time (avg. per thread and iter): 2197.081426us
+[rank 2] comp time (avg. per thread and iter): 112.052670us
+[rank 2] comm time (avg. per thread and iter): 3196.631694us
+[rank 2] overlap: 3.51%
+[rank 1] post time (avg. per thread and iter): 1765.441712us
+[rank 1] wait time (avg. per thread and iter): 1595.298239us
+[rank 1] comp time (avg. per thread and iter): 109.881850us
+[rank 1] comm time (avg. per thread and iter): 3470.621801us
+[rank 1] overlap: 3.17%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622662  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622663  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326483  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326484  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 924.018587us
+[rank 2] wait time (avg. per thread and iter): 28393.776569us
+[rank 2] comp time (avg. per thread and iter): 95.337958us
+[rank 2] comm time (avg. per thread and iter): 29413.133114us
+[rank 2] overlap: 0.32%
+[rank 1] post time (avg. per thread and iter): 4433.586854us
+[rank 1] wait time (avg. per thread and iter): 19222.713682us
+[rank 1] comp time (avg. per thread and iter): 156.013263us
+[rank 1] comm time (avg. per thread and iter): 23812.313799us
+[rank 1] overlap: 0.66%
+[rank 3] post time (avg. per thread and iter): 19308.051308us
+[rank 3] wait time (avg. per thread and iter): 11096.821368us
+[rank 3] comp time (avg. per thread and iter): 161.087024us
+[rank 3] comm time (avg. per thread and iter): 30565.959700us
+[rank 3] overlap: 0.53%
+[rank 0] post time (avg. per thread and iter): 12770.676504us
+[rank 0] wait time (avg. per thread and iter): 15353.731819us
+[rank 0] comp time (avg. per thread and iter): 192.354699us
+[rank 0] comm time (avg. per thread and iter): 28316.763023us
+[rank 0] overlap: 0.68%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1622885  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1622886  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1326713  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1326714  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 544.298366us
+[rank 1] wait time (avg. per thread and iter): 420698.173860us
+[rank 1] comp time (avg. per thread and iter): 117.860187us
+[rank 1] comm time (avg. per thread and iter): 421360.332413us
+[rank 1] overlap: 0.03%
+[rank 2] post time (avg. per thread and iter): 1353.245568us
+[rank 2] wait time (avg. per thread and iter): 277410.390626us
+[rank 2] comp time (avg. per thread and iter): 116.907410us
+[rank 2] comm time (avg. per thread and iter): 278880.543604us
+[rank 2] overlap: 0.04%
+[rank 0] post time (avg. per thread and iter): 234.769706us
+[rank 0] wait time (avg. per thread and iter): 347063.454282us
+[rank 0] comp time (avg. per thread and iter): 80.725627us
+[rank 0] comm time (avg. per thread and iter): 347378.949616us
+[rank 0] overlap: 0.02%
+[rank 3] post time (avg. per thread and iter): 282959.920828us
+[rank 3] wait time (avg. per thread and iter): 104999.980134us
+[rank 3] comp time (avg. per thread and iter): 180.657973us
+[rank 3] comm time (avg. per thread and iter): 388140.558936us
+[rank 3] overlap: 0.05%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1624641  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1624642  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1328764  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1328765  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 5315.951277us
+[rank 3] wait time (avg. per thread and iter): 4127136.773677us
+[rank 3] comp time (avg. per thread and iter): 121.717071us
+[rank 3] comm time (avg. per thread and iter): 4132574.442025us
+[rank 3] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 1904.834974us
+[rank 0] wait time (avg. per thread and iter): 2714360.181766us
+[rank 0] comp time (avg. per thread and iter): 127.826191us
+[rank 0] comm time (avg. per thread and iter): 2716392.842931us
+[rank 0] overlap: 0.00%
+[rank 2] post time (avg. per thread and iter): 427.008494us
+[rank 2] wait time (avg. per thread and iter): 3377957.475777us
+[rank 2] comp time (avg. per thread and iter): 84.199948us
+[rank 2] comm time (avg. per thread and iter): 3378468.684219us
+[rank 2] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 2787038.039634us
+[rank 1] wait time (avg. per thread and iter): 1013006.715749us
+[rank 1] comp time (avg. per thread and iter): 184.366156us
+[rank 1] comm time (avg. per thread and iter): 3800229.121540us
+[rank 1] overlap: 0.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641022  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641023  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348152  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348153  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 46.863129us
+[rank 0] wait time (avg. per thread and iter): 287.337804us
+[rank 0] comp time (avg. per thread and iter): 99.856587us
+[rank 0] comm time (avg. per thread and iter): 434.057520us
+[rank 0] overlap: 23.01%
+[rank 2] post time (avg. per thread and iter): 48.954857us
+[rank 2] wait time (avg. per thread and iter): 122.154386us
+[rank 2] comp time (avg. per thread and iter): 105.060864us
+[rank 2] comm time (avg. per thread and iter): 276.170107us
+[rank 2] overlap: 38.04%
+[rank 1] post time (avg. per thread and iter): 48.156026us
+[rank 1] wait time (avg. per thread and iter): 295.202331us
+[rank 1] comp time (avg. per thread and iter): 100.681780us
+[rank 1] comm time (avg. per thread and iter): 444.040137us
+[rank 1] overlap: 22.67%
+[rank 3] post time (avg. per thread and iter): 50.771702us
+[rank 3] wait time (avg. per thread and iter): 192.189127us
+[rank 3] comp time (avg. per thread and iter): 104.521618us
+[rank 3] comm time (avg. per thread and iter): 347.482447us
+[rank 3] overlap: 30.08%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641119  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641120  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348229  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348230  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 51.632046us
+[rank 1] wait time (avg. per thread and iter): 314.565725us
+[rank 1] comp time (avg. per thread and iter): 105.981451us
+[rank 1] comm time (avg. per thread and iter): 472.179222us
+[rank 1] overlap: 22.45%
+[rank 0] post time (avg. per thread and iter): 54.308592us
+[rank 0] wait time (avg. per thread and iter): 300.828838us
+[rank 0] comp time (avg. per thread and iter): 112.525091us
+[rank 0] comm time (avg. per thread and iter): 467.662521us
+[rank 0] overlap: 24.06%
+[rank 3] post time (avg. per thread and iter): 54.682759us
+[rank 3] wait time (avg. per thread and iter): 275.861053us
+[rank 3] comp time (avg. per thread and iter): 113.291729us
+[rank 3] comm time (avg. per thread and iter): 443.835542us
+[rank 3] overlap: 25.53%
+[rank 2] post time (avg. per thread and iter): 65.973810us
+[rank 2] wait time (avg. per thread and iter): 28.726023us
+[rank 2] comp time (avg. per thread and iter): 126.337530us
+[rank 2] comm time (avg. per thread and iter): 221.037362us
+[rank 2] overlap: 57.16%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641216  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641217  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348304  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348305  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 63.764911us
+[rank 3] wait time (avg. per thread and iter): 339.411071us
+[rank 3] comp time (avg. per thread and iter): 128.895194us
+[rank 3] comm time (avg. per thread and iter): 532.071176us
+[rank 3] overlap: 24.23%
+[rank 2] post time (avg. per thread and iter): 71.868562us
+[rank 2] wait time (avg. per thread and iter): 319.855086us
+[rank 2] comp time (avg. per thread and iter): 139.949561us
+[rank 2] comm time (avg. per thread and iter): 531.673209us
+[rank 2] overlap: 26.32%
+[rank 1] post time (avg. per thread and iter): 67.038388us
+[rank 1] wait time (avg. per thread and iter): 296.608423us
+[rank 1] comp time (avg. per thread and iter): 133.091125us
+[rank 1] comm time (avg. per thread and iter): 496.737936us
+[rank 1] overlap: 26.79%
+[rank 0] post time (avg. per thread and iter): 100.725673us
+[rank 0] wait time (avg. per thread and iter): 35.872292us
+[rank 0] comp time (avg. per thread and iter): 151.038499us
+[rank 0] comm time (avg. per thread and iter): 287.636465us
+[rank 0] overlap: 52.51%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641315  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641316  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348378  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348379  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 190.782577us
+[rank 0] wait time (avg. per thread and iter): 502.483241us
+[rank 0] comp time (avg. per thread and iter): 138.393925us
+[rank 0] comm time (avg. per thread and iter): 831.659744us
+[rank 0] overlap: 16.64%
+[rank 2] post time (avg. per thread and iter): 217.278953us
+[rank 2] wait time (avg. per thread and iter): 424.597065us
+[rank 2] comp time (avg. per thread and iter): 146.283835us
+[rank 2] comm time (avg. per thread and iter): 788.159853us
+[rank 2] overlap: 18.56%
+[rank 1] post time (avg. per thread and iter): 236.467318us
+[rank 1] wait time (avg. per thread and iter): 369.466235us
+[rank 1] comp time (avg. per thread and iter): 169.376253us
+[rank 1] comm time (avg. per thread and iter): 775.309806us
+[rank 1] overlap: 21.85%
+[rank 3] post time (avg. per thread and iter): 246.187244us
+[rank 3] wait time (avg. per thread and iter): 320.771020us
+[rank 3] comp time (avg. per thread and iter): 172.093286us
+[rank 3] comm time (avg. per thread and iter): 739.051550us
+[rank 3] overlap: 23.29%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641412  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641413  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348454  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348455  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 282.079145us
+[rank 0] wait time (avg. per thread and iter): 3157.004446us
+[rank 0] comp time (avg. per thread and iter): 145.081265us
+[rank 0] comm time (avg. per thread and iter): 3584.164856us
+[rank 0] overlap: 4.05%
+[rank 3] post time (avg. per thread and iter): 388.543496us
+[rank 3] wait time (avg. per thread and iter): 3397.545971us
+[rank 3] comp time (avg. per thread and iter): 139.455180us
+[rank 3] comm time (avg. per thread and iter): 3925.544647us
+[rank 3] overlap: 3.55%
+[rank 2] post time (avg. per thread and iter): 964.882018us
+[rank 2] wait time (avg. per thread and iter): 1960.500068us
+[rank 2] comp time (avg. per thread and iter): 180.658756us
+[rank 2] comm time (avg. per thread and iter): 3106.040843us
+[rank 2] overlap: 5.82%
+[rank 1] post time (avg. per thread and iter): 2046.585494us
+[rank 1] wait time (avg. per thread and iter): 1279.710522us
+[rank 1] comp time (avg. per thread and iter): 181.090409us
+[rank 1] comm time (avg. per thread and iter): 3507.386424us
+[rank 1] overlap: 5.16%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641510  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641511  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348534  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348535  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 7497.110888us
+[rank 2] wait time (avg. per thread and iter): 20078.742386us
+[rank 2] comp time (avg. per thread and iter): 192.063013us
+[rank 2] comm time (avg. per thread and iter): 27767.916288us
+[rank 2] overlap: 0.69%
+[rank 0] post time (avg. per thread and iter): 7539.102337us
+[rank 0] wait time (avg. per thread and iter): 20297.135155us
+[rank 0] comp time (avg. per thread and iter): 191.450919us
+[rank 0] comm time (avg. per thread and iter): 28027.688410us
+[rank 0] overlap: 0.68%
+[rank 3] post time (avg. per thread and iter): 6657.081645us
+[rank 3] wait time (avg. per thread and iter): 19257.099834us
+[rank 3] comp time (avg. per thread and iter): 195.739347us
+[rank 3] comm time (avg. per thread and iter): 26109.920827us
+[rank 3] overlap: 0.75%
+[rank 1] post time (avg. per thread and iter): 6774.846535us
+[rank 1] wait time (avg. per thread and iter): 19392.542911us
+[rank 1] comp time (avg. per thread and iter): 194.974597us
+[rank 1] comm time (avg. per thread and iter): 26362.364043us
+[rank 1] overlap: 0.74%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1641721  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1641722  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1348761  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1348762  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 732.434213us
+[rank 3] wait time (avg. per thread and iter): 406913.404484us
+[rank 3] comp time (avg. per thread and iter): 182.753554us
+[rank 3] comm time (avg. per thread and iter): 407828.592251us
+[rank 3] overlap: 0.04%
+[rank 0] post time (avg. per thread and iter): 1438.634644us
+[rank 0] wait time (avg. per thread and iter): 269394.706835us
+[rank 0] comp time (avg. per thread and iter): 187.331170us
+[rank 0] comm time (avg. per thread and iter): 271020.672650us
+[rank 0] overlap: 0.07%
+[rank 2] post time (avg. per thread and iter): 221.122465us
+[rank 2] wait time (avg. per thread and iter): 337640.390089us
+[rank 2] comp time (avg. per thread and iter): 121.994934us
+[rank 2] comm time (avg. per thread and iter): 337983.507489us
+[rank 2] overlap: 0.04%
+[rank 1] post time (avg. per thread and iter): 263227.234785us
+[rank 1] wait time (avg. per thread and iter): 113149.392875us
+[rank 1] comp time (avg. per thread and iter): 199.492447us
+[rank 1] comm time (avg. per thread and iter): 376576.120108us
+[rank 1] overlap: 0.05%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1643381  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1643382  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1350704  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1350705  i06r10c05s03  {24,72}
+[rank 1] post time (avg. per thread and iter): 6065.463757us
+[rank 1] wait time (avg. per thread and iter): 4079399.964504us
+[rank 1] comp time (avg. per thread and iter): 185.905297us
+[rank 1] comm time (avg. per thread and iter): 4085651.333558us
+[rank 1] overlap: 0.00%
+[rank 2] post time (avg. per thread and iter): 1625.340314us
+[rank 2] wait time (avg. per thread and iter): 2671799.140315us
+[rank 2] comp time (avg. per thread and iter): 201.019890us
+[rank 2] comm time (avg. per thread and iter): 2673625.500520us
+[rank 2] overlap: 0.01%
+[rank 0] post time (avg. per thread and iter): 486.927180us
+[rank 0] wait time (avg. per thread and iter): 3347945.626683us
+[rank 0] comp time (avg. per thread and iter): 134.760816us
+[rank 0] comm time (avg. per thread and iter): 3348567.314679us
+[rank 0] overlap: 0.00%
+[rank 3] post time (avg. per thread and iter): 2445380.478432us
+[rank 3] wait time (avg. per thread and iter): 1354302.039805us
+[rank 3] comp time (avg. per thread and iter): 168.373172us
+[rank 3] comm time (avg. per thread and iter): 3799850.891409us
+[rank 3] overlap: 0.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1659625  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1659626  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370004  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370005  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 41.785348us
+[rank 0] wait time (avg. per thread and iter): 230.015054us
+[rank 0] comp time (avg. per thread and iter): 187.598353us
+[rank 0] comm time (avg. per thread and iter): 459.398754us
+[rank 0] overlap: 40.84%
+[rank 1] post time (avg. per thread and iter): 42.155760us
+[rank 1] wait time (avg. per thread and iter): 273.683991us
+[rank 1] comp time (avg. per thread and iter): 186.070355us
+[rank 1] comm time (avg. per thread and iter): 501.910106us
+[rank 1] overlap: 37.07%
+[rank 3] post time (avg. per thread and iter): 42.455386us
+[rank 3] wait time (avg. per thread and iter): 258.979852us
+[rank 3] comp time (avg. per thread and iter): 189.391444us
+[rank 3] comm time (avg. per thread and iter): 490.826682us
+[rank 3] overlap: 38.59%
+[rank 2] post time (avg. per thread and iter): 43.067367us
+[rank 2] wait time (avg. per thread and iter): 8.576873us
+[rank 2] comp time (avg. per thread and iter): 201.953961us
+[rank 2] comm time (avg. per thread and iter): 253.598201us
+[rank 2] overlap: 79.64%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1659722  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1659723  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370079  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370080  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 46.062565us
+[rank 3] wait time (avg. per thread and iter): 274.960171us
+[rank 3] comp time (avg. per thread and iter): 207.722206us
+[rank 3] comm time (avg. per thread and iter): 528.744942us
+[rank 3] overlap: 39.29%
+[rank 1] post time (avg. per thread and iter): 47.303505us
+[rank 1] wait time (avg. per thread and iter): 252.113616us
+[rank 1] comp time (avg. per thread and iter): 209.393811us
+[rank 1] comm time (avg. per thread and iter): 508.810932us
+[rank 1] overlap: 41.15%
+[rank 2] post time (avg. per thread and iter): 48.743054us
+[rank 2] wait time (avg. per thread and iter): 236.709319us
+[rank 2] comp time (avg. per thread and iter): 226.400956us
+[rank 2] comm time (avg. per thread and iter): 511.853328us
+[rank 2] overlap: 44.23%
+[rank 0] post time (avg. per thread and iter): 52.989093us
+[rank 0] wait time (avg. per thread and iter): 15.205236us
+[rank 0] comp time (avg. per thread and iter): 245.062702us
+[rank 0] comm time (avg. per thread and iter): 313.257030us
+[rank 0] overlap: 78.23%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1659819  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1659820  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370154  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370155  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 65.327563us
+[rank 0] wait time (avg. per thread and iter): 259.372698us
+[rank 0] comp time (avg. per thread and iter): 256.179166us
+[rank 0] comm time (avg. per thread and iter): 580.879427us
+[rank 0] overlap: 44.10%
+[rank 2] post time (avg. per thread and iter): 77.005853us
+[rank 2] wait time (avg. per thread and iter): 65.499267us
+[rank 2] comp time (avg. per thread and iter): 270.200139us
+[rank 2] comm time (avg. per thread and iter): 412.705259us
+[rank 2] overlap: 65.47%
+[rank 3] post time (avg. per thread and iter): 60.910391us
+[rank 3] wait time (avg. per thread and iter): 223.617648us
+[rank 3] comp time (avg. per thread and iter): 257.238741us
+[rank 3] comm time (avg. per thread and iter): 541.766780us
+[rank 3] overlap: 47.48%
+[rank 1] post time (avg. per thread and iter): 61.874675us
+[rank 1] wait time (avg. per thread and iter): 276.844648us
+[rank 1] comp time (avg. per thread and iter): 254.578288us
+[rank 1] comm time (avg. per thread and iter): 593.297612us
+[rank 1] overlap: 42.91%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1659916  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1659917  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370229  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370230  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 178.601596us
+[rank 0] wait time (avg. per thread and iter): 457.601525us
+[rank 0] comp time (avg. per thread and iter): 249.988413us
+[rank 0] comm time (avg. per thread and iter): 886.191533us
+[rank 0] overlap: 28.21%
+[rank 2] post time (avg. per thread and iter): 176.023613us
+[rank 2] wait time (avg. per thread and iter): 461.134517us
+[rank 2] comp time (avg. per thread and iter): 251.931310us
+[rank 2] comm time (avg. per thread and iter): 889.089441us
+[rank 2] overlap: 28.34%
+[rank 1] post time (avg. per thread and iter): 216.604313us
+[rank 1] wait time (avg. per thread and iter): 364.496844us
+[rank 1] comp time (avg. per thread and iter): 251.246452us
+[rank 1] comm time (avg. per thread and iter): 832.347608us
+[rank 1] overlap: 30.19%
+[rank 3] post time (avg. per thread and iter): 211.949768us
+[rank 3] wait time (avg. per thread and iter): 374.137983us
+[rank 3] comp time (avg. per thread and iter): 255.463942us
+[rank 3] comm time (avg. per thread and iter): 841.551694us
+[rank 3] overlap: 30.36%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1660011  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1660012  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370304  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370305  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 544.005454us
+[rank 2] wait time (avg. per thread and iter): 2354.995298us
+[rank 2] comp time (avg. per thread and iter): 247.582875us
+[rank 2] comm time (avg. per thread and iter): 3146.583626us
+[rank 2] overlap: 7.87%
+[rank 1] post time (avg. per thread and iter): 753.027182us
+[rank 1] wait time (avg. per thread and iter): 2632.761811us
+[rank 1] comp time (avg. per thread and iter): 247.621866us
+[rank 1] comm time (avg. per thread and iter): 3633.410858us
+[rank 1] overlap: 6.82%
+[rank 0] post time (avg. per thread and iter): 661.670000us
+[rank 0] wait time (avg. per thread and iter): 2156.867112us
+[rank 0] comp time (avg. per thread and iter): 257.606445us
+[rank 0] comm time (avg. per thread and iter): 3076.143556us
+[rank 0] overlap: 8.37%
+[rank 3] post time (avg. per thread and iter): 898.582222us
+[rank 3] wait time (avg. per thread and iter): 2575.476008us
+[rank 3] comp time (avg. per thread and iter): 247.609923us
+[rank 3] comm time (avg. per thread and iter): 3721.668153us
+[rank 3] overlap: 6.65%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1660120  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1660121  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370395  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370396  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 5327.421265us
+[rank 0] wait time (avg. per thread and iter): 22530.883762us
+[rank 0] comp time (avg. per thread and iter): 244.312736us
+[rank 0] comm time (avg. per thread and iter): 28102.617763us
+[rank 0] overlap: 0.87%
+[rank 1] post time (avg. per thread and iter): 3079.183721us
+[rank 1] wait time (avg. per thread and iter): 23525.853693us
+[rank 1] comp time (avg. per thread and iter): 255.212672us
+[rank 1] comm time (avg. per thread and iter): 26860.250085us
+[rank 1] overlap: 0.95%
+[rank 2] post time (avg. per thread and iter): 10288.098672us
+[rank 2] wait time (avg. per thread and iter): 17793.561677us
+[rank 2] comp time (avg. per thread and iter): 242.567118us
+[rank 2] comm time (avg. per thread and iter): 28324.227467us
+[rank 2] overlap: 0.86%
+[rank 3] post time (avg. per thread and iter): 3952.462926us
+[rank 3] wait time (avg. per thread and iter): 21288.422365us
+[rank 3] comp time (avg. per thread and iter): 252.971879us
+[rank 3] comm time (avg. per thread and iter): 25493.857170us
+[rank 3] overlap: 0.99%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1660433  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1660434  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1370701  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1370702  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 1890.649912us
+[rank 3] wait time (avg. per thread and iter): 354821.952360us
+[rank 3] comp time (avg. per thread and iter): 322.514479us
+[rank 3] comm time (avg. per thread and iter): 357035.116750us
+[rank 3] overlap: 0.09%
+[rank 0] post time (avg. per thread and iter): 854.151390us
+[rank 0] wait time (avg. per thread and iter): 239731.738801us
+[rank 0] comp time (avg. per thread and iter): 285.476631us
+[rank 0] comm time (avg. per thread and iter): 240871.366821us
+[rank 0] overlap: 0.12%
+[rank 2] post time (avg. per thread and iter): 129.119982us
+[rank 2] wait time (avg. per thread and iter): 307441.438931us
+[rank 2] comp time (avg. per thread and iter): 267.964474us
+[rank 2] comm time (avg. per thread and iter): 307838.523387us
+[rank 2] overlap: 0.09%
+[rank 1] post time (avg. per thread and iter): 153403.173741us
+[rank 1] wait time (avg. per thread and iter): 190636.366833us
+[rank 1] comp time (avg. per thread and iter): 269.045510us
+[rank 1] comm time (avg. per thread and iter): 344308.586083us
+[rank 1] overlap: 0.08%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1661943  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1661944  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1372478  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1372479  i06r10c05s03  {24,72}
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 1372478 RUNNING AT i06r10c05s03
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 1372479 RUNNING AT i06r10c05s03
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1673782  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1673783  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1386525  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1386526  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 41.821091us
+[rank 0] wait time (avg. per thread and iter): 224.423915us
+[rank 0] comp time (avg. per thread and iter): 341.343051us
+[rank 0] comm time (avg. per thread and iter): 607.588058us
+[rank 0] overlap: 56.18%
+[rank 2] post time (avg. per thread and iter): 43.149628us
+[rank 2] wait time (avg. per thread and iter): 3.385291us
+[rank 2] comp time (avg. per thread and iter): 354.472202us
+[rank 2] comm time (avg. per thread and iter): 401.007121us
+[rank 2] overlap: 88.40%
+[rank 1] post time (avg. per thread and iter): 43.344681us
+[rank 1] wait time (avg. per thread and iter): 272.055229us
+[rank 1] comp time (avg. per thread and iter): 327.800900us
+[rank 1] comm time (avg. per thread and iter): 643.200810us
+[rank 1] overlap: 50.96%
+[rank 3] post time (avg. per thread and iter): 41.963504us
+[rank 3] wait time (avg. per thread and iter): 255.405283us
+[rank 3] comp time (avg. per thread and iter): 340.574182us
+[rank 3] comm time (avg. per thread and iter): 637.942969us
+[rank 3] overlap: 53.39%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1673879  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1673880  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1386600  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1386601  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 48.347462us
+[rank 0] wait time (avg. per thread and iter): 207.985996us
+[rank 0] comp time (avg. per thread and iter): 329.143571us
+[rank 0] comm time (avg. per thread and iter): 585.477030us
+[rank 0] overlap: 56.22%
+[rank 2] post time (avg. per thread and iter): 49.973112us
+[rank 2] wait time (avg. per thread and iter): 98.222953us
+[rank 2] comp time (avg. per thread and iter): 341.422295us
+[rank 2] comm time (avg. per thread and iter): 489.618359us
+[rank 2] overlap: 69.73%
+[rank 1] post time (avg. per thread and iter): 46.537033us
+[rank 1] wait time (avg. per thread and iter): 261.426985us
+[rank 1] comp time (avg. per thread and iter): 323.800385us
+[rank 1] comm time (avg. per thread and iter): 631.764403us
+[rank 1] overlap: 51.25%
+[rank 3] post time (avg. per thread and iter): 46.770267us
+[rank 3] wait time (avg. per thread and iter): 319.378731us
+[rank 3] comp time (avg. per thread and iter): 338.045264us
+[rank 3] comm time (avg. per thread and iter): 704.194261us
+[rank 3] overlap: 48.00%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1673974  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1673975  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1386675  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1386676  i06r10c05s03  {24,72}
+[rank 2] post time (avg. per thread and iter): 67.415543us
+[rank 2] wait time (avg. per thread and iter): 79.439923us
+[rank 2] comp time (avg. per thread and iter): 402.660494us
+[rank 2] comm time (avg. per thread and iter): 549.515961us
+[rank 2] overlap: 73.28%
+[rank 0] post time (avg. per thread and iter): 64.791817us
+[rank 0] wait time (avg. per thread and iter): 163.499414us
+[rank 0] comp time (avg. per thread and iter): 372.200794us
+[rank 0] comm time (avg. per thread and iter): 600.492025us
+[rank 0] overlap: 61.98%
+[rank 3] post time (avg. per thread and iter): 63.225133us
+[rank 3] wait time (avg. per thread and iter): 125.023520us
+[rank 3] comp time (avg. per thread and iter): 393.801245us
+[rank 3] comm time (avg. per thread and iter): 582.049898us
+[rank 3] overlap: 67.66%
+[rank 1] post time (avg. per thread and iter): 63.150461us
+[rank 1] wait time (avg. per thread and iter): 110.256095us
+[rank 1] comp time (avg. per thread and iter): 388.612545us
+[rank 1] comm time (avg. per thread and iter): 562.019100us
+[rank 1] overlap: 69.15%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1674069  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1674070  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1386750  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1386751  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 107.762411us
+[rank 0] wait time (avg. per thread and iter): 504.663129us
+[rank 0] comp time (avg. per thread and iter): 385.233886us
+[rank 0] comm time (avg. per thread and iter): 997.659426us
+[rank 0] overlap: 38.61%
+[rank 2] post time (avg. per thread and iter): 114.595877us
+[rank 2] wait time (avg. per thread and iter): 454.548350us
+[rank 2] comp time (avg. per thread and iter): 405.763553us
+[rank 2] comm time (avg. per thread and iter): 974.907780us
+[rank 2] overlap: 41.62%
+[rank 3] post time (avg. per thread and iter): 180.664830us
+[rank 3] wait time (avg. per thread and iter): 349.981090us
+[rank 3] comp time (avg. per thread and iter): 361.833487us
+[rank 3] comm time (avg. per thread and iter): 892.479407us
+[rank 3] overlap: 40.54%
+[rank 1] post time (avg. per thread and iter): 189.573360us
+[rank 1] wait time (avg. per thread and iter): 357.111930us
+[rank 1] comp time (avg. per thread and iter): 352.453253us
+[rank 1] comm time (avg. per thread and iter): 899.138542us
+[rank 1] overlap: 39.20%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1674165  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1674166  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1386827  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1386828  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 406.885835us
+[rank 0] wait time (avg. per thread and iter): 2343.656307us
+[rank 0] comp time (avg. per thread and iter): 370.094350us
+[rank 0] comm time (avg. per thread and iter): 3120.636492us
+[rank 0] overlap: 11.86%
+[rank 3] post time (avg. per thread and iter): 363.399166us
+[rank 3] wait time (avg. per thread and iter): 2825.240997us
+[rank 3] comp time (avg. per thread and iter): 387.522583us
+[rank 3] comm time (avg. per thread and iter): 3576.162746us
+[rank 3] overlap: 10.84%
+[rank 2] post time (avg. per thread and iter): 700.609915us
+[rank 2] wait time (avg. per thread and iter): 1918.113950us
+[rank 2] comp time (avg. per thread and iter): 367.188506us
+[rank 2] comm time (avg. per thread and iter): 2985.912371us
+[rank 2] overlap: 12.30%
+[rank 1] post time (avg. per thread and iter): 542.051902us
+[rank 1] wait time (avg. per thread and iter): 2769.113571us
+[rank 1] comp time (avg. per thread and iter): 357.541620us
+[rank 1] comm time (avg. per thread and iter): 3668.707093us
+[rank 1] overlap: 9.75%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1674357  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1674358  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1386997  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1386998  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 6650.604692us
+[rank 0] wait time (avg. per thread and iter): 19634.284811us
+[rank 0] comp time (avg. per thread and iter): 321.119775us
+[rank 0] comm time (avg. per thread and iter): 26606.009279us
+[rank 0] overlap: 1.21%
+[rank 3] post time (avg. per thread and iter): 1455.543380us
+[rank 3] wait time (avg. per thread and iter): 24183.486404us
+[rank 3] comp time (avg. per thread and iter): 356.718082us
+[rank 3] comm time (avg. per thread and iter): 25995.747865us
+[rank 3] overlap: 1.37%
+[rank 1] post time (avg. per thread and iter): 2466.449198us
+[rank 1] wait time (avg. per thread and iter): 22926.293743us
+[rank 1] comp time (avg. per thread and iter): 347.443617us
+[rank 1] comm time (avg. per thread and iter): 25740.186557us
+[rank 1] overlap: 1.35%
+[rank 2] post time (avg. per thread and iter): 6411.567063us
+[rank 2] wait time (avg. per thread and iter): 19381.344014us
+[rank 2] comp time (avg. per thread and iter): 320.369760us
+[rank 2] comm time (avg. per thread and iter): 26113.280837us
+[rank 2] overlap: 1.23%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1674468  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1674469  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1387138  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1387139  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 39641.524376us
+[rank 3] wait time (avg. per thread and iter): 282270.742445us
+[rank 3] comp time (avg. per thread and iter): 418.018996us
+[rank 3] comm time (avg. per thread and iter): 322330.285818us
+[rank 3] overlap: 0.13%
+[rank 0] post time (avg. per thread and iter): 183.964315us
+[rank 0] wait time (avg. per thread and iter): 251071.398755us
+[rank 0] comp time (avg. per thread and iter): 401.165842us
+[rank 0] comm time (avg. per thread and iter): 251656.528912us
+[rank 0] overlap: 0.16%
+[rank 2] post time (avg. per thread and iter): 158.277641us
+[rank 2] wait time (avg. per thread and iter): 259469.661988us
+[rank 2] comp time (avg. per thread and iter): 420.931052us
+[rank 2] comm time (avg. per thread and iter): 260048.870681us
+[rank 2] overlap: 0.16%
+[rank 1] post time (avg. per thread and iter): 42946.893019us
+[rank 1] wait time (avg. per thread and iter): 278273.275107us
+[rank 1] comp time (avg. per thread and iter): 429.577998us
+[rank 1] comm time (avg. per thread and iter): 321649.746124us
+[rank 1] overlap: 0.13%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1675967  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1675968  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1388850  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1388851  i06r10c05s03  {24,72}
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 1388850 RUNNING AT i06r10c05s03
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 1388851 RUNNING AT i06r10c05s03
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1685321  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1685322  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1399954  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1399955  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 43.922692us
+[rank 3] wait time (avg. per thread and iter): 188.769966us
+[rank 3] comp time (avg. per thread and iter): 1698.421476us
+[rank 3] comm time (avg. per thread and iter): 1931.114134us
+[rank 3] overlap: 87.95%
+[rank 0] post time (avg. per thread and iter): 43.958348us
+[rank 0] wait time (avg. per thread and iter): 155.525904us
+[rank 0] comp time (avg. per thread and iter): 1718.893228us
+[rank 0] comm time (avg. per thread and iter): 1918.377479us
+[rank 0] overlap: 89.60%
+[rank 1] post time (avg. per thread and iter): 40.027359us
+[rank 1] wait time (avg. per thread and iter): 241.983064us
+[rank 1] comp time (avg. per thread and iter): 1648.145065us
+[rank 1] comm time (avg. per thread and iter): 1930.155487us
+[rank 1] overlap: 85.39%
+[rank 2] post time (avg. per thread and iter): 47.189789us
+[rank 2] wait time (avg. per thread and iter): 24.085094us
+[rank 2] comp time (avg. per thread and iter): 1819.948225us
+[rank 2] comm time (avg. per thread and iter): 1891.223109us
+[rank 2] overlap: 96.23%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1685417  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1685418  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1400054  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1400055  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 49.647671us
+[rank 3] wait time (avg. per thread and iter): 157.941370us
+[rank 3] comp time (avg. per thread and iter): 1701.546952us
+[rank 3] comm time (avg. per thread and iter): 1909.135993us
+[rank 3] overlap: 89.13%
+[rank 0] post time (avg. per thread and iter): 51.464022us
+[rank 0] wait time (avg. per thread and iter): 204.976908us
+[rank 0] comp time (avg. per thread and iter): 1634.610285us
+[rank 0] comm time (avg. per thread and iter): 1891.051215us
+[rank 0] overlap: 86.44%
+[rank 1] post time (avg. per thread and iter): 45.559735us
+[rank 1] wait time (avg. per thread and iter): 198.954668us
+[rank 1] comp time (avg. per thread and iter): 1644.090260us
+[rank 1] comm time (avg. per thread and iter): 1888.604664us
+[rank 1] overlap: 87.05%
+[rank 2] post time (avg. per thread and iter): 54.240281us
+[rank 2] wait time (avg. per thread and iter): 17.869992us
+[rank 2] comp time (avg. per thread and iter): 1787.785246us
+[rank 2] comm time (avg. per thread and iter): 1859.895519us
+[rank 2] overlap: 96.12%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1685512  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1685513  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1400129  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1400130  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 77.933891us
+[rank 3] wait time (avg. per thread and iter): 165.814126us
+[rank 3] comp time (avg. per thread and iter): 1667.145978us
+[rank 3] comm time (avg. per thread and iter): 1910.893994us
+[rank 3] overlap: 87.24%
+[rank 0] post time (avg. per thread and iter): 73.202739us
+[rank 0] wait time (avg. per thread and iter): 197.901786us
+[rank 0] comp time (avg. per thread and iter): 1615.794986us
+[rank 0] comm time (avg. per thread and iter): 1886.899512us
+[rank 0] overlap: 85.63%
+[rank 1] post time (avg. per thread and iter): 65.816168us
+[rank 1] wait time (avg. per thread and iter): 203.165053us
+[rank 1] comp time (avg. per thread and iter): 1625.066954us
+[rank 1] comm time (avg. per thread and iter): 1894.048175us
+[rank 1] overlap: 85.80%
+[rank 2] post time (avg. per thread and iter): 75.570815us
+[rank 2] wait time (avg. per thread and iter): 23.421223us
+[rank 2] comp time (avg. per thread and iter): 1766.594903us
+[rank 2] comm time (avg. per thread and iter): 1865.586941us
+[rank 2] overlap: 94.69%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1685609  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1685610  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1400206  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1400207  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 80.410040us
+[rank 0] wait time (avg. per thread and iter): 502.702081us
+[rank 0] comp time (avg. per thread and iter): 1627.076298us
+[rank 0] comm time (avg. per thread and iter): 2210.188419us
+[rank 0] overlap: 73.62%
+[rank 1] post time (avg. per thread and iter): 160.728271us
+[rank 1] wait time (avg. per thread and iter): 445.670356us
+[rank 1] comp time (avg. per thread and iter): 1568.563372us
+[rank 1] comm time (avg. per thread and iter): 2174.961998us
+[rank 1] overlap: 72.12%
+[rank 2] post time (avg. per thread and iter): 112.552547us
+[rank 2] wait time (avg. per thread and iter): 384.080317us
+[rank 2] comp time (avg. per thread and iter): 1763.527633us
+[rank 2] comm time (avg. per thread and iter): 2260.160497us
+[rank 2] overlap: 78.03%
+[rank 3] post time (avg. per thread and iter): 145.945021us
+[rank 3] wait time (avg. per thread and iter): 464.344694us
+[rank 3] comp time (avg. per thread and iter): 1628.124711us
+[rank 3] comm time (avg. per thread and iter): 2238.414426us
+[rank 3] overlap: 72.74%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1685704  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1685705  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1400281  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1400282  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 186.970443us
+[rank 0] wait time (avg. per thread and iter): 2389.733975us
+[rank 0] comp time (avg. per thread and iter): 1635.385070us
+[rank 0] comm time (avg. per thread and iter): 4212.089489us
+[rank 0] overlap: 38.83%
+[rank 1] post time (avg. per thread and iter): 201.130443us
+[rank 1] wait time (avg. per thread and iter): 3007.205160us
+[rank 1] comp time (avg. per thread and iter): 1544.082614us
+[rank 1] comm time (avg. per thread and iter): 4752.418217us
+[rank 1] overlap: 32.49%
+[rank 2] post time (avg. per thread and iter): 163.154614us
+[rank 2] wait time (avg. per thread and iter): 2356.507374us
+[rank 2] comp time (avg. per thread and iter): 1737.497359us
+[rank 2] comm time (avg. per thread and iter): 4257.159347us
+[rank 2] overlap: 40.81%
+[rank 3] post time (avg. per thread and iter): 302.253364us
+[rank 3] wait time (avg. per thread and iter): 2796.302082us
+[rank 3] comp time (avg. per thread and iter): 1525.617092us
+[rank 3] comm time (avg. per thread and iter): 4624.172538us
+[rank 3] overlap: 32.99%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1685809  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1685810  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1400369  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1400370  i06r10c05s03  {24,72}
+[rank 0] post time (avg. per thread and iter): 5732.931049us
+[rank 0] wait time (avg. per thread and iter): 21037.422706us
+[rank 0] comp time (avg. per thread and iter): 1045.791733us
+[rank 0] comm time (avg. per thread and iter): 27816.145487us
+[rank 0] overlap: 3.76%
+[rank 3] post time (avg. per thread and iter): 236.397643us
+[rank 3] wait time (avg. per thread and iter): 25120.395722us
+[rank 3] comp time (avg. per thread and iter): 1550.051827us
+[rank 3] comm time (avg. per thread and iter): 26906.845192us
+[rank 3] overlap: 5.76%
+[rank 1] post time (avg. per thread and iter): 901.173722us
+[rank 1] wait time (avg. per thread and iter): 24048.809059us
+[rank 1] comp time (avg. per thread and iter): 1450.142450us
+[rank 1] comm time (avg. per thread and iter): 26400.125231us
+[rank 1] overlap: 5.49%
+[rank 2] post time (avg. per thread and iter): 6421.059929us
+[rank 2] wait time (avg. per thread and iter): 19477.047878us
+[rank 2] comp time (avg. per thread and iter): 1093.536679us
+[rank 2] comm time (avg. per thread and iter): 26991.644486us
+[rank 2] overlap: 4.05%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1686115  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1686116  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1400675  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1400676  i06r10c05s03  {24,72}
+[rank 3] post time (avg. per thread and iter): 198.366656us
+[rank 3] wait time (avg. per thread and iter): 297869.711582us
+[rank 3] comp time (avg. per thread and iter): 1729.014006us
+[rank 3] comm time (avg. per thread and iter): 299797.092245us
+[rank 3] overlap: 0.58%
+[rank 0] post time (avg. per thread and iter): 198.819671us
+[rank 0] wait time (avg. per thread and iter): 193999.744970us
+[rank 0] comp time (avg. per thread and iter): 1649.246612us
+[rank 0] comm time (avg. per thread and iter): 195847.811252us
+[rank 0] overlap: 0.84%
+[rank 2] post time (avg. per thread and iter): 66.120932us
+[rank 2] wait time (avg. per thread and iter): 267105.242122us
+[rank 2] comp time (avg. per thread and iter): 1695.732871us
+[rank 2] comm time (avg. per thread and iter): 268867.095925us
+[rank 2] overlap: 0.63%
+[rank 1] post time (avg. per thread and iter): 170.683398us
+[rank 1] wait time (avg. per thread and iter): 290254.400870us
+[rank 1] comp time (avg. per thread and iter): 1614.338615us
+[rank 1] comm time (avg. per thread and iter): 292039.422883us
+[rank 1] overlap: 0.55%
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 12  Build 20210429 (id: e380127cb)
+[0] MPI startup(): Copyright (C) 2003-2021 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: psm2
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1687393  i06r10c05s02  {0,48}
+[0] MPI startup(): 1       1687394  i06r10c05s02  {24,72}
+[0] MPI startup(): 2       1402140  i06r10c05s03  {0,48}
+[0] MPI startup(): 3       1402141  i06r10c05s03  {24,72}
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 1687393 RUNNING AT i06r10c05s02
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 1687394 RUNNING AT i06r10c05s02
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================

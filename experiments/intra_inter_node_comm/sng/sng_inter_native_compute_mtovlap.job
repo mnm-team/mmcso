@@ -3,7 +3,7 @@
 #SBATCH -o ./output/%x.%j.out 
 #SBATCH -e ./output/%x.%j.err 
 #SBATCH -D ./
-#SBATCH --time=04:30:00
+#SBATCH --time=10:30:00
 #SBATCH --no-requeue
 #SBATCH --get-user-env
 #SBATCH --account=pn76bu
@@ -14,6 +14,9 @@
 module load slurm_setup
 module load gcc
 module load cmake
+
+export KMP_AFFINITY=verbose
+export I_MPI_DEBUG=4
 
 export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
 #export COMMOFF_THREAD_CPU_ID=0:23,1:23,2:47,3:47
@@ -27,7 +30,7 @@ echo ${CSV_HEADER} > ${CSV_NATIVE}
 
 bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 4 24 48
 
-BENCH="mpiexec -n 4 -rr --bind-to core /dss/dsshome1/0C/di35hef/mmcso/build_impi/bench/mt_overlap"
+BENCH="mpiexec -n 4 /dss/dsshome1/0C/di35hef/mmcso/build_impi/bench/mt_overlap"
 
 for work in 100 1000 10000 100000; do
 	for msg in 1 100 1000 10000 100000 1000000 10000000 100000000; do  
