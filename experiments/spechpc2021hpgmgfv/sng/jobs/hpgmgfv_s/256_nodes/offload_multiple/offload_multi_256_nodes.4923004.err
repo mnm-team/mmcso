@@ -1,0 +1,512 @@
+[libmmcso] : offloading thread affinity on [host i07r11c05s10, rank [libmmcso] : offloading thread affinity on [host i07r11c06s01, rank [libmmcso] : offloading thread affinity on [host i07r10c05s12, rank 493] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c06s07, rank 499] : cpu=47357] : cpu=47
+
+[libmmcso] : offloading thread affinity on [host i07r10c06s04, rank [libmmcso] : offloading thread affinity on [host i07r11c05s05, rank 371] : cpu=47
+482] : cpu=23
+364] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c05s08, rank [libmmcso] : offloading thread affinity on [host i07r10c05s12, rank [libmmcso] : offloading thread affinity on [host i07r11c06s01, rank 356] : cpu=23
+489] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c01s01, rank [libmmcso] : offloading thread affinity on [host i07r10c06s05, rank [libmmcso] : offloading thread affinity on [host i07r09c06s10, rank 498] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s08, rank 237] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c05s08, rank 66] : cpu=[libmmcso] : offloading thread affinity on [host i07r11c06s07, rank [libmmcso] : offloading thread affinity on [host i06r07c06s09, rank [libmmcso] : offloading thread affinity on [host i07r10c06s09, rank [libmmcso] : offloading thread affinity on [host i07r08c06s04, rank [libmmcso] : offloading thread affinity on [host i07r11c05s10, rank [libmmcso] : offloading thread affinity on [host i06r08c01s11, rank 383] : cpu=4723
+511] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r07c05s07, rank [libmmcso] : offloading thread affinity on [host i07r10c06s04, rank 80] : cpu=23
+492] : cpu=23
+15] : cpu=47
+367] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c06s10, rank [libmmcso] : offloading thread affinity on [host i07r08c05s08, rank [libmmcso] : offloading thread affinity on [host i07r11c05s11, rank 29] : cpu=47[libmmcso] : offloading thread affinity on [host i07r10c06s07, rank 236] : cpu=23
+67] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s07, rank [libmmcso] : offloading thread affinity on [host i07r11c05s05, rank 4] : cpu=23
+372] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c06s11, rank [libmmcso] : offloading thread affinity on [host i07r09c05s01, rank [libmmcso] : offloading thread affinity on [host i07r09c02s10, rank 495] : cpu=
+374] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c06s05, rank 194] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c05s12, rank [libmmcso] : offloading thread affinity on [host i07r09c02s05, rank [libmmcso] : offloading thread affinity on [host i07r11c06s04, rank [libmmcso] : offloading thread affinity on [host i06r08c01s09, rank 
+[libmmcso] : offloading thread affinity on [host i07r09c06s06, rank [libmmcso] : offloading thread affinity on [host i07r09c05s10, rank 72] : cpu=23
+135] : cpu=47
+483] : cpu=47
+25] : cpu=47
+365] : cpu=47
+239] : cpu=47[libmmcso] : offloading thread affinity on [host i07r09c05s06, rank [libmmcso] : offloading thread affinity on [host i07r08c06s04, rank 141] : cpu=47
+47
+[libmmcso] : offloading thread affinity on [host i06r07c06s09, rank 370] : cpu=23
+227] : cpu=47
+212] : cpu=23
+81] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s11, rank 504] : cpu=23
+14] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s09, rank 229] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c05s01, rank 130] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c05s08, rank [libmmcso] : offloading thread affinity on [host i07r11c05s08, rank [libmmcso] : offloading thread affinity on [host i06r07c05s07, rank 375] : cpu=47
+
+204] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s09, rank 143] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c04s10, rank 488] : cpu=23
+5] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c01s01, rank [libmmcso] : offloading thread affinity on [host i07r10c01s03, rank [libmmcso] : offloading thread affinity on [host i07r09c06s02, rank 91] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s07, rank 349] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c01s04, rank [libmmcso] : offloading thread affinity on [host i07r11c05s06, rank [libmmcso] : offloading thread affinity on [host i06r08c01s11, rank [libmmcso] : offloading thread affinity on [host i07r10c06s01, rank 195] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c06s03, rank 134] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s08, rank [libmmcso] : offloading thread affinity on [host i07r11c04s02, rank [libmmcso] : offloading thread affinity on [host i07r09c01s05, rank [libmmcso] : offloading thread affinity on [host i07r10c02s09, rank [libmmcso] : offloading thread affinity on [host i07r11c01s12, rank [libmmcso] : offloading thread affinity on [host i07r10c03s03, rank [libmmcso] : offloading thread affinity on [host i07r09c03s12, rank [libmmcso] : offloading thread affinity on [host i07r08c04s10, rank [libmmcso] : offloading thread affinity on [host i07r11c03s04, rank [libmmcso] : offloading thread affinity on [host i07r11c05s07, rank 28] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s08, rank 247] : cpu=220] : cpu=23
+79] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c03s01, rank 328] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s03, rank [libmmcso] : offloading thread affinity on [host i07r09c01s01, rank 99282] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s04, rank [libmmcso] : offloading thread affinity on [host i07r10c03s05, rank 168] : cpu=23
+47] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c03s06, rank [libmmcso] : offloading thread affinity on [host i07r11c06s03, rank [libmmcso] : offloading thread affinity on [host i06r08c01s06, rank 382] : cpu=23
+47
+[libmmcso] : offloading thread affinity on [host i07r09c05s10, rank [libmmcso] : offloading thread affinity on [host i07r08c06s09, rank 147] : cpu=47
+324] : cpu=[libmmcso] : offloading thread affinity on [host i07r11c04s09, rank 104] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c02s07, rank 400] : cpu=23
+291] : cpu=[libmmcso] : offloading thread affinity on [host i07r09c04s03, rank [libmmcso] : offloading thread affinity on [host i06r08c04s01, rank 433] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c06s07, rank 19] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c05s11, rank [libmmcso] : offloading thread affinity on [host i07r09c06s06, rank 213] : cpu=47
+90] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c02s05, rank [libmmcso] : offloading thread affinity on [host i07r10c05s07, rank 452] : cpu=23
+106] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s11, rank 409] : cpu=47
+294] : cpu=23
+174] : cpu=23
+35] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c03s05, rank 485] : cpu=47[libmmcso] : offloading thread affinity on [host i06r08c01s08, rank 359] : cpu=47
+228] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c05s03, rank [libmmcso] : offloading thread affinity on [host i07r08c05s09, rank [libmmcso] : offloading thread affinity on [host i07r09c02s10, rank 23
+455] : cpu=47
+] : cpu=47
+279] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c02s07, rank 47
+[libmmcso] : offloading thread affinity on [host i07r09c04s11, rank [libmmcso] : offloading thread affinity on [host i07r08c04s10, rank 436] : cpu=23
+487] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r07c05s08, rank 373] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c06s11, rank [libmmcso] : offloading thread affinity on [host i07r09c05s12, rank [libmmcso] : offloading thread affinity on [host i07r08c05s09, rank 131] : cpu=47
+346] : cpu=23
+466] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s04, rank 263] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c01s12, rank [libmmcso] : offloading thread affinity on [host i07r10c04s01, rank [libmmcso] : offloading thread affinity on [host i07r09c03s12, rank 46] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c03s03, rank [libmmcso] : offloading thread affinity on [host i07r11c05s11, rank [libmmcso] : offloading thread affinity on [host i06r07c05s10, rank [libmmcso] : offloading thread affinity on [host i07r10c05s11, rank [libmmcso] : offloading thread affinity on [host i07r09c06s05, rank [libmmcso] : offloading thread affinity on [host i07r09c05s03, rank [libmmcso] : offloading thread affinity on [host i07r08c05s12, rank 140] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s09, rank 105] : cpu=47[libmmcso] : offloading thread affinity on [host i07r10c02s09, rank 415] : cpu=47
+311] : cpu=47
+191] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c04s11, rank 435] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c06s03, rank [libmmcso] : offloading thread affinity on [host i06r08c01s08, rank 354] : cpu=23
+238] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c05s06, rank [libmmcso] : offloading thread affinity on [host i07r08c06s03, rank [libmmcso] : offloading thread affinity on [host i07r09c02s11, rank [libmmcso] : offloading thread affinity on [host i07r10c04s11, rank 467] : cpu=47
+
+283] : cpu=47
+401] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c04s02, rank 169] : cpu=47
+48] : cpu=23
+430] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c06s04, rank [libmmcso] : offloading thread affinity on [host i06r08c01s09, rank 355] : cpu=47
+226] : cpu=23
+217] : cpu=47
+68] : cpu=23
+142] : cpu=23
+331] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c04s02, rank [libmmcso] : offloading thread affinity on [host i07r09c01s05, rank [libmmcso] : offloading thread affinity on [host i07r10c02s07, rank [libmmcso] : offloading thread affinity on [host i07r11c01s09, rank [libmmcso] : offloading thread affinity on [host i07r10c03s03, rank [libmmcso] : offloading thread affinity on [host i07r09c04s03, rank [libmmcso] : offloading thread affinity on [host i07r08c04s12, rank [libmmcso] : offloading thread affinity on [host i07r11c03s05, rank 510] : cpu=23
+[libmmcso] : offloading thread affinity on [host i06r07c05s08, rank [libmmcso] : offloading thread affinity on [host i07r10c06s05, rank [libmmcso] : offloading thread affinity on [host i07r09c06s07, rank 199] : cpu=4773] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c03s06, rank [libmmcso] : offloading thread affinity on [host i07r10c04s10, rank 453] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c02s04, rank [libmmcso] : offloading thread affinity on [host i07r10c03s07, rank [libmmcso] : offloading thread affinity on [host i07r09c04s04, rank [libmmcso] : offloading thread affinity on [host i07r08c04s08, rank 434] : cpu=23
+
+10] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s11, rank 230] : cpu=23
+205] : cpu=47
+78] : cpu=23
+157] : cpu=47
+329] : cpu=47
+107] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c02s04, rank 494] : cpu=23
+[libmmcso] : offloading thread affinity on [host i06r07c05s11, rank [libmmcso] : offloading thread affinity on [host i07r10c06s03, rank [libmmcso] : offloading thread affinity on [host i07r10c01s01, rank [libmmcso] : offloading thread affinity on [host i07r09c06s02, rank [libmmcso] : offloading thread affinity on [host i07r09c03s07, rank [libmmcso] : offloading thread affinity on [host i07r10c05s08, rank [libmmcso] : offloading thread affinity on [host i07r11c04s03, rank [libmmcso] : offloading thread affinity on [host i07r09c01s11, rank 278] : cpu=23
+394] : cpu=23
+312] : cpu=23
+175] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c04s12, rank [libmmcso] : offloading thread affinity on [host i07r11c03s04, rank 502] : cpu=23
+23] : cpu=47
+366] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s05, rank 198] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s08, rank [libmmcso] : offloading thread affinity on [host i07r09c03s02, rank 348] : cpu=23
+454] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s09, rank [libmmcso] : offloading thread affinity on [host i07r10c02s01, rank [libmmcso] : offloading thread affinity on [host i07r11c01s10, rank 290] : cpu=23
+176] : cpu=23
+43] : cpu=47
+432] : cpu=23
+505] : cpu=47
+24] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s11, rank [libmmcso] : offloading thread affinity on [host i07r09c06s07, rank 231] : cpu=47
+221] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c06s10, rank 158] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s08, rank [libmmcso] : offloading thread affinity on [host i07r11c04s10, rank 118] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c02s04, rank 408] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c03s05, rank [libmmcso] : offloading thread affinity on [host i07r09c03s09, rank 50] : cpu=[libmmcso] : offloading thread affinity on [host i07r11c03s03, rank 503] : cpu=47
+6] : cpu=[libmmcso] : offloading thread affinity on [host i07r10c06s01, rank [libmmcso] : offloading thread affinity on [host i07r10c01s01, rank 
+69] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c03s01, rank 325] : cpu=47
+[libmmcso] : offloading thread affinity on [host [libmmcso] : offloading thread affinity on [host i07r09c01s09, rank [libmmcso] : offloading thread affinity on [host i07r10c02s01, rank 396] : cpu=23
+298] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c04s05, rank 23
+[libmmcso] : offloading thread affinity on [host i07r11c02s12, rank [libmmcso] : offloading thread affinity on [host i07r11c05s09, rank 12] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s02, rank [libmmcso] : offloading thread affinity on [host i07r10c01s05, rank [libmmcso] : offloading thread affinity on [host i07r09c05s07, rank [libmmcso] : offloading thread affinity on [host i07r08c06s06, rank 148] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s12, rank i07r11c04s10, rank 114] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c02s02, rank [libmmcso] : offloading thread affinity on [host i07r11c01s08, rank [libmmcso] : offloading thread affinity on [host i07r10c04s04, rank 163] : cpu=47
+51] : cpu=47
+431] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c05s07, rank 22] : cpu=23
+363] : cpu=[libmmcso] : offloading thread affinity on [host i07r09c06s09, rank [libmmcso] : offloading thread affinity on [host i07r09c05s07, rank [libmmcso] : offloading thread affinity on [host i07r08c06s07, rank 146] : cpu=23
+333] : cpu=47
+469] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c01s01, rank 273] : cpu=47
+392] : cpu=295] : cpu=47
+178] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c05s03, rank 424] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c05s09, rank 23
+[libmmcso] : offloading thread affinity on [host i07r10c06s06, rank 242] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c05s08, rank 88] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s06, rank [libmmcso] : offloading thread affinity on [host i07r10c05s09, rank 468] : cpu=23
+115] : cpu=47
+267] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c02s01, rank 316] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c04s09, rank [libmmcso] : offloading thread affinity on [host i07r08c04s09, rank [libmmcso] : offloading thread affinity on [host i07r11c03s06, rank [libmmcso] : offloading thread affinity on [host i07r11c05s06, rank [libmmcso] : offloading thread affinity on [host i06r07c05s11, rank 13] : cpu=47
+378] : cpu=23
+250] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c05s05, rank 92] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s07, rank [libmmcso] : offloading thread affinity on [host i07r10c05s07, rank [libmmcso] : offloading thread affinity on [host i07r11c05s02, rank 98] : cpu=23
+268] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s07, rank [libmmcso] : offloading thread affinity on [host i07r10c04s01, rank [libmmcso] : offloading thread affinity on [host i07r09c03s10, rank [libmmcso] : offloading thread affinity on [host i07r08c04s11, rank 437] : cpu=47
+486] : cpu=23
+[libmmcso] : offloading thread affinity on [host i06r08c03s11, rank 358] : cpu=23
+234] : cpu=23
+206] : cpu=23
+85] : cpu=47
+156] : cpu=23
+350] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c05s02, rank [libmmcso] : offloading thread affinity on [host i07r09c01s10, rank 272] : cpu=23
+23
+310] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s11, rank 57] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c02s09, rank 490] : cpu=23
+[libmmcso] : offloading thread affinity on [host i06r07c05s06, rank 361] : cpu=47
+243] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c05s08, rank 86] : cpu=23
+159] : cpu=47
+347] : cpu=47
+476] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s10, rank 266] : cpu=23
+402] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c03s06, rank [libmmcso] : offloading thread affinity on [host i07r09c04s05, rank [libmmcso] : offloading thread affinity on [host i07r08c04s07, rank [libmmcso] : offloading thread affinity on [host i07r11c02s09, rank 484] : cpu=23
+7] : cpu=47
+47
+251] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c05s05, rank [libmmcso] : offloading thread affinity on [host i07r08c06s08, rank [libmmcso] : offloading thread affinity on [host i07r09c03s02, rank [libmmcso] : offloading thread affinity on [host i07r10c05s06, rank 477] : cpu=47
+116] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s09, rank 414] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c03s06187] : cpu=4745] : cpu=418] : cpu=23
+491] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r08c01s06, rank 368] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c06s09, rank 235] : cpu=47
+207] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c06s02, rank [libmmcso] : offloading thread affinity on [host i07r09c02s08, rank [libmmcso] : offloading thread affinity on [host i07r10c04s12, rank [libmmcso] : offloading thread affinity on [host i07r11c04s04, rank 117] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c01s09, rank [libmmcso] : offloading thread affinity on [host i07r11c01s09, rank [libmmcso] : offloading thread affinity on [host i07r10c03s09, rank [libmmcso] : offloading thread affinity on [host i07r09c04s11, rank 190] : cpu=23
+49] : cpu=47
+419] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c06s05, rank [libmmcso] : offloading thread affinity on [host i06r08c01s10, rank [libmmcso] : offloading thread affinity on [host i07r10c06s10, rank [libmmcso] : offloading thread affinity on [host i07r10c01s06, rank 208] : cpu=23
+89] : cpu=47
+149] : cpu=47
+345] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c04s04, rank [libmmcso] : offloading thread affinity on [host i07r09c01s11, rank [libmmcso] : offloading thread affinity on [host i07r10c01s11, rank 395] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c04s02, rank 164] : cpu=23
+40] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s11, rank [libmmcso] : offloading thread affinity on [host i07r11c05s12, rank [libmmcso] : offloading thread affinity on [host i06r08c03s11, rank 379] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c01s03, rank 203] : cpu=47[libmmcso] : offloading thread affinity on [host i07r08c05s11, rank [libmmcso] : offloading thread affinity on [host i07r09c02s08, rank 332] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s11, rank 119] : cpu=47
+258] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c01s03, rank , rank 166] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c04s08, rank [libmmcso] : offloading thread affinity on [host i07r11c03s07, rank [libmmcso] : offloading thread affinity on [host i07r11c06s05, rank [libmmcso] : offloading thread affinity on [host i06r07c05s06, rank [libmmcso] : offloading thread affinity on [host i07r10c06s06, rank [libmmcso] : offloading thread affinity on [host i07r10c01s06, rank 209] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c06s02, rank [libmmcso] : offloading thread affinity on [host i07r09c02s09, rank [libmmcso] : offloading thread affinity on [host i07r10c05s02, rank 456] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s03, rank 262] : cpu=23
+[libmmcso] : offloading thread affinity on [host [libmmcso] : offloading thread affinity on [host i07r10c03s07, rank [libmmcso] : offloading thread affinity on [host i07r09c04s01, rank 47
+[libmmcso] : offloading thread affinity on [host i07r11c02s11, rank [libmmcso] : offloading thread affinity on [host i07r11c05s12, rank 18] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s10, rank 246] : cpu=23
+202] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s10, rank [libmmcso] : offloading thread affinity on [host i07r09c03s04, rank [libmmcso] : offloading thread affinity on [host i07r10c05s06, rank 344] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s11, rank [libmmcso] : offloading thread affinity on [host i07r09c01s03, rank 259] : cpu=47
+[libmmcso] : offloading thread affinity on [host [libmmcso] : offloading thread affinity on [host i07r10c03s09, rank 179] : cpu=47
+42] : cpu=23
+438] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c06s02, rank 27] : cpu=47
+369] : cpu=47
+252] : cpu=23
+
+[libmmcso] : offloading thread affinity on [host i07r08c05s11, rank 136] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c05s02, rank 457] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c01s12[libmmcso] : offloading thread affinity on [host i07r11c01s03, rank 313] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c04s08, rank [libmmcso] : offloading thread affinity on [host i07r08c05s04, rank 422] : cpu=23
+507] : cpu=47
+31] : cpu=47
+377] : cpu=47[libmmcso] : offloading thread affinity on [host i07r09c06s08, rank [libmmcso] : offloading thread affinity on [host i07r09c05s12, rank 77] : cpu=47
+138] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c05s09, rank 470] : cpu=23
+102] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c02s06, rank i07r11c02s01, rank [libmmcso] : offloading thread affinity on [host i07r10c03s04, rank 
+[libmmcso] : offloading thread affinity on [host i06r08c04s01, rank [libmmcso] : offloading thread affinity on [host i07r11c02s12, rank 496] : cpu=23
+3] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c06s03, rank 253] : cpu=47
+216] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s06, rank 84] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s04, rank 336] : cpu=23471] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c01s07, rank [libmmcso] : offloading thread affinity on [host i07r10c02s08, rank 386] : cpu=23
+296] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s09, rank [libmmcso] : offloading thread affinity on [host i07r08c05s01, rank 423] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c06s02, rank 30] : cpu=23
+376] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c06s08, rank [libmmcso] : offloading thread affinity on [host i07r09c06s01, rank 93] : cpu=47
+137] : cpu=47
+351] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c05s01, rank [libmmcso] : offloading thread affinity on [host i07r09c01s12, rank 276] : cpu=23
+403] : cpu=47
+299] : cpu=47
+171] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c05s02, rank 425] : cpu=47
+506] : cpu=23
+2] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c06s12[libmmcso] : offloading thread affinity on [host i07r09c06s12, rank [libmmcso] : offloading thread affinity on [host i07r09c06s01, rank 70] : cpu=23[libmmcso] : offloading thread affinity on [host i07r09c03s03, rank 337] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c05s01, rank [libmmcso] : offloading thread affinity on [host i07r09c02s02, rank i07r10c02s08, rank [libmmcso] : offloading thread affinity on [host i07r11c02s02, rank 302] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c04s04, rank [libmmcso] : offloading thread affinity on [host i07r08c05s04, rank [libmmcso] : offloading thread affinity on [host i07r11c03s01, rank [libmmcso] : offloading thread affinity on [host i07r11c06s06, rank [libmmcso] : offloading thread affinity on [host i06r08c01s05, rank [libmmcso] : offloading thread affinity on [host i07r10c06s02, rank [libmmcso] : offloading thread affinity on [host i07r10c01s04, rank 218] : cpu=23
+76] : cpu=23
+153] : cpu=47
+
+[libmmcso] : offloading thread affinity on [host i07r11c04s05, rank 103] : cpu=47
+281] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c02s03, rank [libmmcso] : offloading thread affinity on [host i07r10c03s04, rank [libmmcso] : offloading thread affinity on [host i07r09c04s06, rank 34] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c03s08, rank 497] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r07c05s09, rank 362] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s07, rank 219] : cpu=47
+71] : cpu=47
+151] : cpu=47[libmmcso] : offloading thread affinity on [host 474] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s07, rank 280] : cpu=23
+387] : cpu=297] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c04s07, rank 53] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c03s01, rank 501] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r08c01s05, rank 
+232] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c05s02, rank 
+152] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s11, rank [libmmcso] : offloading thread affinity on [host i07r11c04s08, rank , rank [libmmcso] : offloading thread affinity on [host i07r10c03s01, rank [libmmcso] : offloading thread affinity on [host i07r11c01s08, rank 303] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c04s08, rank [libmmcso] : offloading thread affinity on [host i07r08c05s02, rank [libmmcso] : offloading thread affinity on [host i07r11c03s02, rank 509] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r08c01s10, rank [libmmcso] : offloading thread affinity on [host i07r10c06s12, rank [libmmcso] : offloading thread affinity on [host i07r09c06s12, rank [libmmcso] : offloading thread affinity on [host i07r09c05s02, rank [libmmcso] : offloading thread affinity on [host i07r08c06s01, rank [libmmcso] : offloading thread affinity on [host i07r09c02s12, rank [libmmcso] : offloading thread affinity on [host i07r10c05s05, rank 475] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s02, rank [libmmcso] : offloading thread affinity on [host i07r10c02s02, rank [libmmcso] : offloading thread affinity on [host i07r11c02s02, rank [libmmcso] : offloading thread affinity on [host i07r10c04s03, rank 162] : cpu=23
+58] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c03s08, rank 500] : cpu=23
+[libmmcso] : offloading thread affinity on [host i06r07c05s09, rank 360] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s04, rank [libmmcso] : offloading thread affinity on [host i07r09c06s03, rank [libmmcso] : offloading thread affinity on [host i07r08c06s01, rank 
+[libmmcso] : offloading thread affinity on [host i07r10c04s09, rank [libmmcso] : offloading thread affinity on [host i07r11c04s01, rank 110] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c03s01, rank 407] : cpu=[libmmcso] : offloading thread affinity on [host i07r10c04s04, rank [libmmcso] : offloading thread affinity on [host i07r09c04s01[libmmcso] : offloading thread affinity on [host i07r08c05s06, rank [libmmcso] : offloading thread affinity on [host i07r11c03s11, rank [libmmcso] : offloading thread affinity on [host i07r11c06s06, rank 17] : cpu=47
+, rank [libmmcso] : offloading thread affinity on [host i07r10c01s07, rank 196] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s07, rank [libmmcso] : offloading thread affinity on [host i07r09c02s12, rank 330] : cpu=23
+459] : cpu=47
+120] : cpu=23
+269] : cpu=47
+47
+[libmmcso] : offloading thread affinity on [host i07r10c04s05, rank 177] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c04s07, rank 427] : cpu=47
+508] : cpu=23
+26] : cpu=23
+380] : cpu=23
+233] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c05s11, rank [libmmcso] : offloading thread affinity on [host i07r08c06s11, rank 144] : cpu=23
+i07r10c05s05, rank 342] : cpu=23[libmmcso] : offloading thread affinity on [host i07r11c04s08, rank 124] : cpu=286] : cpu=23
+393] : cpu=47
+292] : cpu=23
+180] : cpu=23
+54] : cpu=[libmmcso] : offloading thread affinity on [host i07r11c03s02, rank [libmmcso] : offloading thread affinity on [host i07r11c05s04, rank 8] : cpu=23
+381] : cpu=47
+240] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c06s03, rank 74] : cpu=23
+145] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c04s09, rank [libmmcso] : offloading thread affinity on [host i07r11c05s03, rank 111] : cpu=47
+287] : cpu=47
+404] : cpu=23
+314] : cpu=23
+183] : cpu=47[libmmcso] : offloading thread affinity on [host i07r08c05s03, rank 440] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c05s04, rank 16] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c05s10, rank 248] : cpu=23
+197] : cpu=47
+87] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s06, rank 343] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c04s01, rank 121] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c02s05, rank 47
+317] : cpu=47
+184] : cpu=23
+59] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c03s10, rank 480] : cpu=23
+9] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c05s10, rank 254] : cpu=23
+214] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s11, rank [libmmcso] : offloading thread affinity on [host i07r09c02s06, rank 133] : cpu=47
+326] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s06, rank 23
+[libmmcso] : offloading thread affinity on [host i07r10c02s06, rank 405] : cpu=47
+319] : cpu=47
+, rank [libmmcso] : offloading thread affinity on [host i07r08c05s06, rank [libmmcso] : offloading thread affinity on [host i07r11c03s11, rank 481] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r08c01s07, rank 352] : cpu=23
+241] : cpu=47
+222] : cpu=2375] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s09, rank 
+464] : cpu=23
+125] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c02s05, rank [libmmcso] : offloading thread affinity on [host i07r11c01s04, rank 293] : cpu=47
+
+[libmmcso] : offloading thread affinity on [host i06r08c03s12, rank 32] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s10, rank [libmmcso] : offloading thread affinity on [host i06r08c01s07, rank 353] : cpu=47
+249] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c05s11, rank 215] : cpu=47
+94] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s03, rank 327] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c05s03, rank [libmmcso] : offloading thread affinity on [host i07r09c01s06, rank 277] : cpu=47
+389] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c03s08, rank 185] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c04s05, rank 426] : cpu=23
+21] : cpu=47
+255] : cpu=47
+223] : cpu=47
+95] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c03s05, rank [libmmcso] : offloading thread affinity on [host i07r10c05s01, rank 450] : cpu=23
+109] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c01s10, rank [libmmcso] : offloading thread affinity on [host i07r11c02s06, rank [libmmcso] : offloading thread affinity on [host i07r10c03s08, rank 170] : cpu=23
+41] : cpu=47
+428] : cpu=2320] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s02, rank [libmmcso] : offloading thread affinity on [host i07r09c05s09, rank [libmmcso] : offloading thread affinity on [host i07r08c06s05, rank 132] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c05s01, rank 460] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s06, rank 274] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c01s10, rank [libmmcso] : offloading thread affinity on [host i07r10c04s05, rank [libmmcso] : offloading thread affinity on [host i07r09c03s11, rank [libmmcso] : offloading thread affinity on [host i07r08c04s09, rank [libmmcso] : offloading thread affinity on [host i07r11c03s07, rank [libmmcso] : offloading thread affinity on [host i06r07c05s10, rank [libmmcso] : offloading thread affinity on [host i07r10c01s02, rank 
+[libmmcso] : offloading thread affinity on [host i07r08c06s05, rank 139] : cpu=47
+334] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s07, rank [libmmcso] : offloading thread affinity on [host i07r09c02s03, rank [libmmcso] : offloading thread affinity on [host i07r10c01s10, rank 413] : cpu=47
+300] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c04s09, rank 186] : cpu=23
+23
+441] : cpu=47
+11] : cpu=47
+244] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c05s04, rank 82] : cpu=23
+150] : cpu=23
+335] : cpu=47
+465] : cpu=47
+108] : cpu=23
+275] : cpu=47
+397] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c03s10, rank 167] : cpu=47
+56] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c03s10, rank 245] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c05s09, rank 83] : cpu=47
+155] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c05s04, rank 478] : cpu=23
+127] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c02s10, rank [libmmcso] : offloading thread affinity on [host i07r11c02s03, rank 318] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s08, rank 62] : cpu=23446] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c06s04, rank 201] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c05s07[libmmcso] : offloading thread affinity on [host i07r09c03s05, rank 340] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c03s12, rank 449] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s01, rank 261] : cpu=47
+406] : cpu=23
+301] : cpu=47
+161] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c04s05, rank [libmmcso] : offloading thread affinity on [host i07r11c02s10, rank 224] : cpu=23
+210] : cpu=23
+, rank 154] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c05s04, rank 451] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c01s02, rank [libmmcso] : offloading thread affinity on [host i07r10c02s10, rank [libmmcso] : offloading thread affinity on [host i07r11c01s07, rank [libmmcso] : offloading thread affinity on [host i07r10c03s10, rank [libmmcso] : offloading thread affinity on [host i07r09c04s10, rank 44] : cpu=23
+429] : cpu=47
+[libmmcso] : offloading thread affinity on [host [libmmcso] : offloading thread affinity on [host i07r09c06s04, rank 225] : cpu=47
+211] : cpu=47
+64] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c02s04, rank 129] : cpu=47
+341] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c04s05, rank [libmmcso] : offloading thread affinity on [host i07r09c02s01, rank 260] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s05, rank 304] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c04s06, rank 55] : cpu=47
+439] : cpu=47
+i06r07c05s05, rank [libmmcso] : offloading thread affinity on [host i07r09c05s04, rank [libmmcso] : offloading thread affinity on [host i07r08c05s07, rank 65] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c02s04, rank 128] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s07, rank [libmmcso] : offloading thread affinity on [host i07r11c04s06, rank 461] : cpu=47
+100] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s12, rank [libmmcso] : offloading thread affinity on [host i07r11c01s04, rank 305] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c04s07, rank 63] : cpu=47
+444] : cpu=23
+0] : cpu=23
+200] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s07[libmmcso] : offloading thread affinity on [host i07r11c04s07, rank [libmmcso] : offloading thread affinity on [host i07r09c01s08, rank 284] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c01s07, rank [libmmcso] : offloading thread affinity on [host i07r10c03s11, rank 306] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c04s10, rank 36] : cpu=23
+447] : cpu=47
+[libmmcso] : offloading thread affinity on [host i06r07c05s05, rank [libmmcso] : offloading thread affinity on [host i07r09c04s12, rank , rank [libmmcso] : offloading thread affinity on [host i07r11c04s12, rank 122] : cpu=23
+285] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r11c01s11, rank [libmmcso] : offloading thread affinity on [host i07r10c03s11, rank 307] : cpu=47
+181] : cpu=47
+
+421] : cpu=47
+1] : cpu=[libmmcso] : offloading thread affinity on [host i07r09c04s12, rank 323] : cpu=47
+479] : cpu=47
+113] : cpu=47265] : cpu=47
+410] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c04s03, rank 182] : cpu=23
+37] : cpu=47
+
+47
+192] : cpu=23
+322] : cpu=23
+458] : cpu=23
+123] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c02s03, rank 388] : cpu=23
+315] : cpu=47
+188] : cpu=23
+[libmmcso] : offloading thread affinity on [host i06r08c03s12, rank 33] : cpu=47
+445] : cpu=47
+193] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c05s03, rank 463] : cpu=47
+
+[libmmcso] : offloading thread affinity on [host i07r10c02s03, rank 391] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c03s12, rank 189] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c04s06, rank 420] : cpu=23
+338] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c04s12, rank [libmmcso] : offloading thread affinity on [host i07r09c02s03, rank 271] : cpu=47[libmmcso] : offloading thread affinity on [host i07r11c02s05, rank 411] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c03s12, rank 309] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r09c04s02, rank [libmmcso] : offloading thread affinity on [host i07r08c04s06, rank [libmmcso] : offloading thread affinity on [host i07r11c03s09, rank [libmmcso] : offloading thread affinity on [host i07r10c05s03, rank 339] : cpu=47
+462] : cpu=23
+126] : cpu=23
+
+390] : cpu=23
+308] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c03s08, rank 160] : cpu=23
+38] : cpu=[libmmcso] : offloading thread affinity on [host [libmmcso] : offloading thread affinity on [host i07r10c04s06, rank 472] : cpu=[libmmcso] : offloading thread affinity on [host i07r09c01s02, rank 270] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s06, rank [libmmcso] : offloading thread affinity on [host i07r10c03s02[libmmcso] : offloading thread affinity on [host i07r09c03s10, rank 23
+i07r11c03s09, rank 321] : cpu=47
+473] : cpu=47
+101] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c01s08, rank 399] : cpu=47
+, rank [libmmcso] : offloading thread affinity on [host i07r09c04s02, rank 39] : cpu=47
+443] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r10c04s06, rank 320] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r09c01s08, rank 257] : cpu=47
+412] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c03s02, rank 165] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c05s01, rank 442] : cpu=23
+23
+[libmmcso] : offloading thread affinity on [host i07r11c03s12, rank 112] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r10c01s12, rank [libmmcso] : offloading thread affinity on [host i07r11c01s11, rank 288] : cpu=23
+172] : cpu=23
+52] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c02s08448] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r08c06s12264] : cpu=23
+398] : cpu=23
+289] : cpu=47
+173] : cpu=47
+[libmmcso] : offloading thread affinity on [host i07r08c05s05, rank , rank , rank [libmmcso] : offloading thread affinity on [host i07r10c01s08, rank [libmmcso] : offloading thread affinity on [host i07r11c01s02, rank [libmmcso] : offloading thread affinity on [host i07r08c05s05, rank [libmmcso] : offloading thread affinity on [host i07r11c02s08, rank [libmmcso] : offloading thread affinity on [host 256] : cpu=23
+[libmmcso] : offloading thread affinity on [host i07r11c01s02, rank 61] : cpu=47
+416] : cpu=23
+i07r08c06s12, rank 384] : cpu=23
+60] : cpu=23
+417] : cpu=47
+96] : cpu=23
+385] : cpu=47
+97] : cpu=47
