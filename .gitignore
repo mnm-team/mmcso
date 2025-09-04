@@ -2,3 +2,5 @@ build
 test
 .vscode
 .unused
+./experiments/osu-micro-benchmarks/osu-micro-benchmarks-7.5.1
+.DS_Store
