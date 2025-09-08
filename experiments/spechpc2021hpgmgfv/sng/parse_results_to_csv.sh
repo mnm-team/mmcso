@@ -1,20 +1,25 @@
 #!/bin/sh
 
 # echo "--------------------------------------"
-echo bench,nodes,conf,mode,tcore_default,tresid_default,tcore_offload,tresid_offload
+echo bench,nodes,conf,tcore_funneled,tresid_funneled,tcore_multiple,tresid_multiple,tcore_offload,tresid_offload
 # echo "--------------------------------------"
 
 for bench in hpgmgfv_t hpgmgfv_s hpgmgfv_m; do
     if [ $bench = hpgmgfv_t ]; then
         # echo "HPC Spec 534.hpgmgfv_t "
-        for nodes in 1 2 4 8 16 32 64; do
+        for nodes in 1 2 4 8 16 32 64 128; do
+            funneled=./data/spectimes-funneled-$bench-$nodes-nodes-conf-1.txt
+            multiple=./data/spectimes-native-$bench-$nodes-nodes-conf-1.txt
+            offload=./data/spectimes-offload-$bench-$nodes-nodes-conf-1.txt
 
-            default=./data/spectimes-native-hpgmgfv_t-$nodes-nodes-conf-1.txt
-            offload=./data/spectimes-offload-hpgmgfv_t-$nodes-nodes-conf-1.txt
-                
-            if [ -e $default ]; then
-                tcore_default=$(awk -F'Core time:' '{ printf "%s",$2 }' $default)
-                tresid_default=$(awk -F'Resid time:' '{ printf "%s",$2 }' $default)
+            if [ -e $funneled ]; then
+                tcore_funneled=$(awk -F'Core time:' '{ printf "%s",$2 }' $funneled)
+                tresid_funneled=$(awk -F'Resid time:' '{ printf "%s",$2 }' $funneled)
+            fi
+
+            if [ -e $multiple ]; then
+                tcore_multiple=$(awk -F'Core time:' '{ printf "%s",$2 }' $multiple)
+                tresid_multiple=$(awk -F'Resid time:' '{ printf "%s",$2 }' $multiple)
             fi
 
             if [ -e $offload ]; then
@@ -22,8 +27,8 @@ for bench in hpgmgfv_t hpgmgfv_s hpgmgfv_m; do
                 tresid_offload=$(awk -F'Resid time:' '{ printf "%s",$2 }' $offload)
             fi
 
-            if [ -e $default ]; then
-                printf "%s,%d,%d,%s,%f,%f,%f,%f\n" $bench $nodes 1 multiple $tcore_default $tresid_default $tcore_offload $tresid_offload
+            if [ -e $funneled ]; then
+                printf "%s,%d,%d,%f,%f,%f,%f,%f,%f\n" $bench $nodes 1 $tcore_funneled $tresid_funneled $tcore_multiple $tresid_multiple $tcore_offload $tresid_offload
             fi
         done
     fi
@@ -31,12 +36,18 @@ for bench in hpgmgfv_t hpgmgfv_s hpgmgfv_m; do
     if [ $bench = hpgmgfv_s ]; then
         # echo "HPC Spec 634.hpgmgfv_s"
         for nodes in 4 8 16 32 64 128 256 512; do
-            default=./data/spectimes-native-hpgmgfv_s-$nodes-nodes-conf-1.txt
-            offload=./data/spectimes-offload-hpgmgfv_s-$nodes-nodes-conf-1.txt
+            funneled=./data/spectimes-funneled-$bench-$nodes-nodes-conf-1.txt
+            multiple=./data/spectimes-native-$bench-$nodes-nodes-conf-1.txt
+            offload=./data/spectimes-offload-$bench-$nodes-nodes-conf-1.txt
                 
-            if [ -e $default ]; then
-                tcore_default=$(awk -F'Core time:' '{ printf "%s",$2 }' $default)
-                tresid_default=$(awk -F'Resid time:' '{ printf "%s",$2 }' $default)
+            if [ -e $funneled ]; then
+                tcore_funneled=$(awk -F'Core time:' '{ printf "%s",$2 }' $funneled)
+                tresid_funneled=$(awk -F'Resid time:' '{ printf "%s",$2 }' $funneled)
+            fi
+
+            if [ -e $multiple ]; then
+                tcore_multiple=$(awk -F'Core time:' '{ printf "%s",$2 }' $multiple)
+                tresid_multiple=$(awk -F'Resid time:' '{ printf "%s",$2 }' $multiple)
             fi
 
             if [ -e $offload ]; then
@@ -44,8 +55,8 @@ for bench in hpgmgfv_t hpgmgfv_s hpgmgfv_m; do
                 tresid_offload=$(awk -F'Resid time:' '{ printf "%s",$2 }' $offload)
             fi
 
-            if [ -e $default ]; then
-                printf "%s,%d,%d,%s,%f,%f,%f,%f\n" $bench $nodes 1 multiple $tcore_default $tresid_default $tcore_offload $tresid_offload
+            if [ -e $funneled ]; then
+                printf "%s,%d,%d,%f,%f,%f,%f,%f,%f\n" $bench $nodes 1 $tcore_funneled $tresid_funneled $tcore_multiple $tresid_multiple $tcore_offload $tresid_offload
             fi
         done
     fi
@@ -53,12 +64,18 @@ for bench in hpgmgfv_t hpgmgfv_s hpgmgfv_m; do
     if [ $bench = hpgmgfv_m ]; then
         # echo "HPC Spec 734.hpgmgfv_m"
         for nodes in 64 128 256 512; do
-            default=./data/spectimes-native-hpgmgfv_m-$nodes-nodes-conf-1.txt
-            offload=./data/spectimes-offload-hpgmgfv_m-$nodes-nodes-conf-1.txt
+            funneled=./data/spectimes-funneled-$bench-$nodes-nodes-conf-1.txt
+            multiple=./data/spectimes-native-$bench-$nodes-nodes-conf-1.txt
+            offload=./data/spectimes-offload-$bench-$nodes-nodes-conf-1.txt
                 
-            if [ -e $default ]; then
-                tcore_default=$(awk -F'Core time:' '{ printf "%s",$2 }' $default)
-                tresid_default=$(awk -F'Resid time:' '{ printf "%s",$2 }' $default)
+            if [ -e $funneled ]; then
+                tcore_funneled=$(awk -F'Core time:' '{ printf "%s",$2 }' $funneled)
+                tresid_funneled=$(awk -F'Resid time:' '{ printf "%s",$2 }' $funneled)
+            fi
+
+            if [ -e $multiple ]; then
+                tcore_multiple=$(awk -F'Core time:' '{ printf "%s",$2 }' $multiple)
+                tresid_multiple=$(awk -F'Resid time:' '{ printf "%s",$2 }' $multiple)
             fi
 
             if [ -e $offload ]; then
@@ -66,8 +83,8 @@ for bench in hpgmgfv_t hpgmgfv_s hpgmgfv_m; do
                 tresid_offload=$(awk -F'Resid time:' '{ printf "%s",$2 }' $offload)
             fi
 
-            if [ -e $default ]; then
-                printf "%s,%d,%d,%s,%f,%f,%f,%f\n" $bench $nodes 1 multiple $tcore_default $tresid_default $tcore_offload $tresid_offload
+            if [ -e $funneled ]; then
+                printf "%s,%d,%d,%f,%f,%f,%f,%f,%f\n" $bench $nodes 1 $tcore_funneled $tresid_funneled $tcore_multiple $tresid_multiple $tcore_offload $tresid_offload
             fi
         done
     fi

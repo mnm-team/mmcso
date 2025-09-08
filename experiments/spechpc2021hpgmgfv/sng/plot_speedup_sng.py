@@ -28,28 +28,24 @@ def plot_bench_line(df, bench, ax):
     
 
 def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
+
     df = df.loc[df['bench'] == bench]
     df = df.loc[df['conf'] == conf]
     
     if bench == 'hpgmgfv_t':
-        df = df.loc[df['nodes'] <= 64]
+        df = df.loc[df['nodes'] <= 128]
     elif bench == 'hpgmgfv_s':
         df = df.loc[df['nodes'] >= 4]
     elif bench == 'hpgmgfv_m':
         df = df.loc[df['nodes'] >= 64]
     
-    df = df[['bench', 'conf', 'mode', 'nodes', 't_default', 't_offload']]
+    df = df[['bench', 'conf', 'nodes', 't_funneled', 't_multiple', 't_offload', 
+             'speedup_offload_vs_funneled', 'speedup_offload_vs_multiple']]
     
     # df = pd.merge(df.loc[df['mode'] == 'multiple'],
     #               on = ['conf', 'nodes', 'bench'],
     #               suffixes = ['_funneled', '_multiple']
     #               )
-    
-    # df['speedup_default_multiple'] = df['t_default_funneled'] / df['t_default_multiple']
-    # df['speedup_offload_multiple'] = df['t_default_funneled'] / df['t_offload_multiple']
-    # df['speedup_default_funneled'] = df['t_default_funneled'] / df['t_default_funneled']
-    # df['speedup_offload_funneled'] = df['t_default_funneled'] / df['t_offload_funneled']
-    df['speedup_offload'] = df['t_default'] / df['t_offload']
     
     dfg = df.groupby(['bench', 'conf'])
     
@@ -68,7 +64,8 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
         bar = gp.plot(kind='bar', x='nodes', y=[
             # 'speedup_default_funneled', 
             # 'speedup_offload_funneled', 
-            't_default', 
+            't_funneled',
+            't_multiple',
             't_offload'
             # 'speedup_offload'
             ], 
@@ -76,7 +73,7 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
             grid=True,
             rot=0,
             position=position,
-            color={'t_default' : 'darkorange', 't_offload' : 'darkgreen'}
+            color={'t_funneled':'darkorange', 't_multiple':'blue', 't_offload':'darkgreen'}
             )
         # gp.plot(x='nodes', y='speedup_offload', ax=ax_twin)
         # print(bar)
@@ -84,7 +81,8 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
         
         # ax.bar_label(ax.containers[1], labels=labels, fontsize=7) #, padding=-4.0)
     
-    ax_twin.plot(ax_twin_x_range, df['speedup_offload'], color='red', marker="^", linewidth=1.25)
+    ax_twin.plot(ax_twin_x_range, df['speedup_offload_vs_funneled'], color='black', marker="^", linewidth=1.25)
+    ax_twin.plot(ax_twin_x_range, df['speedup_offload_vs_multiple'], color='red', marker="*", linewidth=1.25)
     if plot_idx == num_benches - 1:
         ax_twin.set_ylabel('Speedup')
     ax_twin.set_ylim(0, 2.5)
@@ -108,14 +106,20 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
     ax.legend().set_visible(False)
     # ax.hlines(y=1.0, xmin=df['msg_size'].min(), xmax=df['msg_size'].max(), color='darkgrey')
 
-df = pd.read_csv('sng_spechpc_hpgmgfv.csv')
+# ------------------------------------------------
+# Plot the figures
+# ------------------------------------------------
+
+df = pd.read_csv('sng_spechpc_hpgmgfv_updated.csv')
 
 # df = df[df['conf'] != 2]
 # df = df[df['mode'] == 'multiple']
 
-df['t_default'] = (df['tcore_default'] + df['tresid_default'])
+df['t_funneled'] = (df['tcore_funneled'] + df['tresid_funneled'])
+df['t_multiple'] = (df['tcore_multiple'] + df['tresid_multiple'])
 df['t_offload'] = (df['tcore_offload'] + df['tresid_offload'])
-df['speedup'] = (df['t_default']) / (df['t_offload'])
+df['speedup_offload_vs_funneled'] = (df['t_funneled']) / (df['t_offload'])
+df['speedup_offload_vs_multiple'] = (df['t_multiple']) / (df['t_offload'])
 
 # benchmarks = df['bench'].unique()
 # benchmarks = ['534.hpgmgfv_t', '634.hpgmgfv_s', '734.hpgmgfv_m']
@@ -131,7 +135,8 @@ for i, bench in enumerate(benchmarks):
     plot_bench_bar(df, bench, 1, axs[i], num_benches, i)
     # plot_bench_bar(df, bench, 3, axs[i][1])
 
-legend_labels = ['Multiple', 'Multiple+Offload']
+legend_labels = ['Funneled', 'Multiple', 'Offload']
+legend_labels_speedup = ['Offload vs. Funneled', 'Offload vs. Multiple']
 # legend_labels = ['Funneled', 'Multiple', 'Multiple\n+ Offload']
 # legend_labels = ['Funneled', 'Funneled + Offload', 'Multiple', 'Multiple + Offload']
 axs[2].legend(labels=legend_labels, handles=axs[0].get_legend().legend_handles, 
@@ -142,7 +147,7 @@ axs[2].legend(labels=legend_labels, handles=axs[0].get_legend().legend_handles,
                                 frameon=True,
                                 framealpha=0.8,
                                 # title=f'Hawk {bench}',
-                                title='MPI Mode'
+                                title='Methods'
                                 # bbox_to_anchor=(0.2, 0.0)
                                 )
 

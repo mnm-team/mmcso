@@ -55,7 +55,7 @@ def plot_bench_bar(df, bench, conf, ax):
     
     position = 0.5
     
-    for (b,c), gp in dfg:
+    for (b, c), gp in dfg:
         bar = gp.plot(kind='bar', x='nodes', y=[
             # 'speedup_default_funneled', 
             # 'speedup_offload_funneled', 
