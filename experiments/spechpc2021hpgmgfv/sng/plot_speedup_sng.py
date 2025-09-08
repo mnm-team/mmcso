@@ -2,31 +2,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def plot_bench_line(df, bench, ax):
-    df = df[df['bench'] == bench]
-    dfg = df.groupby(['bench', 'conf', 'mode'])
-    
-    print(df.to_latex())
-
-    # legend_labels = [f'{b} conf={c} mode={m}' for (b,c,m) in dfg.groups]
-    legend_labels = [f'conf={c} mode={m}' for (b,c,m) in dfg.groups]
-    for (b,c,m), gp in dfg:
-        # gp.plot(x='nodes', y='speedup', ax=ax)
-        gp.plot(x='nodes', y='speedup', ax=ax, logx=True)
-        # gp.plot(x='nodes', y=['t_default', 't_offload'], ax=ax, logx=True)
-        # gp.plot(x='nodes', y=['t_default', 't_offload'], ax=ax, logx=True, logy=True)
-        
-    ax.legend(labels=legend_labels, # handles=ax.get_legend().legend_handles[0:], 
-                                    loc='best',
-                                    ncol=1,
-                                    labelspacing=0.5,
-                                    markerscale=1.5,
-                                    frameon=True,
-                                    framealpha=0.8,
-                                    title=f'Hawk {bench}'
-                                    )
-    
-
 def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
 
     df = df.loc[df['bench'] == bench]
@@ -58,6 +33,7 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
     # add the twin axis
     ax_twin = ax.twinx()
     ax_twin_x_range = np.arange(len(df['nodes']))
+    ax_twin.hlines(y=1.0, xmin=-0.5, xmax=7.5, color='darkgrey', linestyle='--')
     # print("Check ax_twin_y_range: ", ax_twin_x_range)
 
     for (b, c), gp in dfg:
@@ -104,7 +80,8 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
     # ax.set_ylim(0, 900)
     
     ax.legend().set_visible(False)
-    # ax.hlines(y=1.0, xmin=df['msg_size'].min(), xmax=df['msg_size'].max(), color='darkgrey')
+    
+    return ax_twin
 
 # ------------------------------------------------
 # Plot the figures
@@ -125,31 +102,41 @@ df['speedup_offload_vs_multiple'] = (df['t_multiple']) / (df['t_offload'])
 # benchmarks = ['534.hpgmgfv_t', '634.hpgmgfv_s', '734.hpgmgfv_m']
 benchmarks = ['hpgmgfv_t', 'hpgmgfv_s', 'hpgmgfv_m']
 
-# fig, axs = plt.subplots(len(benchmarks), 1, figsize=(16, 9), sharex=True, sharey=True)
-fig, axs = plt.subplots(1, len(benchmarks), figsize=(15, 5), sharex=False, sharey=True, constrained_layout=False)
 num_benches = len(benchmarks)
+fig, axs = plt.subplots(1, num_benches, figsize=(15, 5), sharex=False, sharey=True, constrained_layout=False)
+
+axs_twin = []
 
 for i, bench in enumerate(benchmarks):
     # print(i, bench)
     # plot_bench_line(df, bench, axs[i])
-    plot_bench_bar(df, bench, 1, axs[i], num_benches, i)
+    twin = plot_bench_bar(df, bench, 1, axs[i], num_benches, i)
+    axs_twin = axs_twin + [twin]
     # plot_bench_bar(df, bench, 3, axs[i][1])
+    
+# remove y-axis except in right subplot
+for ax in axs_twin[:-1]:
+    ax.get_yaxis().set_visible(False)
 
 legend_labels = ['Funneled', 'Multiple', 'Offload']
 legend_labels_speedup = ['Offload vs. Funneled', 'Offload vs. Multiple']
 # legend_labels = ['Funneled', 'Multiple', 'Multiple\n+ Offload']
 # legend_labels = ['Funneled', 'Funneled + Offload', 'Multiple', 'Multiple + Offload']
+
 axs[2].legend(labels=legend_labels, handles=axs[0].get_legend().legend_handles, 
-                                loc='center right',
+                                loc='lower right',
                                 ncol=1,
                                 labelspacing=0.5,
                                 markerscale=1.5,
                                 frameon=True,
                                 framealpha=0.8,
                                 # title=f'Hawk {bench}',
-                                title='Methods'
+                                title='Communication Mode'
                                 # bbox_to_anchor=(0.2, 0.0)
                                 )
+
+axs_twin[2].legend(labels=legend_labels_speedup + ['dummy'], title='Speedup')
+axs_twin[2].legend(labels=legend_labels_speedup, handles=axs_twin[2].get_legend().legend_handles[1:], title='Speedup')
 
 axs[2].set_xlim(axs[1].get_xlim())
 axs[2].set_xticks(axs[1].get_xticks())
@@ -163,7 +150,7 @@ axs[2].set_xticks(axs[1].get_xticks())
 # fig.supylabel('Execution Time (s)')
 fig.supxlabel('Nodes', y=0.03)
 
-fig.suptitle(f'SNG: Intel Skylake Xeon Platinum 8174 | 72 Cores per Node')
+fig.suptitle(f'SNG: Intel Skylake Xeon Platinum 8174 | 48 Cores per Node')
     
 plt.tight_layout(pad=1.0, w_pad=0.5, h_pad=1.0)
 # plt.subplots_adjust(top=0.90)
