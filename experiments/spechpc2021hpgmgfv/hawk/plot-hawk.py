@@ -59,7 +59,8 @@ def plot_bench_bar(df, bench, conf, ax):
             grid=True,
             rot=0,
             position=position,
-            color={'t_default_funneled':'darkorange', 't_default_multiple':'blue', 't_offload_multiple':'darkgreen'}
+            # logy=True,
+            color={'t_default_funneled':'#f4a582', 't_default_multiple':'#92c5de', 't_offload_multiple':'black'}
             )
     
     """
@@ -71,8 +72,8 @@ def plot_bench_bar(df, bench, conf, ax):
     ax_twin = ax.twinx()
     ax_twin_x_range = range(len(df['nodes']))
     ax_twin.hlines(y=1.0, xmin=-0.5, xmax=7.5, color='darkgrey', linestyle='--')
-    ax_twin.plot(ax_twin_x_range, df['speedup_offload_funneled'], color='black', marker="^", linewidth=1.25)
-    ax_twin.plot(ax_twin_x_range, df['speedup_offload_multiple'], color='red', marker="*", linewidth=1.25)
+    ax_twin.plot(ax_twin_x_range, df['speedup_offload_funneled'], color='#ca0020', marker="^", linewidth=1.25)
+    ax_twin.plot(ax_twin_x_range, df['speedup_offload_multiple'], color='#0571b0', marker="*", linewidth=1.25)
     ax_twin.set_ylim(0, 2.5)
     
     ax.set_xlabel('')
@@ -98,7 +99,6 @@ def plot_bench_bar(df, bench, conf, ax):
                                     markerscale=1.5,
                                     frameon=True,
                                     framealpha=0.8,
-                                    # title=f'Hawk {bench}',
                                     title='Communication Mode'
                                     # bbox_to_anchor=(0.2, 0.0)
                                     )

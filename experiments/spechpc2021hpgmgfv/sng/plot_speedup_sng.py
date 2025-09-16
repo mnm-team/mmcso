@@ -49,7 +49,8 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
             grid=True,
             rot=0,
             position=position,
-            color={'t_funneled':'darkorange', 't_multiple':'blue', 't_offload':'darkgreen'}
+            # logy=True,
+            color={'t_funneled':'#f4a582', 't_multiple':'#92c5de', 't_offload':'black'}
             )
         # gp.plot(x='nodes', y='speedup_offload', ax=ax_twin)
         # print(bar)
@@ -57,8 +58,8 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
         
         # ax.bar_label(ax.containers[1], labels=labels, fontsize=7) #, padding=-4.0)
     
-    ax_twin.plot(ax_twin_x_range, df['speedup_offload_vs_funneled'], color='black', marker="^", linewidth=1.25)
-    ax_twin.plot(ax_twin_x_range, df['speedup_offload_vs_multiple'], color='red', marker="*", linewidth=1.25)
+    ax_twin.plot(ax_twin_x_range, df['speedup_offload_vs_funneled'], color='#ca0020', marker="^", linewidth=1.25)
+    ax_twin.plot(ax_twin_x_range, df['speedup_offload_vs_multiple'], color='#0571b0', marker="*", linewidth=1.25)
     if plot_idx == num_benches - 1:
         ax_twin.set_ylabel('Speedup')
     ax_twin.set_ylim(0, 2.5)
