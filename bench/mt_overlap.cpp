@@ -54,12 +54,17 @@ int main(int argc, char *argv[])
     int provided;
     MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &provided);
 
-    assert(provided == MPI_THREAD_MULTIPLE);
-
     int rank;
     int num_procs;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
+
+    if(provided != MPI_THREAD_MULTIPLE) {
+        if(rank == 0) {
+            fprintf(stderr, "Provided thread support level below MPI_THREAD_MULTIPLE. Abort...\n");
+        }
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
     const char *csv_file_default = "bench.csv";
 
