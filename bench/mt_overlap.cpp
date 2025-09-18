@@ -15,24 +15,21 @@
 #include <unistd.h>
 
 struct alignas(CLSIZE) measurement {
-    double post_time = 0.0;
-    double wait_time = 0.0;
-    double comp_time = 0.0;
-    double comm_time = 0.0;
+    double post_time{0.0};
+    double wait_time{0.0};
+    double comp_time{0.0};
+    double comm_time{0.0};
 };
 
-#define ARRAY_SIZE 1000000000
-
+#if USE_MEMORY_INTENSIVE_WORK
+#define ARRAY_SIZE 500000000 // 500MB
 thread_local char *a{nullptr};
 thread_local char *b{nullptr};
 
-#if USE_MEMORY_INTENSIVE_WORK
 static void do_work(int work)
 {
     work = 10 * work;
-
-    static int i = 0;
-
+    thread_local static int i{0};
     if (i + work > ARRAY_SIZE) {
         i = 0;
     }
@@ -43,7 +40,7 @@ static void do_work(int work)
 static void do_work(int work)
 {
     struct timespec ts{};
-    ts.tv_sec = 0; 
+    ts.tv_sec  = 0;
     ts.tv_nsec = work;
     nanosleep(&ts, NULL);
 }
@@ -59,8 +56,8 @@ int main(int argc, char *argv[])
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
 
-    if(provided != MPI_THREAD_MULTIPLE) {
-        if(rank == 0) {
+    if (provided != MPI_THREAD_MULTIPLE) {
+        if (rank == 0) {
             fprintf(stderr, "Provided thread support level below MPI_THREAD_MULTIPLE. Abort...\n");
         }
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
@@ -127,24 +124,30 @@ int main(int argc, char *argv[])
 #pragma omp parallel
     {
         int thread_id = omp_get_thread_num();
-        
-        size_t num_pages = ((msg_size * sizeof(int) + PAGESIZE - 1) / PAGESIZE) * PAGESIZE;
-        assert(num_pages % PAGESIZE == 0);
-        int *sendbuf = (int *)aligned_alloc(PAGESIZE, num_pages);
-        int *recvbuf = (int *)aligned_alloc(PAGESIZE, num_pages);
+
+        size_t num_pages  = ((msg_size * sizeof(int) + PAGESIZE - 1) / PAGESIZE);
+        size_t alloc_size = num_pages * PAGESIZE;
+
+        int *sendbuf = (int *)aligned_alloc(PAGESIZE, alloc_size);
+        int *recvbuf = (int *)aligned_alloc(PAGESIZE, alloc_size);
         if (!sendbuf || !recvbuf) {
             perror("aligned_alloc");
             exit(EXIT_FAILURE);
         }
 
-        num_pages = ((ARRAY_SIZE + PAGESIZE - 1) / PAGESIZE) * PAGESIZE;
-        assert(num_pages % PAGESIZE == 0);
-        a = (char *)aligned_alloc(PAGESIZE, num_pages);
-        b = (char *)aligned_alloc(PAGESIZE, num_pages);
+#if USE_MEMORY_INTENSIVE_WORK
+        num_pages  = ((ARRAY_SIZE + PAGESIZE - 1) / PAGESIZE);
+        alloc_size = num_pages * PAGESIZE;
+
+        a = (char *)aligned_alloc(PAGESIZE, alloc_size);
+        b = (char *)aligned_alloc(PAGESIZE, alloc_size);
         if (!a || !b) {
             perror("aligned_alloc");
             exit(EXIT_FAILURE);
         }
+        memset(a, 0x0, alloc_size);
+        memset(b, 0x0, alloc_size);
+#endif
 
         for (int i = 0; i < msg_size; ++i) {
             sendbuf[i] = thread_id + i;
@@ -189,8 +192,6 @@ int main(int argc, char *argv[])
 #pragma omp barrier
 
 #if !defined(NDEBUG)
-            // assert(status_s.MPI_SOURCE == rank);
-            // assert(status_s.MPI_TAG == thread_id);
             int count;
             MPI_Get_count(&status_r, MPI_INT, &count);
             assert(status_r.MPI_SOURCE == rank_recv);
@@ -203,13 +204,14 @@ int main(int argc, char *argv[])
 #endif
 
 #pragma omp barrier
-
         }
         free(sendbuf);
         free(recvbuf);
 
+#if USE_MEMORY_INTENSIVE_WORK
         free(a);
         free(b);
+#endif
     } // parallel region end
 
     // MPI_Barrier(MPI_COMM_WORLD);

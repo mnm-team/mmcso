@@ -6,7 +6,7 @@ project(
     mmcso
     VERSION 0.2
     LANGUAGES CXX
-    DESCRIPTION "Multithreaded MPI software communication offloading library."
+    DESCRIPTION "Multithreaded MPI communication software offloading library."
     )
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
@@ -14,7 +14,6 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
-# set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD 20)
 
 if(NOT CMAKE_BUILD_TYPE)
