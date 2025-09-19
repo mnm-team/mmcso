@@ -135,5 +135,5 @@ if __name__ == '__main__':
     
     plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=0.5)
     plt.subplots_adjust(top=0.90)
-    plt.savefig(f'./overhead_microbench_sng.pdf')
-    print("Saved figure to ./overhead_microbench_sng.pdf")
+    plt.savefig(f'./overhead_microbench_only_sng.pdf')
+    print("Saved figure to ./overhead_microbench_only_sng.pdf")

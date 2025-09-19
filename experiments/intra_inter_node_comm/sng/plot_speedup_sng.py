@@ -84,7 +84,7 @@ def plot_speedup(df, ax, title, is_mem):
     else:
         # ax.set_title(title)
         legend_labels = [f"{work} ns" for work in dfg.groups]
-        ax.set_ylabel('Speedup (sleep)')
+        ax.set_ylabel('Speedup')
         
     ax.legend(handles=ax.get_legend().legend_handles[0:], labels=legend_labels,
                                  loc='best',
