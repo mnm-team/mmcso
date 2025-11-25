@@ -7,10 +7,8 @@ This is an interposition library implementation of the software offloading conce
 Compiling: (requires CMake v3.12+)
 
 ```bash
-mkdir -p build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
-cmake --build . -j
-cd ..
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
 ```
 
 This will create the shared library *libmmc.so* in `build/lib`.
@@ -24,6 +22,7 @@ Using the library requires either preloading *libmmc.so*, or linking *libmmc.so*
 # Preload libmmc.so
 export LD_PRELOAD={PATH TO LIBMMCSO}/libmmc.so
 # Run MPI application
+mpirun <APP>
 ```
 
 ### Thread affinity
