@@ -3,6 +3,8 @@
 #include <functional> // std::invoke
 #include <utility>    // std::move, std::swap
 
+#include <cstddef>    // std::byte
+
 #include "mpi.h"
 
 template <std::size_t Size, std::size_t Align = 8ul>
