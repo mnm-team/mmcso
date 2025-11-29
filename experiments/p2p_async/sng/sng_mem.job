@@ -1,0 +1,98 @@
+#!/bin/bash
+#SBATCH -J test
+#SBATCH -o ./output/%x.%j.out 
+#SBATCH -e ./output/%x.%j.err 
+#SBATCH -D ./
+#SBATCH --time=00:30:00
+#SBATCH --no-requeue
+#SBATCH --get-user-env
+#SBATCH --account=pr58ci
+#SBATCH --partition=test
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=2
+
+module load slurm_setup
+
+module unload intel-oneapi-compilers
+module load cmake gcc intel-mpi/2019-gcc
+
+PREFIX=${HOME}/mmcso/
+
+export KMP_AFFINITY=verbose
+export I_MPI_DEBUG=4
+export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
+export OMP_DISPLAY_AFFINITY=true
+export OMP_NUM_THREADS=23
+
+CSV_HEADER=rank,nthreads,thread,rep,work,msg_size,post_time,wait_time,comp_time,comm_time
+
+# bash ${PREFIX}/experiments/affinity_setup.sh 4 24 48
+
+# using round-robin placement: rank0:node0,rank1:node1,rank2:node0,rank3:node1
+BENCH="mpiexec -n 4 -rr ${PREFIX}/build/bench/mt_overlap_mem"
+export MMCSO_THREAD_AFFINITY=0:23,1:23,2:47,3:47
+export MMCSO_DISPLAY_AFFINITY=1
+
+do_bench()
+{
+        echo ${CSV_HEADER} > ${CSV_FILE}
+        # for work in 100 1000 10000 100000; do
+        for work in 500 5000 50000 500000; do
+                REP=5000
+                for msg in 1 10 100 1000; do
+                        ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+                done
+                REP=500
+                for msg in 10000 100000; do
+                        ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+                done
+                REP=100
+                for msg in 1000000 10000000; do
+                        ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+                done
+                REP=20
+                for msg in 100000000; do
+                        ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+                done
+        done
+}
+
+# native
+CSV_FILE="result/sng-2-4-default-mem.csv"
+# do_bench
+
+# offload
+CSV_FILE="result/sng-2-4-offload-mem.csv"
+export LD_PRELOAD=${PREFIX}/build/lib/libmmc.so
+# do_bench
+
+# async
+CSV_FILE="result/sng-2-4-async-mem.csv"
+export LD_PRELOAD=
+# see https://www.intel.com/content/www/us/en/docs/mpi-library/developer-guide-linux/2021-6/asynchronous-progress-control.html
+export I_MPI_ASYNC_PROGRESS=1
+export I_MPI_ASYNC_PROGRESS_THREADS=1
+export I_MPI_ASYNC_PROGRESS_PIN=23,23,47,47
+BENCH="mpiexec -n 4 -rr ${PREFIX}/build/bench/mt_overlap_mem -a"
+# do_bench
+
+# MPI_THREAD_SPLIT model (Intel: multiple endpoints)
+# export I_MPI_THREAD_SPLIT=1
+#
+# NOTE: needs to recompile benchmark with:
+# export I_MPI_LINK=opt_mt
+#
+# see https://www.intel.com/content/www/us/en/docs/mpi-library/developer-guide-linux/2021-6/mpi-thread-split-programming-model.html
+
+# thread split
+CSV_FILE="result/sng-2-4-default-split-mem.csv"
+export I_MPI_ASYNC_PROGRESS=0
+export I_MPI_THREAD_SPLIT=1
+BENCH="mpiexec -n 4 -rr ${PREFIX}/build/bench/mt_overlap_mem_split"
+# do_bench
+
+# thread split + async
+CSV_FILE="result/sng-2-4-split-async-mem.csv"
+export I_MPI_ASYNC_PROGRESS=1
+BENCH="mpiexec -n 4 -rr ${PREFIX}/build/bench/mt_overlap_mem_split -a"
+do_bench
