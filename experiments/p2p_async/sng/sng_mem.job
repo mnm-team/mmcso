@@ -85,7 +85,7 @@ BENCH="mpiexec -n 4 -rr ${PREFIX}/build/bench/mt_overlap_mem -a"
 # see https://www.intel.com/content/www/us/en/docs/mpi-library/developer-guide-linux/2021-6/mpi-thread-split-programming-model.html
 
 # thread split
-CSV_FILE="result/sng-2-4-default-split-mem.csv"
+CSV_FILE="result/sng-2-4-split-default-mem.csv"
 export I_MPI_ASYNC_PROGRESS=0
 export I_MPI_THREAD_SPLIT=1
 BENCH="mpiexec -n 4 -rr ${PREFIX}/build/bench/mt_overlap_mem_split"
