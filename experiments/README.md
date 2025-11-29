@@ -22,17 +22,17 @@
     + libmmc.so integration mode (LD_PRELOAD)
 
 - Benchmarks and Applications:
-    + Synthetic microbenchmarks for intra/inter communiation, and adjustable workloads
+    + Synthetic microbenchmarks for P2P inter-node communiation, and adjustable workloads
     + Realistic application: Cardiac Electrophysiology Simulation
 
-### 1. Intra- and Inter-Node Communication Performance
+### 1. Inter-Node Communication Performance
 - Intra-Communication: NUMA 0 <-> NUMA 1 (same node)
-- Inter-Communication: UMA 0 (node A) <-> NUMA 0 (node B), and NUMA 1 (node A) <-> NUMA 1 (node B)
+- Inter-Communication: NUMA 0 (node A) <-> NUMA 0 (node B), and NUMA 1 (node A) <-> NUMA 1 (node B)
 - Goal: Assess baseline communication performance and how libmmc.so handles thread-aware traffic across NUMA and node boundaries.
 - Experiment Detail:
     + For workload 0 100 10000 1000000
         + For varied message sizes (small, medium, large)
-    + 2 figures: one with intel mpi on intel node; one with cray mpi on amd node (Line charts with message size on X, overhead/overlap_percentage on Y). Subplots for intra-node vs inter-node
+    + 2 figures: one with intel mpi on intel node; one with cray mpi on amd node (Line charts with message size on X, overhead/overlap_percentage on Y).
 - Discussion:
     + Highlight how libmmc.so affects contention on intra-node communication
     + How offloading performs across networked nodes under NUMA isolation

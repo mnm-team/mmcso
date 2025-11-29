@@ -70,6 +70,32 @@ int main(int argc, char *argv[])
     int   msg_size = 1;
     int   rep      = 20000;
     char *csv_file = (char *)csv_file_default;
+    bool intel_async{false};
+
+    int opt;
+    while ((opt = getopt(argc, argv, "m:r:f:w:a")) != -1) {
+        switch (opt) {
+        case 'a':
+            intel_async = true;
+            break;
+        case 'm':
+            msg_size = atoi(optarg);
+            break;
+        case 'f':
+            csv_file = optarg;
+            break;
+        case 'r':
+            rep = atoi(optarg);
+            break;
+        case 'w':
+            work = atoi(optarg);
+            break;
+        default: /* '?' */
+                 // usage:
+            fprintf(stderr, "Usage: %s [-m message size] [-w work] [-r repetitions] [-f csv file]\n", argv[0]);
+            exit(EXIT_FAILURE);
+        }
+    }
 
     MPI_Info info;
     MPI_Info_create(&info);
@@ -77,6 +103,11 @@ int main(int argc, char *argv[])
     MPI_Info_set(info, "mpi_assert_no_any_source", "true");
     MPI_Info_set(info, "mpi_assert_exact_length", "true");
     MPI_Info_set(info, "mpi_assert_allow_overtaking", "true");
+    if(intel_async) {
+        MPI_Info_set(info, "thread_id", "0"); // for using 1 Intel async progress thread
+        // see:
+        // https://www.intel.com/content/www/us/en/docs/mpi-library/developer-guide-linux/2021-16/async-progress-sample-c.html
+    }
     MPI_Comm_set_info(MPI_COMM_WORLD, info);
     MPI_Info_free(&info);
 
@@ -86,28 +117,6 @@ int main(int argc, char *argv[])
     for (int i = 0; i < nthreads; ++i) {
         if (MPI_Comm_dup(MPI_COMM_WORLD, &communicators[i]) != MPI_SUCCESS) {
             fprintf(stderr, "MPI_Comm_dup\n");
-        }
-    }
-
-    int opt;
-    while ((opt = getopt(argc, argv, "m:r:f:w:")) != -1) {
-        switch (opt) {
-        case 'r':
-            rep = atoi(optarg);
-            break;
-        case 'm':
-            msg_size = atoi(optarg);
-            break;
-        case 'f':
-            csv_file = optarg;
-            break;
-        case 'w':
-            work = atoi(optarg);
-            break;
-        default: /* '?' */
-                 // usage:
-            fprintf(stderr, "Usage: %s [-m message size] [-w work] [-r repetitions] [-f csv file]\n", argv[0]);
-            exit(EXIT_FAILURE);
         }
     }
 
