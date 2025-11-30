@@ -15,24 +15,21 @@
 #include <unistd.h>
 
 struct alignas(CLSIZE) measurement {
-    double post_time = 0.0;
-    double wait_time = 0.0;
-    double comp_time = 0.0;
-    double comm_time = 0.0;
+    double post_time{0.0};
+    double wait_time{0.0};
+    double comp_time{0.0};
+    double comm_time{0.0};
 };
 
-#define ARRAY_SIZE 1000000000
-
+#if USE_MEMORY_INTENSIVE_WORK
+#define ARRAY_SIZE 500000000 // 500MB
 thread_local char *a{nullptr};
 thread_local char *b{nullptr};
 
-#if USE_MEMORY_INTENSIVE_WORK
 static void do_work(int work)
 {
     work = 10 * work;
-
-    static int i = 0;
-
+    thread_local static int i{0};
     if (i + work > ARRAY_SIZE) {
         i = 0;
     }
@@ -43,7 +40,7 @@ static void do_work(int work)
 static void do_work(int work)
 {
     struct timespec ts{};
-    ts.tv_sec = 0; 
+    ts.tv_sec  = 0;
     ts.tv_nsec = work;
     nanosleep(&ts, NULL);
 }
@@ -54,12 +51,17 @@ int main(int argc, char *argv[])
     int provided;
     MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &provided);
 
-    assert(provided == MPI_THREAD_MULTIPLE);
-
     int rank;
     int num_procs;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
+
+    if (provided != MPI_THREAD_MULTIPLE) {
+        if (rank == 0) {
+            fprintf(stderr, "Provided thread support level below MPI_THREAD_MULTIPLE. Abort...\n");
+        }
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
     const char *csv_file_default = "bench.csv";
 
@@ -68,6 +70,32 @@ int main(int argc, char *argv[])
     int   msg_size = 1;
     int   rep      = 20000;
     char *csv_file = (char *)csv_file_default;
+    bool intel_async{false};
+
+    int opt;
+    while ((opt = getopt(argc, argv, "m:r:f:w:a")) != -1) {
+        switch (opt) {
+        case 'a':
+            intel_async = true;
+            break;
+        case 'm':
+            msg_size = atoi(optarg);
+            break;
+        case 'f':
+            csv_file = optarg;
+            break;
+        case 'r':
+            rep = atoi(optarg);
+            break;
+        case 'w':
+            work = atoi(optarg);
+            break;
+        default: /* '?' */
+                 // usage:
+            fprintf(stderr, "Usage: %s [-m message size] [-w work] [-r repetitions] [-f csv file]\n", argv[0]);
+            exit(EXIT_FAILURE);
+        }
+    }
 
     MPI_Info info;
     MPI_Info_create(&info);
@@ -75,6 +103,11 @@ int main(int argc, char *argv[])
     MPI_Info_set(info, "mpi_assert_no_any_source", "true");
     MPI_Info_set(info, "mpi_assert_exact_length", "true");
     MPI_Info_set(info, "mpi_assert_allow_overtaking", "true");
+    if(intel_async) {
+        MPI_Info_set(info, "thread_id", "0"); // for using 1 Intel async progress thread
+        // see:
+        // https://www.intel.com/content/www/us/en/docs/mpi-library/developer-guide-linux/2021-16/async-progress-sample-c.html
+    }
     MPI_Comm_set_info(MPI_COMM_WORLD, info);
     MPI_Info_free(&info);
 
@@ -84,28 +117,6 @@ int main(int argc, char *argv[])
     for (int i = 0; i < nthreads; ++i) {
         if (MPI_Comm_dup(MPI_COMM_WORLD, &communicators[i]) != MPI_SUCCESS) {
             fprintf(stderr, "MPI_Comm_dup\n");
-        }
-    }
-
-    int opt;
-    while ((opt = getopt(argc, argv, "m:r:f:w:")) != -1) {
-        switch (opt) {
-        case 'r':
-            rep = atoi(optarg);
-            break;
-        case 'm':
-            msg_size = atoi(optarg);
-            break;
-        case 'f':
-            csv_file = optarg;
-            break;
-        case 'w':
-            work = atoi(optarg);
-            break;
-        default: /* '?' */
-                 // usage:
-            fprintf(stderr, "Usage: %s [-m message size] [-w work] [-r repetitions] [-f csv file]\n", argv[0]);
-            exit(EXIT_FAILURE);
         }
     }
 
@@ -122,24 +133,30 @@ int main(int argc, char *argv[])
 #pragma omp parallel
     {
         int thread_id = omp_get_thread_num();
-        
-        size_t num_pages = ((msg_size * sizeof(int) + PAGESIZE - 1) / PAGESIZE) * PAGESIZE;
-        assert(num_pages % PAGESIZE == 0);
-        int *sendbuf = (int *)aligned_alloc(PAGESIZE, num_pages);
-        int *recvbuf = (int *)aligned_alloc(PAGESIZE, num_pages);
+
+        size_t num_pages  = ((msg_size * sizeof(int) + PAGESIZE - 1) / PAGESIZE);
+        size_t alloc_size = num_pages * PAGESIZE;
+
+        int *sendbuf = (int *)aligned_alloc(PAGESIZE, alloc_size);
+        int *recvbuf = (int *)aligned_alloc(PAGESIZE, alloc_size);
         if (!sendbuf || !recvbuf) {
             perror("aligned_alloc");
             exit(EXIT_FAILURE);
         }
 
-        num_pages = ((ARRAY_SIZE + PAGESIZE - 1) / PAGESIZE) * PAGESIZE;
-        assert(num_pages % PAGESIZE == 0);
-        a = (char *)aligned_alloc(PAGESIZE, num_pages);
-        b = (char *)aligned_alloc(PAGESIZE, num_pages);
+#if USE_MEMORY_INTENSIVE_WORK
+        num_pages  = ((ARRAY_SIZE + PAGESIZE - 1) / PAGESIZE);
+        alloc_size = num_pages * PAGESIZE;
+
+        a = (char *)aligned_alloc(PAGESIZE, alloc_size);
+        b = (char *)aligned_alloc(PAGESIZE, alloc_size);
         if (!a || !b) {
             perror("aligned_alloc");
             exit(EXIT_FAILURE);
         }
+        memset(a, 0x0, alloc_size);
+        memset(b, 0x0, alloc_size);
+#endif
 
         for (int i = 0; i < msg_size; ++i) {
             sendbuf[i] = thread_id + i;
@@ -184,8 +201,6 @@ int main(int argc, char *argv[])
 #pragma omp barrier
 
 #if !defined(NDEBUG)
-            // assert(status_s.MPI_SOURCE == rank);
-            // assert(status_s.MPI_TAG == thread_id);
             int count;
             MPI_Get_count(&status_r, MPI_INT, &count);
             assert(status_r.MPI_SOURCE == rank_recv);
@@ -198,13 +213,14 @@ int main(int argc, char *argv[])
 #endif
 
 #pragma omp barrier
-
         }
         free(sendbuf);
         free(recvbuf);
 
+#if USE_MEMORY_INTENSIVE_WORK
         free(a);
         free(b);
+#endif
     } // parallel region end
 
     // MPI_Barrier(MPI_COMM_WORLD);

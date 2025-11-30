@@ -10,11 +10,11 @@ colors = ['darkorange', 'darkgreen', 'mediumvioletred', 'darkblue', 'orange', 'r
 
 colors_by_comm = {
     # (intra, offload)
-    (False, False): 'darkorange',
-    (False, True): 'orange',
+    (False, False): 'darkgreen',
+    (False, True): 'red',
     # (inter, offload)
-    (True, False): 'darkgreen',
-    (True, True): 'forestgreen',
+    (True, False): 'darkorange',
+    (True, True): 'darkblue',
     # 16: 'blue',
     # (23, True): 'mediumvioletred',
     # (23, False): 'violet'
@@ -48,7 +48,7 @@ def plot_overhead(df, ax, is_mem, title):
 
     ax.legend(legend_labels,
                 loc='upper left',
-                ncol=3,
+                ncol=2,
                 labelspacing=0.5,
                 markerscale=1.5,
                 frameon=True,
@@ -136,8 +136,7 @@ if __name__ == '__main__':
     plot_overhead(df_compute_intra_inter, axs[1], False, subtitle_sng)
     
     # fig.suptitle(f'Overhead on SNG: Intra- and Inter-Node Communication')
-
-    
+    axs[0].set_ylabel('Overhead (ns)')
     
     plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=0.5)
     plt.subplots_adjust(top=0.90)

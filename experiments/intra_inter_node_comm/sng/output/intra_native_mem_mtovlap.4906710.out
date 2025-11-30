@@ -1,0 +1,244 @@
+Placing MMCSO Threads in 2 MPI processes on each 24th Core of each Node with total 48 Cores
+MMCSO_THREAD_AFFINITY=0:23,1:47
+[rank 1] post time (avg. per thread and iter): 64.284495us
+[rank 1] wait time (avg. per thread and iter): 99.343211us
+[rank 1] comp time (avg. per thread and iter): 5.061907us
+[rank 1] comm time (avg. per thread and iter): 168.689613us
+[rank 1] overlap: 3.00%
+[rank 0] post time (avg. per thread and iter): 64.561752us
+[rank 0] wait time (avg. per thread and iter): 113.100512us
+[rank 0] comp time (avg. per thread and iter): 5.077154us
+[rank 0] comm time (avg. per thread and iter): 182.739418us
+[rank 0] overlap: 2.78%
+[rank 1] post time (avg. per thread and iter): 76.174083us
+[rank 1] wait time (avg. per thread and iter): 117.893868us
+[rank 1] comp time (avg. per thread and iter): 5.351381us
+[rank 1] comm time (avg. per thread and iter): 199.419331us
+[rank 1] overlap: 2.68%
+[rank 0] post time (avg. per thread and iter): 76.415247us
+[rank 0] wait time (avg. per thread and iter): 107.559350us
+[rank 0] comp time (avg. per thread and iter): 5.333049us
+[rank 0] comm time (avg. per thread and iter): 189.307646us
+[rank 0] overlap: 2.82%
+[rank 0] post time (avg. per thread and iter): 98.957254us
+[rank 0] wait time (avg. per thread and iter): 132.777929us
+[rank 0] comp time (avg. per thread and iter): 5.712205us
+[rank 0] comm time (avg. per thread and iter): 237.447387us
+[rank 0] overlap: 2.41%
+[rank 1] post time (avg. per thread and iter): 100.343778us
+[rank 1] wait time (avg. per thread and iter): 132.176481us
+[rank 1] comp time (avg. per thread and iter): 5.649623us
+[rank 1] comm time (avg. per thread and iter): 238.169882us
+[rank 1] overlap: 2.37%
+[rank 1] post time (avg. per thread and iter): 336.804786us
+[rank 1] wait time (avg. per thread and iter): 350.013428us
+[rank 1] comp time (avg. per thread and iter): 6.029827us
+[rank 1] comm time (avg. per thread and iter): 692.848041us
+[rank 1] overlap: 0.87%
+[rank 0] post time (avg. per thread and iter): 345.811576us
+[rank 0] wait time (avg. per thread and iter): 342.302096us
+[rank 0] comp time (avg. per thread and iter): 6.048533us
+[rank 0] comm time (avg. per thread and iter): 694.162205us
+[rank 0] overlap: 0.87%
+[rank 1] post time (avg. per thread and iter): 2831.054634us
+[rank 1] wait time (avg. per thread and iter): 1213.126146us
+[rank 1] comp time (avg. per thread and iter): 6.118399us
+[rank 1] comm time (avg. per thread and iter): 4050.299179us
+[rank 1] overlap: 0.15%
+[rank 0] post time (avg. per thread and iter): 1478.875495us
+[rank 0] wait time (avg. per thread and iter): 2525.184755us
+[rank 0] comp time (avg. per thread and iter): 5.941811us
+[rank 0] comm time (avg. per thread and iter): 4010.002061us
+[rank 0] overlap: 0.15%
+[rank 1] post time (avg. per thread and iter): 25484.652781us
+[rank 1] wait time (avg. per thread and iter): 14136.594861us
+[rank 1] comp time (avg. per thread and iter): 5.872324us
+[rank 1] comm time (avg. per thread and iter): 39627.119966us
+[rank 1] overlap: 0.01%
+[rank 0] post time (avg. per thread and iter): 24793.227464us
+[rank 0] wait time (avg. per thread and iter): 14717.068753us
+[rank 0] comp time (avg. per thread and iter): 5.971866us
+[rank 0] comm time (avg. per thread and iter): 39516.268083us
+[rank 0] overlap: 0.02%
+[rank 0] post time (avg. per thread and iter): 104180.436143us
+[rank 0] wait time (avg. per thread and iter): 331193.281512us
+[rank 0] comp time (avg. per thread and iter): 4.734525us
+[rank 0] comm time (avg. per thread and iter): 435378.452180us
+[rank 0] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 105663.252510us
+[rank 1] wait time (avg. per thread and iter): 330430.102730us
+[rank 1] comp time (avg. per thread and iter): 4.687135us
+[rank 1] comm time (avg. per thread and iter): 436098.042375us
+[rank 1] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 1072862.400556us
+[rank 1] wait time (avg. per thread and iter): 3249635.813303us
+[rank 1] comp time (avg. per thread and iter): 4.739586us
+[rank 1] comm time (avg. per thread and iter): 4322502.953445us
+[rank 1] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 1089675.572625us
+[rank 0] wait time (avg. per thread and iter): 3259193.120489us
+[rank 0] comp time (avg. per thread and iter): 4.819917us
+[rank 0] comm time (avg. per thread and iter): 4348873.513031us
+[rank 0] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 66.328481us
+[rank 1] wait time (avg. per thread and iter): 144.760814us
+[rank 1] comp time (avg. per thread and iter): 21.039325us
+[rank 1] comm time (avg. per thread and iter): 232.128620us
+[rank 1] overlap: 9.06%
+[rank 0] post time (avg. per thread and iter): 67.569822us
+[rank 0] wait time (avg. per thread and iter): 149.727716us
+[rank 0] comp time (avg. per thread and iter): 21.050628us
+[rank 0] comm time (avg. per thread and iter): 238.348166us
+[rank 0] overlap: 8.83%
+[rank 1] post time (avg. per thread and iter): 79.490882us
+[rank 1] wait time (avg. per thread and iter): 142.167065us
+[rank 1] comp time (avg. per thread and iter): 21.532025us
+[rank 1] comm time (avg. per thread and iter): 243.189971us
+[rank 1] overlap: 8.85%
+[rank 0] post time (avg. per thread and iter): 77.642009us
+[rank 0] wait time (avg. per thread and iter): 170.250553us
+[rank 0] comp time (avg. per thread and iter): 21.639678us
+[rank 0] comm time (avg. per thread and iter): 269.532239us
+[rank 0] overlap: 8.03%
+[rank 0] post time (avg. per thread and iter): 95.174317us
+[rank 0] wait time (avg. per thread and iter): 221.320142us
+[rank 0] comp time (avg. per thread and iter): 23.664323us
+[rank 0] comm time (avg. per thread and iter): 340.158783us
+[rank 0] overlap: 6.96%
+[rank 1] post time (avg. per thread and iter): 102.734662us
+[rank 1] wait time (avg. per thread and iter): 142.662067us
+[rank 1] comp time (avg. per thread and iter): 23.062345us
+[rank 1] comm time (avg. per thread and iter): 268.459074us
+[rank 1] overlap: 8.59%
+[rank 1] post time (avg. per thread and iter): 309.630113us
+[rank 1] wait time (avg. per thread and iter): 439.977536us
+[rank 1] comp time (avg. per thread and iter): 23.611256us
+[rank 1] comm time (avg. per thread and iter): 773.218905us
+[rank 1] overlap: 3.05%
+[rank 0] post time (avg. per thread and iter): 305.588122us
+[rank 0] wait time (avg. per thread and iter): 444.273695us
+[rank 0] comp time (avg. per thread and iter): 23.335738us
+[rank 0] comm time (avg. per thread and iter): 773.197555us
+[rank 0] overlap: 3.02%
+[rank 1] post time (avg. per thread and iter): 1874.596894us
+[rank 1] wait time (avg. per thread and iter): 2290.603144us
+[rank 1] comp time (avg. per thread and iter): 24.480877us
+[rank 1] comm time (avg. per thread and iter): 4189.680915us
+[rank 1] overlap: 0.58%
+[rank 0] post time (avg. per thread and iter): 2520.865430us
+[rank 0] wait time (avg. per thread and iter): 1645.086813us
+[rank 0] comp time (avg. per thread and iter): 25.991555us
+[rank 0] comm time (avg. per thread and iter): 4191.943798us
+[rank 0] overlap: 0.62%
+[rank 1] post time (avg. per thread and iter): 25327.038400us
+[rank 1] wait time (avg. per thread and iter): 14476.511610us
+[rank 1] comp time (avg. per thread and iter): 26.523088us
+[rank 1] comm time (avg. per thread and iter): 39830.073098us
+[rank 1] overlap: 0.07%
+[rank 0] post time (avg. per thread and iter): 24765.978508us
+[rank 0] wait time (avg. per thread and iter): 15175.825300us
+[rank 0] comp time (avg. per thread and iter): 26.911889us
+[rank 0] comm time (avg. per thread and iter): 39968.715697us
+[rank 0] overlap: 0.07%
+[rank 1] post time (avg. per thread and iter): 101736.780402us
+[rank 1] wait time (avg. per thread and iter): 333495.211710us
+[rank 1] comp time (avg. per thread and iter): 17.623989us
+[rank 1] comm time (avg. per thread and iter): 435249.616101us
+[rank 1] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 101495.722538us
+[rank 0] wait time (avg. per thread and iter): 332154.634358us
+[rank 0] comp time (avg. per thread and iter): 17.734111us
+[rank 0] comm time (avg. per thread and iter): 433668.091008us
+[rank 0] overlap: 0.00%
+[rank 1] post time (avg. per thread and iter): 1092928.914339us
+[rank 1] wait time (avg. per thread and iter): 3234881.508419us
+[rank 1] comp time (avg. per thread and iter): 17.760976us
+[rank 1] comm time (avg. per thread and iter): 4327828.183734us
+[rank 1] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 1048478.308275us
+[rank 0] wait time (avg. per thread and iter): 3280916.321719us
+[rank 0] comp time (avg. per thread and iter): 17.919450us
+[rank 0] comm time (avg. per thread and iter): 4329412.549443us
+[rank 0] overlap: 0.00%
+[rank 0] post time (avg. per thread and iter): 66.214134us
+[rank 0] wait time (avg. per thread and iter): 199.799382us
+[rank 0] comp time (avg. per thread and iter): 35.214382us
+[rank 0] comm time (avg. per thread and iter): 301.227898us
+[rank 0] overlap: 11.69%
+[rank 1] post time (avg. per thread and iter): 66.799261us
+[rank 1] wait time (avg. per thread and iter): 141.732313us
+[rank 1] comp time (avg. per thread and iter): 35.656118us
+[rank 1] comm time (avg. per thread and iter): 244.187691us
+[rank 1] overlap: 14.60%
+[rank 0] post time (avg. per thread and iter): 79.479465us
+[rank 0] wait time (avg. per thread and iter): 175.467848us
+[rank 0] comp time (avg. per thread and iter): 37.783205us
+[rank 0] comm time (avg. per thread and iter): 292.730517us
+[rank 0] overlap: 12.91%
+[rank 1] post time (avg. per thread and iter): 78.901710us
+[rank 1] wait time (avg. per thread and iter): 184.165713us
+[rank 1] comp time (avg. per thread and iter): 37.603007us
+[rank 1] comm time (avg. per thread and iter): 300.670430us
+[rank 1] overlap: 12.51%
+[rank 1] post time (avg. per thread and iter): 97.275946us
+[rank 1] wait time (avg. per thread and iter): 171.634922us
+[rank 1] comp time (avg. per thread and iter): 40.398670us
+[rank 1] comm time (avg. per thread and iter): 309.309537us
+[rank 1] overlap: 13.06%
+[rank 0] post time (avg. per thread and iter): 92.202755us
+[rank 0] wait time (avg. per thread and iter): 253.028031us
+[rank 0] comp time (avg. per thread and iter): 40.075054us
+[rank 0] comm time (avg. per thread and iter): 385.305840us
+[rank 0] overlap: 10.40%
+[rank 1] post time (avg. per thread and iter): 269.205658us
+[rank 1] wait time (avg. per thread and iter): 531.305213us
+[rank 1] comp time (avg. per thread and iter): 40.136997us
+[rank 1] comm time (avg. per thread and iter): 840.647868us
+[rank 1] overlap: 4.77%
+[rank 0] post time (avg. per thread and iter): 287.034361us
+[rank 0] wait time (avg. per thread and iter): 497.595281us
+[rank 0] comp time (avg. per thread and iter): 40.551375us
+[rank 0] comm time (avg. per thread and iter): 825.181017us
+[rank 0] overlap: 4.91%
+[rank 0] post time (avg. per thread and iter): 1483.384392us
+[rank 0] wait time (avg. per thread and iter): 2764.833642us
+[rank 0] comp time (avg. per thread and iter): 42.190187us
+[rank 0] comm time (avg. per thread and iter): 4290.408220us
+[rank 0] overlap: 0.98%
+[rank 1] post time (avg. per thread and iter): 2826.508339us
+[rank 1] wait time (avg. per thread and iter): 1424.704112us
+[rank 1] comp time (avg. per thread and iter): 47.285821us
+[rank 1] comm time (avg. per thread and iter): 4298.498272us
+[rank 1] overlap: 1.10%
+[rank 1] post time (avg. per thread and iter): 24987.578050us
+[rank 1] wait time (avg. per thread and iter): 14679.522302us
+[rank 1] comp time (avg. per thread and iter): 49.967736us
+[rank 1] comm time (avg. per thread and iter): 39717.068087us
+[rank 1] overlap: 0.13%
+[rank 0] post time (avg. per thread and iter): 24361.756856us
+[rank 0] wait time (avg. per thread and iter): 15338.080830us
+[rank 0] comp time (avg. per thread and iter): 50.249097us
+[rank 0] comm time (avg. per thread and iter): 39750.086783us
+[rank 0] overlap: 0.13%
+[rank 0] post time (avg. per thread and iter): 97891.970143us
+[rank 0] wait time (avg. per thread and iter): 333731.204293us
+[rank 0] comp time (avg. per thread and iter): 32.179618us
+[rank 0] comm time (avg. per thread and iter): 431655.354055us
+[rank 0] overlap: 0.01%
+[rank 1] post time (avg. per thread and iter): 97359.866044us
+[rank 1] wait time (avg. per thread and iter): 334794.387180us
+[rank 1] comp time (avg. per thread and iter): 31.572507us
+[rank 1] comm time (avg. per thread and iter): 432185.825730us
+[rank 1] overlap: 0.01%
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 1583248 RUNNING AT i01r06c06s04
+=   KILLED BY SIGNAL: 15 (Terminated)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 1583249 RUNNING AT i01r06c06s04
+=   KILLED BY SIGNAL: 15 (Terminated)
+===================================================================================
