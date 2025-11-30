@@ -1,0 +1,41 @@
+#!/bin/bash
+#SBATCH -J internode_native_bench_mem
+#SBATCH -D ./
+#SBATCH -o ./output/%x.%j.out 
+#SBATCH -e ./output/%x.%j.err 
+#SBATCH --get-user-env
+#SBATCH --clusters=inter
+#SBATCH --partition=cm4_inter
+##SBATCH --qos=cm4_inter
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=2
+#SBATCH --time=10:30:00
+
+module load slurm_setup
+module load openmpi/5.0.8-gcc13
+
+export OMPI_MCA_hwloc_base_verbose=1
+
+# To ignore the shared file system warning with PRTE
+export PRTE_MCA_prte_silence_shared_fs=1
+
+export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
+#export COMMOFF_THREAD_CPU_ID=0:19,1:39,2:19,3:39
+export OMP_DISPLAY_AFFINITY=true
+export OMP_NUM_THREADS=19
+export PREFIX=/dss/dsshome1/0C/di35hef/mmcso/build_ompi/lib
+
+CSV_NATIVE=./result/internode_native_bench_mem_2nodes_4procs.csv
+CSV_HEADER=rank,nthreads,thread,rep,work,msg_size,post_time,wait_time,comp_time,comm_time
+echo ${CSV_HEADER} > ${CSV_NATIVE}
+
+bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 4 20 40
+
+BENCH="mpiexec -n 4 /dss/dsshome1/0C/di35hef/mmcso/build_ompi/bench/mt_overlap_mem"
+
+for work in 100 500 1000 5000 10000 50000 100000 500000; do
+	for msg in 1 100 1000 10000 100000 1000000 10000000 100000000; do  
+		${BENCH} -m ${msg} -w ${work} -f ${CSV_NATIVE} -r 1000
+	done
+done
+
