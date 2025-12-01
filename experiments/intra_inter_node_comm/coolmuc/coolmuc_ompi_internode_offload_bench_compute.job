@@ -25,17 +25,29 @@ export OMP_DISPLAY_AFFINITY=true
 export OMP_NUM_THREADS=19
 export PREFIX=/dss/dsshome1/0C/di35hef/mmcso/build_ompi/lib
 
-CSV_OFFLOAD=./result/internode_offload_bench_compute_2nodes_4procs.csv
+CSV_FILE=./result/internode_offload_bench_compute_2nodes_4procs.csv
 CSV_HEADER=rank,nthreads,thread,rep,work,msg_size,post_time,wait_time,comp_time,comm_time
-echo ${CSV_HEADER} > ${CSV_OFFLOAD}
 
 bash /dss/dsshome1/0C/di35hef/mmcso/experiments/affinity_setup.sh 4 20 40
 
 BENCH="mpiexec -n 4 /dss/dsshome1/0C/di35hef/mmcso/build_ompi/bench/mt_overlap"
 
+echo ${CSV_HEADER} > ${CSV_FILE}
 for work in 100 1000 10000 100000; do
-	for msg in 1 100 1000 10000 100000 1000000 10000000 100000000; do   
-		LD_PRELOAD=${PREFIX}/libmmc.so ${BENCH} -m ${msg} -w ${work} -f ${CSV_OFFLOAD} -r 1000
+	REP=5000
+	for msg in 1 10 100 1000; do
+		LD_PRELOAD=${PREFIX}/libmmc.so ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+	done
+	REP=500
+	for msg in 10000 100000; do
+		LD_PRELOAD=${PREFIX}/libmmc.so ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+	done
+	REP=100
+	for msg in 1000000 10000000; do
+		LD_PRELOAD=${PREFIX}/libmmc.so ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
+	done
+	REP=20
+	for msg in 100000000; do
+		LD_PRELOAD=${PREFIX}/libmmc.so ${BENCH} -m ${msg} -w ${work} -f ${CSV_FILE} -r ${REP}
 	done
 done
-
