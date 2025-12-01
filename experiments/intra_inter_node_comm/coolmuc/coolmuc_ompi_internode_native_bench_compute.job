@@ -12,12 +12,12 @@
 #SBATCH --time=08:00:00
 
 module load slurm_setup
-module load openmpi/4.1.7-gcc13
+module load openmpi/5.0.8-gcc13
 
 export OMPI_MCA_hwloc_base_verbose=1
 
 # To ignore the shared file system warning with PRTE
-# export PRTE_MCA_prte_silence_shared_fs=1
+export PRTE_MCA_prte_silence_shared_fs=1
 
 export OMP_PROC_BIND=CLOSE OMP_PLACES=CORES OMP_DISPLAY_AFFINITY=TRUE
 #export COMMOFF_THREAD_CPU_ID=0:19,1:39,2:19,3:39
