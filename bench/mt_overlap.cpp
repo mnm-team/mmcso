@@ -210,10 +210,10 @@ int main(int argc, char *argv[])
                 assert(recvbuf[i] == thread_id + i);
                 recvbuf[i] = -1;
             }
-#endif
-
 #pragma omp barrier
-        }
+#endif
+        } // for end
+        
         free(sendbuf);
         free(recvbuf);
 

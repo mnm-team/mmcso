@@ -24,7 +24,7 @@ def plot_bench_bar(df, bench, conf, ax, num_plots, plot_idx):
     
     dfg = df.groupby(['bench', 'conf'])
     
-    # print(df.to_string())
+    print(df.to_string())
     
     ax.grid(alpha=0.3)
     

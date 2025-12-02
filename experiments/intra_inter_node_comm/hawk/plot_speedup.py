@@ -23,18 +23,6 @@ markers = {
     True: 'o',
     False: '^'
 }
-
-def plot_overhead(df, row, fig, ax, mpi):
-    df['comm_time'] = (df['comm_time'] - df['comp_time']) / df['rep'] * 1.0e6
-    # df['comm_time'] = (df['wait_time']) / df['rep'] * 1.0e6
-    # df['comm_time'] = (df['wait_time'] + df['post_time']) / df['rep'] * 1.0e6
-    # df['comm_time'] = (df['post_time']) / df['rep'] * 1.0e6
-
-    """
-    # for ax in fig.get_axes():
-    #    ax.label_outer()
-    fig.suptitle(f'Spinlocks (48 Core ARM A64FX) N={n}')
-    """
     
 def get_rank(filename):
     match = re.search(r"hawk-r(\d+)\.mt-(\d+)-(\d+)-.*\.csv", filename)
@@ -69,7 +57,7 @@ def plot_speedup(df, ax, title, is_mem):
     # merge dfs to compute speedup
     df = pd.merge(df.loc[~df_offload], df.loc[df_offload], on=('msg_size', 'work'), suffixes=('_default', '_offload'))
     df['speedup'] = df['comm_time_default'] / df['comm_time_offload']
-    print(df)
+    print(df.to_string())
     
     if is_mem:
         df = df[(df['work'] == 500) | (df['work'] == 5000) | (df['work'] == 50000) | (df['work'] == 500000)]
@@ -129,7 +117,7 @@ def plot(axs, is_mem):
     for ax in axs:
         ax.grid(alpha=0.3)
         ax.set_xlim(2, 1.0e9)
-        ax.set_xlabel('Message Size [bytes]')
+        ax.set_xlabel('Message Size [bytes]') 
         # ax.set_ylabel('speedup')
         ax.set_yticks(range(ytickmax))
         ax.set_ylim(0.5, ymax)

@@ -23,18 +23,6 @@ markers = {
     True: 'o',
     False: '^'
 }
-
-def plot_overhead(df, row, fig, ax, mpi):
-    df['comm_time'] = (df['comm_time'] - df['comp_time']) / df['rep'] * 1.0e6
-    # df['comm_time'] = (df['wait_time']) / df['rep'] * 1.0e6
-    # df['comm_time'] = (df['wait_time'] + df['post_time']) / df['rep'] * 1.0e6
-    # df['comm_time'] = (df['post_time']) / df['rep'] * 1.0e6
-
-    """
-    # for ax in fig.get_axes():
-    #    ax.label_outer()
-    fig.suptitle(f'Spinlocks (48 Core ARM A64FX) N={n}')
-    """
     
 def get_rank(filename):
     match = re.search(r"hawk-r(\d+)\.mt-(\d+)-(\d+)-.*\.csv", filename)
@@ -68,6 +56,8 @@ def plot_speedup(df, ax, title, is_mem):
         df = df[(df['work'] == 500) | (df['work'] == 5000) | (df['work'] == 50000) | (df['work'] == 500000)]
     else:
         df = df[(df['work'] == 100) | (df['work'] == 1000) | (df['work'] == 10000) | (df['work'] == 100000)]
+    
+    print(df.to_string())
     
     dfg = df.groupby(['work'])
     
