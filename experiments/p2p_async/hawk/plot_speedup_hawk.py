@@ -1,8 +1,10 @@
-import os
+import os,sys
 import re
 import math
 import matplotlib.pyplot as plt
 import pandas as pd
+
+os.chdir(sys.path[0])
 
 linestyles = { True: ':', False: '-.' }
 
@@ -57,7 +59,7 @@ def plot_speedup(df, ax, title, is_mem):
     # merge dfs to compute speedup
     df = pd.merge(df.loc[~df_offload], df.loc[df_offload], on=('msg_size', 'work'), suffixes=('_default', '_offload'))
     df['speedup'] = df['comm_time_default'] / df['comm_time_offload']
-    print(df.to_string())
+    # print(df.to_string())
     
     if is_mem:
         df = df[(df['work'] == 500) | (df['work'] == 5000) | (df['work'] == 50000) | (df['work'] == 500000)]
@@ -109,7 +111,7 @@ def plot(axs, is_mem):
     for i, (conf, title) in enumerate(configs):
         df = make_dataframe(csv_files, conf, is_mem)
         # df = df[(df['work'] == 100) | (df['work'] == 1000) | (df['work'] == 10000) | (df['work'] == 100000)]
-        print(f"Dataframe for config {conf} has {len(df)} rows")
+        # print(f"Dataframe for config {conf} has {len(df)} rows")
         df = df.groupby(['nthreads', 'msg_size', 'offload', 'work']).mean().drop(['rank', 'thread'], axis=1).reset_index()
         # print(df)
         plot_speedup(df, axs[i], title, is_mem)
@@ -127,10 +129,13 @@ def plot(axs, is_mem):
 
 if __name__ == '__main__':
 
-    fig, axs = plt.subplots(2, 2, figsize=(16, 9), sharex=True, sharey=True)
+    fig, axs = plt.subplots(2, 2, figsize=(16, 7), sharex=True, sharey=True)
 
-    csv_files = [f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')]
+    result_dir = './result'
+    csv_files = [f'{result_dir}/{f}' for f in os.listdir(result_dir) if os.path.isfile(f'{result_dir}/{f}') and f.endswith('.csv')]
     # print(csv_files)
+    
+    # exit()
     
     plot(axs[0], False)
     plot(axs[1], True)
