@@ -12,7 +12,7 @@ using MPICommand = MpiCommand<112ul>;
 
 namespace mmcso
 {
-    template <std::size_t IDX = 0u, auto Function, bool HasRequest>
+    template <auto Function, bool HasRequest>
     constexpr auto make_mpi_callable(auto &&...args) noexcept
     {
         return MPICommand([=](MPI_Request *r) {

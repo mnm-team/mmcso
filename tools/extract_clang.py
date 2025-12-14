@@ -308,31 +308,6 @@ impl_file_footer = '''\
 '''
 
 #########################################################
-###   Header File Header and Footer
-#########################################################
-
-# Header
-header_file_header = f'''\
-#pragma once
-
-#include <mpi.h>
-
-#include <functional> // bind_front
-#include <variant>    // variant
-#include "lambda_wrapper.h"
-
-namespace mmcso {{
-
-'''
-
-# Footer
-header_file_footer = '''\
-
-} // namespace mmcso
-
-'''
-    
-#########################################################
 ###   Function Body Generation
 #########################################################
 
@@ -351,14 +326,14 @@ def make_parameter_list(parameters):
 def make_argument_list(parameters):
     return ', '.join([f'std::move({p.name})' for p in parameters])
 
-def nonblocking_function_body(function, fn_num):
+def nonblocking_function_body(function):
     parameter_list = make_parameter_list(function.parameters)
     argument_list_no_request = make_argument_list(function.parameters[:-1])
     return f'''\
 
 {function.return_type} {function.name}({parameter_list})
 {{
-    oe.post(OffloadCommand{{make_mpi_callable<{fn_num}, P{function.name}, true>({argument_list_no_request}), {function.parameters[-1].name}}});
+    oe.post(OffloadCommand{{make_mpi_callable<P{function.name}, true>({argument_list_no_request}), {function.parameters[-1].name}}});
     return MPI_SUCCESS;
 }}
 '''
@@ -377,7 +352,7 @@ def blocking_function_body_with_nonblocking_equivalent(fn_blocking, fn_nonblocki
 }}
 '''
 
-def nonblocking_function_body_status_no_request(function, fn_num):
+def nonblocking_function_body_status_no_request(function):
     parameter_list = make_parameter_list(function.parameters)
     argument_list = make_argument_list(function.parameters)
     return f'''\
@@ -385,7 +360,7 @@ def nonblocking_function_body_status_no_request(function, fn_num):
 {function.return_type} {function.name}({parameter_list})
 {{
     MPI_Request request_local = MPI_REQUEST_NULL; // TODO
-    oe.post(OffloadCommand{{make_mpi_callable<{fn_num}, P{function.name}, false>({argument_list}), &request_local}});
+    oe.post(OffloadCommand{{make_mpi_callable<P{function.name}, false>({argument_list}), &request_local}});
     return MPI_SUCCESS;
 }}
 '''
@@ -404,7 +379,7 @@ def blocking_function_body_status_instead_of_request(fn_blocking, fn_nonblocking
 }}
 '''
 
-def blocking_function_body(function, fn_num):
+def blocking_function_body(function):
     parameter_list = make_parameter_list(function.parameters)
     argument_list = make_argument_list(function.parameters)
     return f'''\
@@ -412,7 +387,7 @@ def blocking_function_body(function, fn_num):
 {function.return_type} {function.name}({parameter_list})
 {{
     MPI_Request request_local;
-    oe.post(OffloadCommand{{make_mpi_callable<{fn_num}, P{function.name}, false>({argument_list}), &request_local, true}});
+    oe.post(OffloadCommand{{make_mpi_callable<P{function.name}, false>({argument_list}), &request_local, true}});
     MPI_Wait(&request_local, MPI_STATUS_IGNORE); // NOLINT: suppress warning 'no matching nonblocking call'
     return MPI_SUCCESS;
 }}
@@ -475,46 +450,13 @@ def set_nonblocking_blocking_pairs(functions):
                 break
 
 #########################################################
-###   Variant Type Helpers
+###   MPI Implementation
 #########################################################
 
-def make_bind_type(function, fn_num):
-    def make_decay_t_argument_list(parameters):
-        return ', '.join([f'std::decay_t<{p.type}>{{}}' for p in parameters])
-
-    # print(function.name)
-    parameters = function.parameters[:-1]  if has_request(function) else function.parameters
-
-    argument_list = make_decay_t_argument_list(parameters)
-    tf = 'true' if has_request(function) else 'false'
-
-    return f'    using T{fn_num} = decltype(mmcso::make_lambda_wrapper<P{function.name}, {tf}>({argument_list}));\n'
-
-def make_variant_type_definition(num_fns):
-    variant_type = ('using variant_type = std::variant<std::monostate,\n')
-    for i in range(1, num_fns):
-        variant_type = variant_type + f'T{i},\n'
-    variant_type = variant_type[:-2] + '\n>;\n'
-    variant_type = variant_type + f'static_assert(std::variant_size_v<variant_type> == {num_fns});\n'
-
-    for i in range(1, num_fns):
-        variant_type = variant_type + (f'static_assert(std::is_same_v<T{i}, std::variant_alternative_t<{i}, variant_type>>);\n')
-    
-    return variant_type
-
-#########################################################
-###   MPI Implementation and Variant Type Header
-#########################################################
-
-def generate_cpp_files(functions, impl_file, header_file):
+def generate_cpp_files(functions, impl_file):
     implemented_functions = []
 
     impl_file.write(impl_file_header)
-    header_file.write(header_file_header)
-    
-    # need to start from one because first variant member type must be
-    # std::monostate to make variant default-constructible
-    fn_num = 1
 
     for f in functions:
 
@@ -522,16 +464,14 @@ def generate_cpp_files(functions, impl_file, header_file):
 
             # nonblocking function w/o request (e.g. Iprobe, Improbe)
             if not has_request(f):
-                impl_file.write(nonblocking_function_body_status_no_request(f, fn_num))
+                impl_file.write(nonblocking_function_body_status_no_request(f))
                 # MPI_Probe is manually implemented
 
             # typical nonblocking function
             else:
-                impl_file.write(nonblocking_function_body(f, fn_num))
+                impl_file.write(nonblocking_function_body(f))
 
             implemented_functions.append(f)
-            header_file.write(make_bind_type(f, fn_num))
-            fn_num = fn_num + 1
 
         else: # blocking function
 
@@ -556,7 +496,6 @@ def generate_cpp_files(functions, impl_file, header_file):
 
             # some functions like e.g. MPI_Get_processor_name may be assumed thread safe
             elif f.assumed_thread_safe:
-                # don't increase fn_num
                 # TODO: define thread safe functions
                 continue
 
@@ -568,17 +507,13 @@ def generate_cpp_files(functions, impl_file, header_file):
                     print('skipping: ' + f.name)
                     continue
                 
+                # print('skipping2: ' + f.name)
                 continue
                 
-                impl_file.write(blocking_function_body(f, fn_num))
+                impl_file.write(blocking_function_body(f))
                 implemented_functions.append(f)
-                header_file.write(make_bind_type(f, fn_num))
-                fn_num = fn_num + 1
-
-    header_file.write(make_variant_type_definition(fn_num))
 
     impl_file.write(impl_file_footer)
-    header_file.write(header_file_footer)
 
     return implemented_functions
 
@@ -606,20 +541,17 @@ if __name__ == '__main__':
     manually_implemented_functions = [f for f in functions if f.name in manually_implemented_function_names]
     functions = [f for f in functions if f.name not in manually_implemented_function_names]
 
-    variant_header_path = os.path.join(args.path, 'variant_type.h')
     mpi_impl_path = os.path.join(args.path, 'mpi_impl.cpp')
 
     impl_file = open(mpi_impl_path, 'w')
-    header_file = open(variant_header_path, 'w')
 
-    implemented_functions = generate_cpp_files(functions, impl_file, header_file)
+    implemented_functions = generate_cpp_files(functions, impl_file)
 
     impl_file.close()
-    header_file.close()
 
     implemented_functions = implemented_functions + manually_implemented_functions
-
     # print('\n\nImplemented functions:\n\n' + '\n'.join(mpi_implemented_function_names))
+    
     unimplemented = [f for f in functions if f not in implemented_functions]
     # print('\n\nUnimplemented functions:\n\n' + '\n'.join([f.name for f in unimplemented]))
     
