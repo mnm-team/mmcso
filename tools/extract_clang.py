@@ -194,7 +194,8 @@ manually_implemented_function_names = [
     'MPI_Test_cancelled',
     'MPI_Testsome',
     'MPI_Probe',
-    'MPI_Mprobe'
+    'MPI_Mprobe',
+    'MPI_Startall'
 ]
 
 mpi_status_instead_of_request_function_names = [
@@ -499,18 +500,16 @@ def generate_cpp_files(functions, impl_file):
                 # TODO: define thread safe functions
                 continue
 
-            # blocking function without nonblocking equivalent
+            # blocking ? function without nonblocking equivalent
             else:
-                # TODO: handling of those functions
-                
+                # TODO: check correct handling of those functions
                 if has_request(f):
-                    print('skipping: ' + f.name)
-                    continue
-                
-                # print('skipping2: ' + f.name)
-                continue
-                
-                impl_file.write(blocking_function_body(f))
+                    # print('function implemented as nonblocking: ' + f.name)
+                    impl_file.write(nonblocking_function_body(f))
+                    
+                else:
+                    # print('function implemented as blocking: ' + f.name)
+                    impl_file.write(blocking_function_body(f))
                 implemented_functions.append(f)
 
     impl_file.write(impl_file_footer)
@@ -553,7 +552,7 @@ if __name__ == '__main__':
     # print('\n\nImplemented functions:\n\n' + '\n'.join(mpi_implemented_function_names))
     
     unimplemented = [f for f in functions if f not in implemented_functions]
-    # print('\n\nUnimplemented functions:\n\n' + '\n'.join([f.name for f in unimplemented]))
+    print('\n\nUnimplemented functions:\n\n' + '\n'.join([f.name for f in unimplemented]))
     
     unimplemented_with_request = [f for f in unimplemented if 'MPI_Request *' in [p.type for p in f.parameters]]
     # print('\nWith request:\n')
@@ -820,14 +819,6 @@ MPI_Attr_put
 MPI_Keyval_create
 MPI_Keyval_free
 """
-
-
-
-
-
-
-
-
 
 
 # MPI Categories:
