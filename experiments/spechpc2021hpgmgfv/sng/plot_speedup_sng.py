@@ -104,7 +104,7 @@ df['speedup_offload_vs_multiple'] = (df['t_multiple']) / (df['t_offload'])
 benchmarks = ['hpgmgfv_t', 'hpgmgfv_s', 'hpgmgfv_m']
 
 num_benches = len(benchmarks)
-fig, axs = plt.subplots(1, num_benches, figsize=(15, 5), sharex=False, sharey=True, constrained_layout=False)
+fig, axs = plt.subplots(1, num_benches, figsize=(15, 4), sharex=False, sharey=True, constrained_layout=False)
 
 axs_twin = []
 
@@ -151,8 +151,10 @@ axs[2].set_xticks(axs[1].get_xticks())
 # fig.supylabel('Execution Time (s)')
 fig.supxlabel('Nodes', y=0.03)
 
-fig.suptitle(f'SNG: Intel Skylake Xeon Platinum 8174 | 48 Cores per Node')
+# fig.suptitle(f'SNG: Intel Skylake Xeon Platinum 8174 | 48 Cores per Node')
     
 plt.tight_layout(pad=1.0, w_pad=0.5, h_pad=1.0)
 # plt.subplots_adjust(top=0.90)
 plt.savefig(f'sng-hpgmgfv-speedup.pdf')
+
+# plt.subplots_adjust(right=0.95)

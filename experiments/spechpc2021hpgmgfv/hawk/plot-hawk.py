@@ -116,7 +116,7 @@ df['t_offload'] = (df['tcore_offload'] + df['tresid_offload'])
 df['speedup'] = (df['t_default']) / (df['t_offload'])
 
 benchmarks = ['534.hpgmgfv_t', '634.hpgmgfv_s', '734.hpgmgfv_m']
-fig, axs = plt.subplots(2, len(benchmarks), figsize=(15, 9), sharex=False, sharey=True, constrained_layout=False)
+fig, axs = plt.subplots(2, len(benchmarks), figsize=(15, 7), sharex=False, sharey=True, constrained_layout=False)
 
 for i, bench in enumerate(benchmarks):
     print(i, bench)
@@ -132,14 +132,14 @@ axs[1][2].set_xticks(axs[1][1].get_xticks())
 # axs[1][2].set_xlabel('Nodes')
 
 # fig.supylabel('Speedup vs. Funneled')
-fig.supylabel('Execution Time (s)')
-supylabel2(fig, 'Speedup')
+fig.supylabel('Execution Time (s)', x=0.01)
+supylabel2(fig, 'Speedup', x=0.99)
 
-fig.supxlabel('Nodes', y=0.03)
+fig.supxlabel('Nodes', y=0.02)
 
-fig.suptitle(f'Hawk: AMD Epyc 7702 | 128 Cores per Node')
+# fig.suptitle(f'Hawk: AMD Epyc 7702 | 128 Cores per Node')
     
 plt.tight_layout(pad=1.0, w_pad=0.5, h_pad=1.0)
-plt.subplots_adjust(top=0.90)
-plt.subplots_adjust(right=0.94)
+# plt.subplots_adjust(top=0.90)
+plt.subplots_adjust(right=0.95)
 plt.savefig(f'hawk-hpgmgfv-speedup.pdf')
